@@ -11,6 +11,32 @@ Understanding the Magic Behind the Framework
 
 Duration: 30 minutes
 
+<!--
+speaker_note: |
+  MODULE INTRODUCTION (2 minutes)
+
+  • Context setting:
+    - "Day 1 almost done!"
+    - "Last content module"
+    - "Why learn about Spring Boot?"
+
+  • Purpose of this module:
+    - Understand what we avoided
+    - Appreciate Jersey simplicity
+    - Know when to use which
+    - Not promoting Spring Boot!
+
+  • Key message:
+    - "Knowledge is power"
+    - "Understand trade-offs"
+    - "Make informed decisions"
+
+  • Energy check:
+    - End of day fatigue?
+    - Keep it light
+    - Interactive discussion
+-->
+
 <!-- end_slide -->
 
 ## Agenda
@@ -21,6 +47,27 @@ Duration: 30 minutes
 1. Embedded Servers Comparison
 1. Configuration Management
 1. When to Use Each Approach
+
+<!--
+speaker_note: |
+  AGENDA OVERVIEW (1 minute)
+
+  • Quick overview:
+    - What Spring Boot does
+    - How it works
+    - Comparison with Jersey
+    - Decision framework
+
+  • Not a Spring Boot tutorial:
+    - Focus on understanding
+    - Not implementation
+    - Conceptual level
+
+  • Interactive:
+    - "Who uses Spring Boot?"
+    - "What do you like/dislike?"
+    - Share experiences
+-->
 
 <!-- end_slide -->
 
@@ -47,13 +94,78 @@ Opinionated view of the Spring platform
 - Actuator (monitoring)
 - DevTools
 
-<!-- speaker_note: Spring Boot is NOT a new framework, it's Spring made easier -->
+<!--
+speaker_note: |
+  WHAT IS SPRING BOOT (3 minutes)
+
+  • Historical context:
+    - Spring Framework since 2003
+    - Configuration hell by 2010
+    - Spring Boot born 2014
+    - Solution to complexity
+
+  • Core philosophy explained:
+    - Convention: sensible defaults
+    - Opinionated: one way to do things
+    - Production: metrics, health built-in
+    - Dependencies: starter POMs
+
+  • Key components:
+    - Spring Framework: still there!
+    - Auto-config: the magic
+    - Embedded servers: Tomcat default
+    - Actuator: ops features
+    - DevTools: developer experience
+
+  • Important clarification:
+    - "NOT a new framework"
+    - "Spring + conventions"
+    - "Simplification layer"
+
+  • Ask audience:
+    - "Who struggled with old Spring?"
+    - "Remember XML configs?"
+-->
 
 <!-- end_slide -->
 
 ## What Spring Boot Abstracts
 
 The magic revealed
+
+<!--
+speaker_note: |
+  ABSTRACTION COMPARISON (4 minutes)
+
+  • Side-by-side code:
+    - Jersey: 10 lines setup
+    - Spring Boot: 3 lines
+    - Where did code go?
+
+  • What's hidden:
+    - Server creation
+    - Port binding
+    - Context setup
+    - Component scanning
+    - Error handling
+
+  • The cost:
+    - Black box when fails
+    - Hard to debug
+    - Magic confusion
+    - Larger artifact
+
+  • The benefit:
+    - Faster development
+    - Less boilerplate
+    - Standard patterns
+    - Team consistency
+
+  • Key point:
+    - "Both approaches work"
+    - "Trade-off decision"
+    - "No right answer"
+-->
 
 <!-- pause -->
 
@@ -159,13 +271,83 @@ public class UserService {
 }
 ```
 
-<!-- speaker_note: Spring's DI is more mature and feature-rich -->
+<!--
+speaker_note: |
+  DEPENDENCY INJECTION (4 minutes)
+
+  • HK2 explanation:
+    - Jersey's built-in DI
+    - Lightweight
+    - Manual binding
+    - Good enough for most
+
+  • Spring DI advantages:
+    - 20 years mature
+    - AOP support
+    - Scopes (singleton, prototype, request)
+    - Conditional beans
+    - Profiles
+
+  • Trade-offs:
+    - HK2: Simple, explicit
+    - Spring: Powerful, magic
+
+  • Real impact:
+    - Small project: HK2 fine
+    - Large team: Spring better
+    - Learning: HK2 clearer
+
+  • Common question:
+    - "Can we use CDI instead?"
+    - Yes! Weld works with Jersey
+-->
 
 <!-- end_slide -->
 
 ## Auto-Configuration Magic
 
 How Spring Boot "just works"
+
+<!--
+speaker_note: |
+  AUTO-CONFIGURATION (4 minutes)
+
+  • The magic explained:
+
+  • Step 1: Classpath scan
+    - What JARs present?
+    - Jackson? → JSON config
+    - H2? → In-memory DB
+    - Tomcat? → Web server
+
+  • Step 2: Conditional config
+    - @ConditionalOnClass
+    - @ConditionalOnMissingBean
+    - @ConditionalOnProperty
+    - Smart defaults
+
+  • Step 3: Properties
+    - application.properties
+    - application.yml
+    - Environment variables
+    - Override defaults
+
+  • Step 4: Bean creation
+    - Automatic wiring
+    - Dependency injection
+    - Ready to use
+
+  • Jackson example:
+    - Sensible defaults
+    - Java 8 time support
+    - No timestamp dates
+    - Pretty printing dev
+
+  • The danger:
+    - "What if wrong defaults?"
+    - "How to override?"
+    - "Debugging nightmare?"
+-->
 
 <!-- pause -->
 
@@ -376,6 +558,47 @@ Automatic endpoints:
 
 Making the right choice
 
+<!--
+speaker_note: |
+  WHEN PLAIN JERSEY (4 minutes)
+
+  • Good fit scenarios:
+
+  • Microservices:
+    - 50MB vs 200MB RAM
+    - 1s vs 5s startup
+    - Multiplied by 100 instances!
+
+  • Simple APIs:
+    - CRUD only
+    - No complex requirements
+    - Overkill to use Spring
+
+  • Learning:
+    - Understand fundamentals
+    - No magic hiding concepts
+    - Better foundation
+
+  • Legacy Java 8:
+    - Real constraint
+    - Many enterprises
+    - Jersey 2.x perfect
+
+  • Performance:
+    - Every millisecond counts
+    - High-frequency trading
+    - IoT devices
+
+  • Container native:
+    - Kubernetes loves small
+    - Faster scaling
+    - Lower costs
+
+  • Show metrics:
+    - Real numbers matter
+    - Not hypothetical
+-->
+
 <!-- pause -->
 
 ### ✅ Good Fit
@@ -403,6 +626,51 @@ Making the right choice
 
 Leveraging the ecosystem
 
+<!--
+speaker_note: |
+  WHEN SPRING BOOT (4 minutes)
+
+  • Good fit scenarios:
+
+  • Enterprise apps:
+    - Complex requirements
+    - Multiple integrations
+    - Large teams
+
+  • Rapid development:
+    - Prototypes
+    - MVPs
+    - Tight deadlines
+
+  • Complex requirements:
+    - Security (OAuth2, JWT)
+    - Transactions
+    - Messaging (JMS, AMQP)
+    - Batch processing
+
+  • Team familiarity:
+    - Most know Spring
+    - Hiring easier
+    - Training available
+
+  • Integration heavy:
+    - Databases (multiple)
+    - Message queues
+    - Cache systems
+    - Cloud services
+
+  • Ecosystem benefits:
+    - Spring Data magic
+    - Spring Security mature
+    - Spring Cloud patterns
+    - Community huge
+
+  • Reality check:
+    - "Most enterprises use it"
+    - "De facto standard"
+    - "Can't go wrong"
+-->
+
 <!-- pause -->
 
 ### ✅ Good Fit
@@ -428,6 +696,46 @@ Leveraging the ecosystem
 ## Migration Path
 
 From one to the other
+
+<!--
+speaker_note: |
+  MIGRATION STRATEGIES (3 minutes)
+
+  • Jersey to Spring Boot:
+
+  • Step 1: Add Spring Boot
+    - Keep Jersey resources
+    - Add @Component
+    - Works immediately!
+
+  • Step 2: Gradual adoption
+    - Use Spring DI
+    - Add Spring Data
+    - Add Security
+
+  • Step 3: Full migration
+    - Optional!
+    - Maybe never
+    - Jersey in Spring works
+
+  • Spring Boot to Jersey:
+    - Rarely happens
+    - Extract business logic
+    - Remove annotations
+    - Manual wiring
+
+  • Real-world approach:
+    - "Start with Jersey"
+    - "Learn fundamentals"
+    - "Add Spring if needed"
+    - "Incremental growth"
+
+  • Success story:
+    - "Client started Jersey"
+    - "Grew to Spring Boot"
+    - "Smooth transition"
+    - "No rewrite needed"
+-->
 
 <!-- pause -->
 
@@ -524,6 +832,44 @@ Same API, different approaches
 
 Questions to ask
 
+<!--
+speaker_note: |
+  DECISION FRAMEWORK (3 minutes)
+
+  • Walk through each question:
+
+  • Team experience:
+    - Spring experts? Use it
+    - Java EE background? Jersey
+    - New team? Either works
+
+  • Timeline:
+    - Tomorrow? Spring Boot
+    - Next month? Either
+    - Learning project? Jersey
+
+  • Constraints:
+    - Memory limited? Jersey
+    - Complex integrations? Spring
+    - Performance critical? Jersey
+    - Feature rich? Spring
+
+  • Deployment:
+    - Kubernetes? Jersey lighter
+    - Traditional server? Either
+    - Serverless? Jersey faster
+    - Cloud PaaS? Spring better
+
+  • Real advice:
+    - "Start simple"
+    - "Migrate if needed"
+    - "Don't over-engineer"
+
+  • Ask audience:
+    - "What's your scenario?"
+    - Let's categorize
+-->
+
 <!-- pause -->
 
 1. **What's your team's experience?**
@@ -584,6 +930,48 @@ Don't rewrite working Jersey resources just to use @RestController
 
 ## Key Takeaways
 
+<!--
+speaker_note: |
+  KEY TAKEAWAYS (3 minutes)
+
+  • Reinforce main points:
+
+  • Point 1: Abstracts complexity
+    - Good and bad
+    - Power vs understanding
+    - Choose wisely
+
+  • Point 2: Jersey = control
+    - See everything
+    - Understand flow
+    - Debug easier
+
+  • Point 3: Spring Boot = productivity
+    - Faster development
+    - More features
+    - Bigger ecosystem
+
+  • Point 4: Jersey = lightweight
+    - Smaller footprint
+    - Faster startup
+    - Cloud-friendly
+
+  • Point 5: Both production ready
+    - No wrong choice
+    - Both work at scale
+    - Many success stories
+
+  • Point 6: Requirements matter
+    - Not resume-driven
+    - Not trend-driven
+    - Problem-driven
+
+  • Final thought:
+    - "You learned Jersey today"
+    - "Foundation for both"
+    - "Can learn Spring Boot easily now"
+-->
+
 <!-- pause -->
 
 ✅ Spring Boot abstracts complexity through auto-configuration
@@ -614,11 +1002,47 @@ Don't rewrite working Jersey resources just to use @RestController
 
 Let's discuss your Spring Boot experiences
 
-<!-- speaker_note: 
-- Ask who has used Spring Boot
-- What challenges they've faced
-- What they like/dislike about it
-- Transition to afternoon exercises
+<!--
+speaker_note: |
+  WRAP UP & DAY 1 CLOSE (5 minutes)
+
+  • Open discussion:
+    - "Spring Boot experiences?"
+    - "Jersey thoughts?"
+    - "Which would you choose?"
+
+  • Common questions:
+    - "Can we migrate later?"
+      Yes, Jersey → Spring easier
+    - "Job market?"
+      Spring Boot dominates
+    - "Your preference?"
+      Depends on project
+
+  • Day 1 summary:
+    - REST fundamentals ✓
+    - Resource design ✓
+    - Jersey setup ✓
+    - CRUD implementation ✓
+    - Idempotency ✓
+    - Alternatives ✓
+
+  • Day 2 preview:
+    - Jackson deep dive
+    - Security implementation
+    - Advanced patterns
+    - Comprehensive exercise
+
+  • Closing:
+    - "Great first day!"
+    - "See you tomorrow 9 AM"
+    - "Questions via email/Slack"
+    - "Code in GitHub"
+
+  • Homework (optional):
+    - "Review today's code"
+    - "Try bonus exercises"
+    - "Think about your APIs"
 -->
 
 <!-- end_slide -->

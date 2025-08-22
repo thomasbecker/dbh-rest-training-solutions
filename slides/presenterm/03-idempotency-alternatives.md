@@ -11,6 +11,16 @@ Safe Operations and API Paradigms
 
 Duration: 45 minutes
 
+<!--
+speaker_note: |
+  MODULE 3 START (1 minute)
+
+  • Time check: Should be ~11:00 AM
+  • Energy level check
+  • This is the last module before lunch
+  • More theoretical but critical concepts
+-->
+
 <!-- end_slide -->
 
 ## Agenda
@@ -22,6 +32,31 @@ Duration: 45 minutes
 1. gRPC Overview
 1. SOAP Legacy Systems
 1. When to Use Which
+
+<!--
+speaker_note: |
+  MODULE INTRODUCTION (2 minutes)
+
+  • Transition from Module 2:
+    - "We've designed resources"
+    - "Now: operational concerns"
+    - "And alternative approaches"
+
+  • Why this matters:
+    - Network failures happen
+    - Duplicate operations costly
+    - REST isn't always the answer
+
+  • Set expectations:
+    - 45 minutes total
+    - Theory + practical examples
+    - Decision framework
+    - Real-world scenarios
+
+  • Energy check:
+    - "Everyone still with me?"
+    - "Questions from resource design?"
+-->
 
 <!-- end_slide -->
 
@@ -59,7 +94,36 @@ Operations that produce the **same result** when called multiple times
 
 - **POST** - Creates new resources each time
 
-<!-- speaker_note: Safe operations are always idempotent, but not vice versa -->
+<!--
+speaker_note: |
+  SAFE VS IDEMPOTENT (5 minutes)
+
+  • Start with confusion clearing:
+    - "These terms often confused"
+    - "Critical for API reliability"
+    - "Prevents duplicate charges/orders"
+
+  • Safe operations:
+    - Read-only, no side effects
+    - Can be cached aggressively
+    - Browser can retry automatically
+    - Example: "Refresh a page - no harm"
+
+  • Idempotent operations:
+    - Same result if called 1 or N times
+    - PUT replaces entire resource
+    - DELETE already gone? Still 204/404
+    - Critical for network failures
+
+  • Key distinction:
+    - "All safe ops are idempotent"
+    - "But DELETE is idempotent, not safe"
+    - "PUT modifies but is idempotent"
+
+  • Ask audience:
+    - "Why is POST not idempotent?"
+    - Let them think... "Creates NEW each time"
+-->
 
 <!-- end_slide -->
 
@@ -77,7 +141,27 @@ Operations that produce the **same result** when called multiple times
 
 *PATCH can be idempotent depending on implementation
 
-<!-- speaker_note: PATCH with JSON Patch operations may not be idempotent -->
+<!--
+speaker_note: |
+  IDEMPOTENCY MATRIX (3 minutes)
+
+  • Use this table as reference:
+    - Keep on screen during discussion
+    - Point to each row as you explain
+
+  • PATCH special case:
+    - "PATCH /users/123 {\"age\": 30}" - idempotent
+    - "PATCH /users/123 {\"age\": +1}" - NOT idempotent
+    - JSON Patch ops often not idempotent
+
+  • Real-world impact:
+    - "GET can be retried safely"
+    - "PUT can be retried safely"
+    - "POST needs special handling"
+
+  • Transition:
+    - "Let's see why this matters in practice..."
+-->
 
 <!-- end_slide -->
 
@@ -111,7 +195,38 @@ Idempotency-Key: 550e8400-e29b-41d4-a716-446655440000
 // If no: process and cache result
 ```
 
-<!-- speaker_note: Financial systems often require idempotency keys -->
+<!--
+speaker_note: |
+  WHY IDEMPOTENCY MATTERS (4 minutes)
+
+  • Set the scene:
+    - "Customer clicks 'Buy Now'"
+    - "Network timeout occurs"
+    - "Did order go through?"
+    - "Customer clicks again..."
+
+  • Real examples:
+    - Stripe uses idempotency keys
+    - PayPal requires them
+    - AWS APIs use client tokens
+
+  • Implementation pattern:
+    - Client generates UUID
+    - Sends with request
+    - Server checks cache/DB
+    - Returns cached if exists
+    - Processes if new
+
+  • Best practices:
+    - 24-hour cache typical
+    - Store in Redis/Memcached
+    - Include in API docs
+    - Return same status code
+
+  • Ask audience:
+    - "Any payment processing experience?"
+    - "Ever seen duplicate charges?"
+-->
 
 <!-- end_slide -->
 
@@ -172,7 +287,35 @@ Different paradigms for different needs
 
 **"What problem are you solving?"**
 
-<!-- speaker_note: No one-size-fits-all solution -->
+<!--
+speaker_note: |
+  REST ALTERNATIVES OVERVIEW (3 minutes)
+
+  • Transition from idempotency:
+    - "REST handles idempotency well"
+    - "But REST isn't always best choice"
+    - "Let's explore alternatives"
+
+  • Set expectations:
+    - "Not REST vs others"
+    - "Right tool for right job"
+    - "Many can coexist"
+
+  • Quick overview (30 seconds each):
+    - REST: Resources over HTTP
+    - GraphQL: Facebook 2015, query language
+    - gRPC: Google RPC, binary
+    - SOAP: Still alive in enterprise
+    - WebSockets: Real-time needs
+
+  • Key message:
+    - "What problem are you solving?"
+    - Not resume-driven development
+    - Consider team skills too
+
+  • Transition:
+    - "Let's revisit REST strengths/weaknesses"
+-->
 
 <!-- end_slide -->
 
@@ -298,11 +441,62 @@ query {
 
 <!-- reset_layout -->
 
-<!-- speaker_note: GraphQL shines with complex, nested data -->
+<!--
+speaker_note: |
+  GRAPHQL VS REST COMPARISON (4 minutes)
+
+  • Set up the comparison:
+    - "Mobile app scenario"
+    - "User profile with posts and comments"
+    - "Limited bandwidth"
+
+  • REST problems (left side):
+    - 4 separate HTTP calls
+    - Over-fetching (all fields)
+    - Under-fetching (need more calls)
+    - Waterfall loading pattern
+
+  • GraphQL solution (right side):
+    - Single request
+    - Exact fields needed
+    - Nested data in one go
+    - Better for mobile
+
+  • Real examples:
+    - GitHub moved v4 to GraphQL
+    - Facebook mobile app
+    - Shopify storefront API
+
+  • When NOT to use GraphQL:
+    - Simple CRUD (overkill)
+    - File uploads (complex)
+    - Caching (harder than REST)
+
+  • Ask audience:
+    - "Anyone tried GraphQL?"
+    - "What was your experience?"
+-->
 
 <!-- end_slide -->
 
 ## GraphQL Considerations
+
+<!--
+speaker_note: |
+  GRAPHQL TRADE-OFFS (3 minutes)
+  
+  • Strengths: flexibility, efficiency
+  • Weaknesses: complexity, caching
+  • When it shines: mobile, multiple clients
+  • Real examples: GitHub, Shopify
+  
+  • N+1 problem explanation:
+    - Query asks for users + their posts
+    - 1 query for all users
+    - N queries for each user's posts
+    - Solution: DataLoader pattern (batching)
+    - "This is THE GraphQL gotcha"
+-->
 
 <!-- pause -->
 
@@ -366,11 +560,54 @@ message User {
 }
 ```
 
-<!-- speaker_note: Binary format is much more efficient than JSON -->
+<!--
+speaker_note: |
+  GRPC OVERVIEW (4 minutes)
+
+  • Context setting:
+    - "Google internal RPC system"
+    - "Open sourced 2015"
+    - "Built for microservices"
+
+  • Protocol Buffers demo:
+    - Binary vs JSON size (3-10x smaller)
+    - Strongly typed
+    - Code generation benefit
+    - Version compatibility built-in
+
+  • Performance numbers:
+    - "10x faster than REST/JSON"
+    - "Streaming built-in"
+    - "HTTP/2 multiplexing"
+
+  • Real use cases:
+    - Netflix backend services
+    - Uber microservices
+    - Google Cloud APIs
+
+  • Limitations to mention:
+    - "No browser support directly"
+    - "Need proxy for web"
+    - "Binary = not human readable"
+    - "Debugging harder"
+
+  • Transition:
+    - "Now let's look at enterprise legacy..."
+-->
 
 <!-- end_slide -->
 
 ## gRPC Considerations
+
+<!--
+speaker_note: |
+  GRPC TRADE-OFFS (2 minutes)
+  
+  • Quick comparison
+  • When to use gRPC
+  • When to avoid
+  • Real-world fit
+-->
 
 <!-- pause -->
 
@@ -436,7 +673,36 @@ Still alive in enterprise
 </soap:Envelope>
 ```
 
-<!-- speaker_note: Verbose but comprehensive -->
+<!--
+speaker_note: |
+  SOAP LEGACY (3 minutes)
+
+  • Set the tone:
+    - "SOAP seems outdated but..."
+    - "Still dominates banking/insurance"
+    - "Government loves it"
+    - "Not going away soon"
+
+  • Why it persists:
+    - WS-Security standards
+    - Transaction support
+    - Formal contracts (WSDL)
+    - Tool support in enterprise
+
+  • The XML example:
+    - "Yes, it's verbose"
+    - "But self-documenting"
+    - "Security built into protocol"
+    - "Not just HTTP - works over JMS, SMTP"
+
+  • Migration reality:
+    - "Banks won't migrate soon"
+    - "Regulatory compliance"
+    - "If it works, don't touch"
+
+  • Transition:
+    - "So how do we choose?"
+-->
 
 <!-- end_slide -->
 
@@ -487,7 +753,37 @@ When to use which?
 | Browser SPA | REST/GraphQL | Native support |
 | High Performance | gRPC | Binary protocol |
 
-<!-- speaker_note: Consider your specific requirements -->
+<!--
+speaker_note: |
+  DECISION MATRIX (3 minutes)
+
+  • How to use this table:
+    - "Not absolute rules"
+    - "Starting points for decisions"
+    - "Consider multiple factors"
+
+  • Walk through examples:
+    - Public API: REST wins (tooling, understanding)
+    - Mobile: GraphQL (bandwidth matters)
+    - Internal services: gRPC (performance)
+    - Banking: SOAP (compliance, legacy)
+
+  • Additional factors:
+    - Team expertise
+    - Existing infrastructure
+    - Client requirements
+    - Time to market
+
+  • Hybrid reality:
+    - "Most companies use 2-3"
+    - "REST for public"
+    - "gRPC for internal"
+    - "GraphQL for mobile"
+
+  • Ask audience:
+    - "What's your scenario?"
+    - Let's categorize together
+-->
 
 <!-- end_slide -->
 
@@ -519,7 +815,35 @@ public class UserResolver { }
 1. Deprecate old endpoints
 1. Remove legacy code
 
-<!-- speaker_note: Never do big-bang migrations -->
+<!--
+speaker_note: |
+  MIGRATION STRATEGIES (3 minutes)
+
+  • Key message:
+    - "Never do big-bang migrations"
+    - "Always run parallel first"
+    - "Gradual client migration"
+
+  • REST to GraphQL example:
+    - Start with read-only GraphQL
+    - Keep REST for writes
+    - Migrate one client at a time
+    - Monitor performance/errors
+    - Deprecate REST endpoints slowly
+
+  • Success stories:
+    - GitHub: 3 years REST + GraphQL
+    - Shopify: Still has both
+    - Netflix: gRPC internal, REST external
+
+  • Common mistakes:
+    - Forcing all clients to migrate
+    - Removing old API too soon
+    - Not monitoring usage
+
+  • Transition:
+    - "Let's see who uses what in production"
+-->
 
 <!-- end_slide -->
 
@@ -588,7 +912,35 @@ Internal: gRPC for microservices
 External: REST gateway for public API
 ```
 
-<!-- speaker_note: Pragmatic architecture uses multiple paradigms -->
+<!--
+speaker_note: |
+  HYBRID APPROACHES (2 minutes)
+
+  • Real-world reality:
+    - "Pure architectures rare"
+    - "Use best tool for each job"
+    - "Complexity vs pragmatism"
+
+  • Common patterns:
+    - REST + GraphQL (GitHub)
+    - REST + WebSockets (Slack)
+    - gRPC + REST Gateway (Google)
+
+  • Implementation tips:
+    - Separate endpoints
+    - Shared business logic
+    - Common auth layer
+    - Unified monitoring
+
+  • Cost considerations:
+    - More complexity
+    - Multiple skill sets
+    - More infrastructure
+    - But better fit for purpose
+
+  • Transition:
+    - "Quick decision guide coming up"
+-->
 
 <!-- end_slide -->
 
@@ -627,6 +979,38 @@ External: REST gateway for public API
 ## Practical Exercise
 
 Analyze these scenarios
+
+<!--
+speaker_note: |
+  PRACTICAL EXERCISE (3 minutes)
+
+  • Interactive section:
+    - "Let's apply what we learned"
+    - Show scenario, pause for thinking
+    - Get audience answers first
+    - Then reveal and explain
+
+  • Scenario 1 discussion:
+    - E-commerce = different client needs
+    - Mobile wants minimal data
+    - Web wants rich data
+    - GraphQL better for this
+
+  • Scenario 2 discussion:
+    - Microsecond latency = gRPC
+    - Binary protocol faster
+    - Streaming capabilities
+    - Used by HFT systems
+
+  • Scenario 3 discussion:
+    - Legacy = SOAP likely
+    - Don't force modernization
+    - Integration over migration
+
+  • If time permits:
+    - Ask for their scenarios
+    - Analyze together
+-->
 
 <!-- pause -->
 
@@ -690,10 +1074,39 @@ Analyze these scenarios
 
 Let's discuss your API challenges
 
-<!-- speaker_note: 
-- Ask about their current systems
-- What paradigms they've encountered
-- Pain points with current APIs
+<!--
+speaker_note: |
+  QUESTIONS & DISCUSSION (5 minutes)
+
+  • Wrap up key points:
+    - Idempotency critical for reliability
+    - Multiple paradigms available
+    - Choose based on requirements
+    - Hybrid approaches common
+
+  • Questions to prompt discussion:
+    - "What APIs are you building?"
+    - "Any GraphQL experience?"
+    - "SOAP horror stories?"
+    - "Performance requirements?"
+
+  • Common questions to expect:
+    - "Can we use GraphQL with Jersey?"
+      Answer: Yes, graphql-java works
+    - "Is REST dying?"
+      Answer: No, still dominant
+    - "Should we migrate from SOAP?"
+      Answer: Depends on business value
+
+  • Time check:
+    - Should be ~11:45
+    - Lunch break at 12:00
+    - Afternoon: Jersey hands-on
+
+  • Transition to lunch:
+    - "After lunch: Jersey setup"
+    - "We'll build real APIs"
+    - "Questions over lunch welcome"
 -->
 
 <!-- end_slide -->
