@@ -82,10 +82,13 @@ organization and easier sharing with participants.
 
    - [x] REST fundamentals slides (01-rest-fundamentals.md)
    - [x] Resource design slides (02-resource-design.md)
-   - [x] Jersey setup slides (03-jersey-setup.md)
-   - [x] Jersey CRUD exercise slides (04-jersey-crud-exercise.md)
-   - [ ] API versioning slides (05-api-versioning.md)
-   - [x] Basic exercises and solutions (Exercise 01 & 04 completed)
+   - [x] Idempotency & alternatives slides (03-idempotency-alternatives.md)
+   - [x] Jersey setup slides (04-jersey-setup.md)
+   - [x] Jersey CRUD exercise slides (05-jersey-crud-exercise.md)
+   - [ ] Bean validation slides (06-bean-validation.md)
+   - [ ] API versioning slides (07-api-versioning.md)
+   - [x] Spring Boot overview slides (08-spring-boot-overview.md)
+   - [x] Basic exercises and solutions (Exercise 01, 02, 03 completed)
    - [ ] Versioning implementation guide
 
 1. **Days 4-5: Day 2 Content**
@@ -499,9 +502,15 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - **Agent**: general-purpose
 - **Model**: claude-sonnet-4 (medium complexity)
 
-##### 2.2 Jersey CRUD Exercise [45-50 min within 75 min slot]
+##### 2.2 Jersey Setup Exercise [15-20 min within 60 min slot]
 
-- [x] Create exercises/04-jersey-crud/
+- [x] Create exercises/02-jersey-setup/
+- [x] Create basic project setup exercise
+- **Note**: Fits within "Plain Java with Jersey Setup" (Day 1 PM)
+
+##### 2.3 Jersey CRUD Exercise [45-50 min within 75 min slot]
+
+- [x] Create exercises/03-jersey-crud/
 - [x] **Trainees implement**: Complete User model (partial starter provided)
 - [x] **Trainees implement**: Add GET and POST operations
 - [x] **Trainees implement**: Add PUT and DELETE operations
@@ -510,9 +519,9 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - **Note**: Fits within "Building REST Controllers with Jersey" (Day 1 PM)
 - **Model**: claude-sonnet-4
 
-##### 2.3 Bean Validation Exercise [15-20 min within 30 min slot]
+##### 2.4 Bean Validation Exercise [15-20 min within 30 min slot]
 
-- [x] Create exercises/05-bean-validation/
+- [x] Create exercises/04-bean-validation/
 - [ ] **Trainees add**: Validation annotations to User model
 - [ ] **Trainees implement**: @Valid in POST/PUT methods
 - [ ] **Trainees test**: With provided invalid data
@@ -520,9 +529,9 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - **Note**: Fits within "Bean Validation with Jersey" (Day 1 PM)
 - **Model**: claude-sonnet-4
 
-##### 2.4 API Versioning Exercise [20-25 min within 45 min slot]
+##### 2.5 API Versioning Exercise [20-25 min within 45 min slot]
 
-- [ ] Create exercises/06-api-versioning/
+- [ ] Create exercises/05-api-versioning/
 - [ ] **Trainees implement**: Simple /v1 to /v2 migration
 - [ ] **Trainees add**: One new field in v2
 - [ ] **Trainees test**: Both versions work
@@ -531,9 +540,9 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 
 #### Day 2 Training Exercises
 
-##### 2.5 Jackson Basics Exercise [45 min within 90 min slot]
+##### 2.6 Jackson Basics Exercise [45 min within 90 min slot]
 
-- [ ] Create exercises/07-jackson-basics/
+- [ ] Create exercises/06-jackson-basics/
 - [ ] **Trainees configure**: Jackson ObjectMapper
 - [ ] **Trainees implement**: Date formatting
 - [ ] **Trainees add**: @JsonProperty annotations
@@ -541,18 +550,18 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - **Note**: Fits within "Jackson Integration" (Day 2 AM)
 - **Model**: claude-sonnet-4
 
-##### 2.6 Jackson Advanced Exercise [30 min within 60 min slot]
+##### 2.7 Jackson Advanced Exercise [30 min within 60 min slot]
 
-- [ ] Create exercises/08-jackson-advanced/
+- [ ] Create exercises/07-jackson-advanced/
 - [ ] **Trainees create**: One custom serializer
 - [ ] **Trainees implement**: @JsonIgnore and @JsonView
 - [ ] **Trainees test**: Different JSON representations
 - **Note**: Fits within "Advanced Jackson Features" (Day 2 AM)
 - **Model**: claude-sonnet-4
 
-##### 2.7 Security Implementation Exercise [30-40 min within 60 min slot]
+##### 2.8 Security Implementation Exercise [30-40 min within 60 min slot]
 
-- [ ] Create exercises/09-security-implementation/
+- [ ] Create exercises/08-security-implementation/
 - [ ] **Trainees implement**: Basic Auth filter
 - [ ] **Trainees add**: Simple role checking
 - [ ] **Trainees test**: Protected endpoints
@@ -595,9 +604,9 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 
 #### Documentation & Support
 
-##### 2.8 Comprehensive Exercise [90 min - Day 2 PM]
+##### 2.9 Comprehensive Exercise [90 min - Day 2 PM]
 
-- [ ] Create exercises/10-comprehensive/
+- [ ] Create exercises/09-comprehensive/
 - [ ] **Trainees build**: Complete REST API for a Todo application
 - [ ] **Combines**: CRUD, validation, JSON handling, basic security
 - [ ] **Trainees implement**: All concepts from Day 1 and 2
@@ -623,16 +632,18 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 
 - [x] Create slides/presenterm/01-rest-fundamentals.md - HTTP/REST Basics (75 min content)
 - [x] Create slides/presenterm/02-resource-design.md - Resource Orientation & REST Principles (60 min content)
-- [x] Create slides/presenterm/03-jersey-setup.md - Plain Java with Jersey Setup (60 min content)
-- [x] Create slides/presenterm/04-jersey-crud-exercise.md - Jersey CRUD Exercise (45-50 min hands-on)
-- [ ] Create slides/presenterm/05-bean-validation.md - Bean Validation with Jersey (30 min content)
-- [ ] Create slides/presenterm/06-api-versioning.md - API Versioning Strategies (45 min content)
+- [x] Create slides/presenterm/03-idempotency-alternatives.md - Idempotency & REST Alternatives (45 min content)
+- [x] Create slides/presenterm/04-jersey-setup.md - Plain Java with Jersey Setup (60 min content)
+- [x] Create slides/presenterm/05-jersey-crud-exercise.md - Jersey CRUD Exercise (45-50 min hands-on)
+- [ ] Create slides/presenterm/06-bean-validation.md - Bean Validation with Jersey (30 min content)
+- [ ] Create slides/presenterm/07-api-versioning.md - API Versioning Strategies (45 min content)
+- [x] Create slides/presenterm/08-spring-boot-overview.md - Spring Boot Overview (30 min content)
 
 **Day 2 Slides:**
 
-- [ ] Create slides/presenterm/07-jackson-basics.md - Jackson Integration with Jersey (90 min content)
-- [ ] Create slides/presenterm/08-jackson-advanced.md - Advanced Jackson Features (60 min content)
-- [ ] Create slides/presenterm/09-security-implementation.md - Security Fundamentals & Implementation (90 min content)
+- [ ] Create slides/presenterm/09-jackson-basics.md - Jackson Integration with Jersey (90 min content)
+- [ ] Create slides/presenterm/10-jackson-advanced.md - Advanced Jackson Features (60 min content)
+- [ ] Create slides/presenterm/11-security-implementation.md - Security Fundamentals & Implementation (90 min content)
 
 **Supporting Materials:**
 
