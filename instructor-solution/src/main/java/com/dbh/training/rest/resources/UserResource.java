@@ -12,10 +12,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * Solution for Exercise 02: Jersey CRUD
+ * Solution for Exercise 04: Jersey CRUD
  * 
  * Basic CRUD operations with JAX-RS annotations.
- * This is what students should have after completing Exercise 02.
+ * This is what students should have after completing Exercise 04.
  */
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
