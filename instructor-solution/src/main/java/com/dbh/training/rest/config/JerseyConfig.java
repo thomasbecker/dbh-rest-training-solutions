@@ -8,11 +8,14 @@ import org.slf4j.LoggerFactory;
 
 import com.dbh.training.rest.filters.CORSFilter;
 import com.dbh.training.rest.filters.LoggingFilter;
+import com.dbh.training.rest.mappers.ValidationExceptionMapper;
+import org.glassfish.jersey.server.validation.ValidationFeature;
 
 /**
  * Jersey configuration class that sets up:
  * - Package scanning for resources
  * - Jackson JSON provider
+ * - Bean Validation
  * - Exception mappers
  * - Filters (CORS, Logging)
  * 
@@ -34,12 +37,14 @@ public class JerseyConfig extends ResourceConfig {
         register(JacksonFeature.class);
         register(JacksonConfig.class);
         
-        // Register filters (commented out for Exercise 02)
-        // register(CORSFilter.class);
-        // register(LoggingFilter.class);
+        // Register Bean Validation (Exercise 04)
+        register(ValidationFeature.class);
+        register(ValidationExceptionMapper.class);
+        property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
         
-        // Disable validation for Exercise 02 (will be enabled in Exercise 03)
-        // property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true);
+        // Register filters
+        register(CORSFilter.class);
+        register(LoggingFilter.class);
         
         // Disable automatic Wadl generation (optional)
         property(ServerProperties.WADL_FEATURE_DISABLE, true);
@@ -49,6 +54,6 @@ public class JerseyConfig extends ResourceConfig {
         
         logger.info("Jersey configuration initialized successfully");
         logger.info("Scanning packages: com.dbh.training.rest");
-        logger.info("Features enabled: Jackson JSON, CORS, Request/Response Logging");
+        logger.info("Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging");
     }
 }

@@ -85,7 +85,7 @@ organization and easier sharing with participants.
    - [x] Idempotency & alternatives slides (03-idempotency-alternatives.md)
    - [x] Jersey setup slides (04-jersey-setup.md)
    - [x] Jersey CRUD exercise slides (05-jersey-crud-exercise.md)
-   - [ ] Bean validation slides (06-bean-validation.md)
+   - [x] Bean validation slides (06-bean-validation.md)
    - [ ] API versioning slides (07-api-versioning.md)
    - [x] Spring Boot overview slides (08-spring-boot-overview.md)
    - [x] Basic exercises and solutions (Exercise 01, 02, 03 completed)
@@ -522,10 +522,10 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 ##### 2.4 Bean Validation Exercise [15-20 min within 30 min slot]
 
 - [x] Create exercises/04-bean-validation/
-- [ ] **Trainees add**: Validation annotations to User model
-- [ ] **Trainees implement**: @Valid in POST/PUT methods
-- [ ] **Trainees test**: With provided invalid data
-- [ ] Provide clear validation requirements
+- [x] **Trainees add**: Validation annotations to User model
+- [x] **Trainees implement**: @Valid in POST/PUT methods
+- [x] **Trainees test**: With provided invalid data
+- [x] Provide clear validation requirements
 - **Note**: Fits within "Bean Validation with Jersey" (Day 1 PM)
 - **Model**: claude-sonnet-4
 
@@ -635,8 +635,9 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - [x] Create slides/presenterm/03-idempotency-alternatives.md - Idempotency & REST Alternatives (45 min content)
 - [x] Create slides/presenterm/04-jersey-setup.md - Plain Java with Jersey Setup (60 min content)
 - [x] Create slides/presenterm/05-jersey-crud-exercise.md - Jersey CRUD Exercise (45-50 min hands-on)
-- [ ] Create slides/presenterm/06-bean-validation.md - Bean Validation with Jersey (30 min content)
-- [ ] Create slides/presenterm/07-api-versioning.md - API Versioning Strategies (45 min content)
+- [x] Create slides/presenterm/06-bean-validation.md - Bean Validation with Jersey (30 min content)
+- [x] Create slides/presenterm/07-bean-validation-exercise.md - Bean Validation Exercise (20 min hands-on)
+- [ ] Create slides/presenterm/08-api-versioning.md - API Versioning Strategies (45 min content)
 - [x] Create slides/presenterm/08-spring-boot-overview.md - Spring Boot Overview (30 min content)
 
 **Day 2 Slides:**

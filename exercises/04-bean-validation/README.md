@@ -1,219 +1,373 @@
-# Exercise 03: Bean Validation
+# Exercise 04: Bean Validation with Jersey
 
-## Time Allocation: 15-20 minutes
-
-## Objective
-Add Bean Validation to your REST API to ensure data integrity and provide
-meaningful error messages.
+**Duration**: 20 minutes  
+**Difficulty**: Intermediate  
+**Objectives**:
+- Add Bean Validation to your REST API
+- Implement validation annotations on the User model
+- Create custom error responses for validation failures
+- Test validation with various invalid inputs
 
 ## Prerequisites
-- Completed Exercise 02 (Jersey CRUD)
-- Working User model and UserResource
 
-## Tasks
+✅ Completed Exercise 03 (Jersey CRUD Operations)  
+✅ Working User REST API with all CRUD operations  
+✅ Gradle build system configured
 
-### Task 1: Add Validation Annotations (5 minutes)
-Update the User model with Bean Validation annotations:
+## Background
+
+Input validation is crucial for any REST API. Without proper validation, your API
+could accept invalid data leading to data corruption, security issues, or
+application crashes. Bean Validation (JSR-303/JSR-380) provides a standardized
+way to validate data using annotations.
+
+Jersey integrates seamlessly with Bean Validation, automatically validating
+request bodies when you add the `@Valid` annotation to your resource methods.
+
+## Your Tasks
+
+### Task 1: Add Bean Validation Dependencies (3 minutes)
+
+Add the required dependencies to your `build.gradle`:
+
+```gradle
+dependencies {
+    // Your existing dependencies...
+    
+    // Add these for Bean Validation:
+    implementation 'org.glassfish.jersey.ext:jersey-bean-validation:2.35'
+    implementation 'org.hibernate.validator:hibernate-validator:6.2.5.Final'
+    implementation 'org.glassfish:javax.el:3.0.0'
+}
+```
+
+After adding, run:
+```bash
+./gradlew build
+```
+
+💡 **Tip**: We need all three dependencies:
+- `jersey-bean-validation`: Jersey's validation integration
+- `hibernate-validator`: The validation implementation
+- `javax.el`: Expression Language for validation messages
+
+### Task 2: Add Validation Annotations to User Model (5 minutes)
+
+Update your `User.java` model with validation annotations:
 
 ```java
-// In User.java
 import javax.validation.constraints.*;
 
 public class User {
     private Long id;
     
     @NotBlank(message = "Username is required")
-    @Size(min = 3, max = 20, message = "Username must be 3-20 characters")
+    @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
     private String username;
     
     @NotBlank(message = "Email is required")
     @Email(message = "Email must be valid")
     private String email;
     
-    @NotBlank(message = "First name is required")
-    private String firstName;
+    @NotNull(message = "Age is required")
+    @Min(value = 0, message = "Age cannot be negative")
+    @Max(value = 150, message = "Age cannot exceed 150")
+    private Integer age;
     
-    @NotBlank(message = "Last name is required")
-    private String lastName;
-    
-    // ... rest of the class
+    // Keep your existing constructors, getters, and setters
 }
 ```
 
-### Task 2: Enable Validation in Resources (5 minutes)
-Add `@Valid` annotation to UserResource methods:
+**Validation Rules**:
+- Username: Required, 3-50 characters
+- Email: Required, valid email format
+- Age: Required, between 0 and 150
+
+### Task 3: Enable Validation in REST Endpoints (3 minutes)
+
+Add the `@Valid` annotation to your POST and PUT methods in `UserResource.java`:
 
 ```java
+import javax.validation.Valid;
+
 @POST
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public Response createUser(@Valid User user) {
-    // Your existing implementation
+    // Your existing create logic
 }
 
 @PUT
 @Path("/{id}")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public Response updateUser(@PathParam("id") Long id, @Valid User user) {
-    // Your existing implementation
+    // Your existing update logic
 }
 ```
 
-### Task 3: Test Validation (5 minutes)
-Test that invalid data returns 400 Bad Request:
+💡 **Note**: The `@Valid` annotation tells Jersey to validate the request body
+before calling your method.
+
+### Task 4: Test Basic Validation (2 minutes)
+
+Test your validation with invalid data:
 
 ```bash
-# Test missing username
+# Test 1: Missing username (should return 400)
 curl -X POST http://localhost:8080/api/users \
   -H "Content-Type: application/json" \
-  -d '{"email":"test@example.com"}'
+  -d '{"email":"test@example.com","age":25}'
 
-# Test invalid email
+# Test 2: Invalid email (should return 400)
 curl -X POST http://localhost:8080/api/users \
   -H "Content-Type: application/json" \
-  -d '{"username":"john","email":"not-an-email"}'
+  -d '{"username":"john","email":"not-an-email","age":25}'
 
-# Test short username
+# Test 3: Username too short (should return 400)
 curl -X POST http://localhost:8080/api/users \
   -H "Content-Type: application/json" \
-  -d '{"username":"jo","email":"test@example.com"}'
+  -d '{"username":"ab","email":"test@example.com","age":25}'
+
+# Test 4: Age out of range (should return 400)
+curl -X POST http://localhost:8080/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"username":"john","email":"test@example.com","age":200}'
 ```
 
-### Task 4: Create Custom Error Response (5 minutes)
-Create a ValidationExceptionMapper to return structured error messages:
+All tests should return `400 Bad Request`, but the error messages might not be
+very user-friendly yet.
+
+### Task 5: Create Custom Validation Error Handler (5 minutes)
+
+Create a new class `ValidationExceptionMapper.java` in the `mappers` package:
 
 ```java
+package com.dbh.training.rest.mappers;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
+import java.util.*;
+
 @Provider
 public class ValidationExceptionMapper 
     implements ExceptionMapper<ConstraintViolationException> {
     
     @Override
-    public Response toResponse(ConstraintViolationException e) {
+    public Response toResponse(ConstraintViolationException exception) {
         Map<String, Object> response = new HashMap<>();
         response.put("status", 400);
         response.put("error", "Validation Failed");
         
-        List<String> errors = e.getConstraintViolations()
-            .stream()
-            .map(violation -> violation.getPropertyPath() + 
-                             ": " + violation.getMessage())
-            .collect(Collectors.toList());
-        
+        List<String> errors = new ArrayList<>();
+        for (ConstraintViolation<?> violation : exception.getConstraintViolations()) {
+            String field = violation.getPropertyPath().toString();
+            String message = violation.getMessage();
+            errors.add(field + ": " + message);
+        }
         response.put("errors", errors);
         
-        return Response.status(400)
-            .entity(response)
-            .build();
+        return Response.status(Response.Status.BAD_REQUEST)
+                      .entity(response)
+                      .build();
     }
 }
 ```
 
-## Validation Rules Summary
-- **username**: Required, 3-20 characters
-- **email**: Required, valid email format
-- **firstName**: Required
-- **lastName**: Required
+### Task 6: Register the Exception Mapper (2 minutes)
 
-## Expected Response for Validation Errors
-```json
-{
-    "status": 400,
-    "error": "Validation Failed",
-    "errors": [
-        "username: Username must be 3-20 characters",
-        "email: Email must be valid"
-    ]
+Register your ValidationExceptionMapper in `JerseyConfig.java`:
+
+```java
+public class JerseyConfig extends ResourceConfig {
+    public JerseyConfig() {
+        // Your existing registrations...
+        
+        // Add this line:
+        register(ValidationExceptionMapper.class);
+    }
 }
 ```
 
-## Bonus Tasks (For Fast Learners)
+Now test again with invalid data to see the improved error messages:
 
-### Bonus 1: Custom Validation Annotation (10 minutes)
-Create a custom `@UniqueUsername` annotation:
+```bash
+curl -X POST http://localhost:8080/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"username":"a","email":"invalid","age":-5}'
+```
 
+Expected response:
+```json
+{
+  "status": 400,
+  "error": "Validation Failed",
+  "errors": [
+    "username: Username must be between 3 and 50 characters",
+    "email: Email must be valid",
+    "age: Age cannot be negative"
+  ]
+}
+```
+
+## Running the Tests
+
+Your existing tests might fail after adding validation. Update them to provide
+valid data:
+
+```bash
+./gradlew test
+```
+
+Example of a valid user for testing:
+```java
+User validUser = new User();
+validUser.setUsername("john_doe");
+validUser.setEmail("john@example.com");
+validUser.setAge(30);
+```
+
+## Expected Test Output
+
+After implementing validation, you should see:
+- POST with invalid data returns 400
+- POST with valid data returns 201
+- PUT with invalid data returns 400
+- PUT with valid data returns 200
+- Error responses include field-specific messages
+
+## Hints
+
+### Data Structure Tips
+- Use `@NotBlank` for strings that shouldn't be empty or whitespace
+- Use `@NotNull` for required fields that aren't strings
+- Use `@Size` for string length validation
+- Use `@Min/@Max` for numeric ranges
+- Use `@Email` for email validation
+
+### Common Patterns
+- Always provide custom messages in annotations
+- Handle null values appropriately in custom validators
+- Use groups for different validation scenarios (create vs update)
+
+## Bonus Tasks (If Time Permits)
+
+### Bonus 1: Query Parameter Validation (5 minutes)
+
+Add validation to your GET method for pagination:
+
+```java
+@GET
+public Response getUsers(
+    @QueryParam("page") 
+    @DefaultValue("1") 
+    @Min(value = 1, message = "Page must be at least 1") 
+    Integer page,
+    
+    @QueryParam("size") 
+    @DefaultValue("10") 
+    @Min(value = 1, message = "Size must be at least 1")
+    @Max(value = 100, message = "Size cannot exceed 100") 
+    Integer size) {
+    
+    // Implementation
+}
+```
+
+### Bonus 2: Custom Username Validator (10 minutes)
+
+Create a custom annotation to validate username format:
+
+1. Create the annotation:
 ```java
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = UniqueUsernameValidator.class)
-public @interface UniqueUsername {
-    String message() default "Username already exists";
+@Constraint(validatedBy = UsernameValidator.class)
+public @interface ValidUsername {
+    String message() default "Username can only contain letters, numbers, and underscores";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
+```
 
-public class UniqueUsernameValidator 
-    implements ConstraintValidator<UniqueUsername, String> {
-    // Implement validation logic
+2. Create the validator:
+```java
+public class UsernameValidator implements ConstraintValidator<ValidUsername, String> {
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+        if (value == null) return true; // Let @NotNull handle this
+        return value.matches("^[a-zA-Z0-9_]+$");
+    }
 }
 ```
 
-### Bonus 2: Validation Groups (10 minutes)
-Implement different validation groups for Create vs Update:
+3. Use it in your User model:
+```java
+@ValidUsername
+@NotBlank(message = "Username is required")
+@Size(min = 3, max = 50)
+private String username;
+```
+
+### Bonus 3: Cross-Field Validation (10 minutes)
+
+If you add a `passwordConfirm` field, validate that it matches `password`:
 
 ```java
-public interface CreateValidation {}
-public interface UpdateValidation {}
-
-// In User model
-@Null(groups = CreateValidation.class)
-@NotNull(groups = UpdateValidation.class)
-private Long id;
-
-// In UserResource
-@POST
-public Response createUser(
-    @Validated(CreateValidation.class) User user) {
-    // ...
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = PasswordMatchValidator.class)
+public @interface PasswordMatch {
+    String message() default "Passwords do not match";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
 }
 ```
 
-### Bonus 3: Password Validation (5 minutes)
-Add a password field with complex validation:
+## Helpful Resources
 
-```java
-@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$",
-         message = "Password must be 8+ chars with uppercase, lowercase, digit, and special char")
-private String password;
-```
+- [Jersey Bean Validation Documentation](https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest/bean-validation.html)
+- [Bean Validation Specification](https://beanvalidation.org/2.0/spec/)
+- [Hibernate Validator Documentation](https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/)
+- [Common Validation Annotations Reference](https://docs.oracle.com/javaee/7/api/javax/validation/constraints/package-summary.html)
 
-### Bonus 4: Cross-Field Validation (10 minutes)
-Create a class-level constraint for related fields:
+## Common Mistakes to Avoid
 
-```java
-@PasswordConfirmation
-public class UserRegistration {
-    private String password;
-    private String confirmPassword;
-    // Validate that both passwords match
-}
-```
+1. ❌ **Forgetting @Valid**: Without `@Valid`, validation won't run
+2. ❌ **Wrong null handling**: Custom validators should handle null gracefully
+3. ❌ **Missing EL dependency**: Causes runtime errors
+4. ❌ **Not registering the exception mapper**: Results in generic error messages
+5. ❌ **Validating IDs on creation**: IDs should be null when creating new entities
+6. ❌ **Over-validation**: Don't validate business rules, only data integrity
+7. ❌ **Unclear messages**: Always provide helpful error messages
 
-## Common Issues and Solutions
+## Solution Checkpoint
 
-### Issue: Validation not triggered
-**Solution**: Ensure you have:
-1. `jersey-bean-validation` dependency in build.gradle
-2. `@Valid` annotation on method parameters
-3. ValidationConfig registered in your application
+After completing this exercise, you should have:
 
-### Issue: Generic 500 error instead of 400
-**Solution**: Register the ValidationExceptionMapper as a Provider
+- [ ] Bean Validation dependencies in `build.gradle`
+- [ ] Validation annotations on all User fields
+- [ ] `@Valid` annotation on POST and PUT methods
+- [ ] Custom ValidationExceptionMapper created
+- [ ] Exception mapper registered in JerseyConfig
+- [ ] All validation tests passing
+- [ ] Clear error messages for validation failures
 
-### Issue: No error details in response
-**Solution**: Create custom ExceptionMapper for ValidationException
+## Need Help?
 
-## Testing Tips
-1. Use curl or Postman to test various invalid scenarios
-2. Check that valid data still works correctly
-3. Verify error messages are helpful and specific
-4. Test boundary values (min/max lengths)
+If you're stuck:
 
-## Success Criteria
-✅ Invalid data returns 400 Bad Request  
-✅ Error messages clearly indicate what's wrong  
-✅ Valid data continues to work as before  
-✅ All validation rules are enforced  
+1. Check that all three dependencies are added correctly
+2. Verify @Valid is on the method parameter, not the method itself
+3. Check server logs for detailed error messages
+4. Ensure ValidationExceptionMapper is annotated with @Provider
+5. Make sure JerseyConfig registers the ValidationExceptionMapper
+6. Ask the instructor for help - validation setup can be tricky!
 
-## Next Steps
-After completing this exercise:
-- Consider how validation affects API usability
-- Think about validation performance impact
-- Explore more complex validation scenarios
-- Move on to Exercise 04: API Versioning
+## What's Next?
+
+In the next exercise, we'll learn about API versioning strategies and how to
+evolve your API without breaking existing clients.

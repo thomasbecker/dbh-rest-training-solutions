@@ -2,6 +2,7 @@ package com.dbh.training.rest.resources;
 
 import com.dbh.training.rest.models.User;
 
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -12,10 +13,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * Solution for Exercise 03: Jersey CRUD
+ * Solution for Exercise 04: Bean Validation
  * 
- * Basic CRUD operations with JAX-RS annotations.
- * This is what students should have after completing Exercise 03.
+ * CRUD operations with validation using @Valid annotation.
+ * This is what students should have after completing Exercise 04.
  */
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -58,11 +59,11 @@ public class UserResource extends AbstractResource {
     
     /**
      * POST /users
-     * Create new user with generated ID
+     * Create new user with generated ID and validation
      * Return 201 with Location header
      */
     @POST
-    public Response createUser(User user) {
+    public Response createUser(@Valid User user) {
         // Generate ID and set creation timestamp
         Long id = idGenerator.getAndIncrement();
         user.setId(id);
@@ -78,11 +79,11 @@ public class UserResource extends AbstractResource {
     
     /**
      * PUT /users/{id}
-     * Update existing user or return 404
+     * Update existing user with validation or return 404
      */
     @PUT
     @Path("/{id}")
-    public Response updateUser(@PathParam("id") Long id, User user) {
+    public Response updateUser(@PathParam("id") Long id, @Valid User user) {
         // Check if user exists
         if (!users.containsKey(id)) {
             return Response.status(404).entity("User not found").build();

@@ -175,11 +175,13 @@ public class UserResourceTest extends BaseIntegrationTest {
     
     @Test
     public void testUpdateUserNotFound() {
-        // Given: A user that doesn't exist
+        // Given: A user that doesn't exist (with valid data for validation)
         User updateUser = new User();
         updateUser.setId(99999L);
         updateUser.setUsername("ghost");
         updateUser.setEmail("ghost@example.com");
+        updateUser.setFirstName("Ghost");
+        updateUser.setLastName("User");
         
         // When: Try to update non-existent user
         // Then: Should return 404

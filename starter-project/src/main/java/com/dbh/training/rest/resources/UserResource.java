@@ -61,23 +61,27 @@ public class UserResource extends AbstractResource {
      * POST /users
      * Create new user with generated ID
      * Return 201 with Location header
+     * TODO Exercise 04: Add @Valid annotation to enable validation
      */
     public Response createUser(User user) {
         // TODO: Add annotation and implement
         // Hint: Use idGenerator.getAndIncrement() for ID
         // Hint: Set user.setCreatedAt(LocalDateTime.now())
         // Hint: Use the created(entity, id) helper method from AbstractResource
+        // TODO Exercise 04: Add @Valid before User parameter
         return Response.status(501).entity("Not implemented yet").build();
     }
     
     /**
      * PUT /users/{id}
      * Update existing user or return 404
+     * TODO Exercise 04: Add @Valid annotation to enable validation
      */
     public Response updateUser(Long id, User user) {
         // TODO: Add annotations and implement
         // Hint: Return 404 with message "User not found" if user doesn't exist
         // Hint: Use the ok() helper method for successful response
+        // TODO Exercise 04: Add @Valid before User parameter
         return Response.status(501).entity("Not implemented yet").build();
     }
     

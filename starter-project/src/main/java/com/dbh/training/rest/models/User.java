@@ -69,13 +69,13 @@ public class User {
         this.createdAt = createdAt; 
     }
     
-    // TODO: Exercise 03 - Add Bean Validation annotations:
-    // - username: @NotBlank, @Size(min = 3, max = 20)
+    // TODO: Exercise 04 - Add Bean Validation annotations:
+    // - username: @NotBlank, @Size(min = 3, max = 50)
     // - email: @NotBlank, @Email
-    // - firstName: @NotBlank
-    // - lastName: @NotBlank
+    // - firstName: @NotBlank, @Size(max = 50)
+    // - lastName: @NotBlank, @Size(max = 50)
     
-    // TODO: Exercise 05 - Add Jackson annotations:
+    // TODO: Exercise 06 - Add Jackson annotations:
     // - @JsonIgnore for sensitive fields
     // - @JsonProperty for custom naming
     // - @JsonFormat for date formatting
