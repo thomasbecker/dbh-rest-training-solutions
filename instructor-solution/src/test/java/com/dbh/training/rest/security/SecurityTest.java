@@ -111,6 +111,20 @@ public class SecurityTest {
     @Test
     @Order(5)
     public void testAccessProtectedEndpointWithAdminToken() {
+        // First create a user to ensure we have data
+        String testUser = "{\"user_name\":\"testuser1\",\"email_address\":\"testuser1@example.com\"," +
+                          "\"first_name\":\"Test\",\"last_name\":\"User1\"}";
+        
+        given()
+            .header("Authorization", "Bearer " + adminToken)
+            .contentType(ContentType.JSON)
+            .body(testUser)
+        .when()
+            .post("/v1/users")
+        .then()
+            .statusCode(201);
+        
+        // Now test getting the list
         given()
             .header("Authorization", "Bearer " + adminToken)
         .when()
@@ -134,10 +148,26 @@ public class SecurityTest {
     @Test
     @Order(7)
     public void testAdminOnlyEndpointWithAdminToken() {
+        // First create a user to ensure user with ID 1 exists
+        String testUser = "{\"user_name\":\"testadmin\",\"email_address\":\"testadmin@example.com\"," +
+                          "\"first_name\":\"Test\",\"last_name\":\"Admin\"}";
+        
+        Integer userId = given()
+            .header("Authorization", "Bearer " + adminToken)
+            .contentType(ContentType.JSON)
+            .body(testUser)
+        .when()
+            .post("/v1/users")
+        .then()
+            .statusCode(201)
+            .extract()
+            .path("user_id");
+        
+        // Now test the admin endpoint
         given()
             .header("Authorization", "Bearer " + adminToken)
         .when()
-            .get("/v1/users/1/admin")
+            .get("/v1/users/" + userId + "/admin")
         .then()
             .statusCode(200);
     }
@@ -145,10 +175,26 @@ public class SecurityTest {
     @Test
     @Order(8)
     public void testAdminOnlyEndpointWithUserToken() {
+        // First create a user to ensure a user exists
+        String testUser = "{\"user_name\":\"testuser2\",\"email_address\":\"testuser2@example.com\"," +
+                          "\"first_name\":\"Test\",\"last_name\":\"User2\"}";
+        
+        Integer userId = given()
+            .header("Authorization", "Bearer " + adminToken)
+            .contentType(ContentType.JSON)
+            .body(testUser)
+        .when()
+            .post("/v1/users")
+        .then()
+            .statusCode(201)
+            .extract()
+            .path("user_id");
+        
+        // Now test that regular user cannot access admin endpoint
         given()
             .header("Authorization", "Bearer " + userToken)
         .when()
-            .get("/v1/users/1/admin")
+            .get("/v1/users/" + userId + "/admin")
         .then()
             .statusCode(403); // Forbidden for regular users
     }

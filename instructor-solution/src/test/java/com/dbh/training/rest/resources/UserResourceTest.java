@@ -39,6 +39,7 @@ public class UserResourceTest extends BaseIntegrationTest {
     public void testGetAllUsersEmpty() {
         // When no users exist, should return empty array
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v1/users")
@@ -58,6 +59,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         // When: Get all users
         // Then: Should return both users
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v1/users")
@@ -80,6 +82,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         // When: Create the user
         Integer userId = 
             given()
+                .header("Authorization", "Bearer " + adminToken)
                 .contentType(ContentType.JSON)
                 .body(newUser)
             .when()
@@ -98,6 +101,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         
         // Then: Verify the user can be retrieved
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v1/users/{id}", userId)
@@ -114,6 +118,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         // When: Get the user by ID
         // Then: Should return the correct user
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v1/users/{id}", userId)
@@ -132,6 +137,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         // When: Request non-existent user
         // Then: Should return 404
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v1/users/{id}", 99999)
@@ -153,6 +159,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         updatedUser.setLastName("Test"); // Keep same last name
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(updatedUser)
         .when()
@@ -165,6 +172,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         
         // Then: Verify the update persisted
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v1/users/{id}", userId)
@@ -187,6 +195,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         // When: Try to update non-existent user
         // Then: Should return 404
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(updateUser)
         .when()
@@ -202,6 +211,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         
         // When: Delete the user
         given()
+            .header("Authorization", "Bearer " + adminToken)
         .when()
             .delete("/v1/users/{id}", userId)
         .then()
@@ -209,6 +219,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         
         // Then: Verify the user is gone
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v1/users/{id}", userId)
@@ -221,6 +232,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         // When: Try to delete non-existent user
         // Then: Should return 404
         given()
+            .header("Authorization", "Bearer " + adminToken)
         .when()
             .delete("/v1/users/{id}", 99999)
         .then()
@@ -237,6 +249,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         user.setLastName("Doe");
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -256,6 +269,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         user.setLastName("Doe");
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -275,6 +289,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         user.setLastName("Doe");
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -293,6 +308,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         user.setLastName("Doe");
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -311,6 +327,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         user.setLastName("Doe");
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -329,6 +346,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         // Missing firstName and lastName
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -356,6 +374,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         invalidUpdate.setLastName("User");
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(invalidUpdate)
         .when()
@@ -377,6 +396,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         user.setLastName("Doe");
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -400,6 +420,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         user.setLastName(lastName);
         
         return given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()

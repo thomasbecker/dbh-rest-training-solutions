@@ -162,6 +162,7 @@ public class User {
         return passwordHash != null && BCrypt.checkpw(password, passwordHash);
     }
     
+    @JsonIgnore
     public void setPassword(String password) {
         this.passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
     }

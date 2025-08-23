@@ -106,7 +106,7 @@ public class JacksonSerializationTest {
         assertEquals(LocalDate.of(1985, 3, 20), user.getBirthDate());
         assertEquals(LocalDateTime.of(2024, 1, 10, 15, 45, 30), user.getCreatedAt());
         assertEquals(AccountStatus.SUSPENDED, user.getStatus());
-        assertEquals(Arrays.asList("USER", "MODERATOR"), user.getRoles());
+        assertEquals(new HashSet<>(Arrays.asList("USER", "MODERATOR")), user.getRoles());
         
         // Password should be null due to @JsonIgnore
         assertNull(user.getPasswordHash(), "Password hash should be ignored during deserialization");
@@ -181,7 +181,10 @@ public class JacksonSerializationTest {
         assertNull(root.get("birth_date"));
         assertNull(root.get("created_at"));
         assertNull(root.get("account_status"));
-        assertNull(root.get("roles"));
+        // roles is initialized as empty HashSet now, not null
+        assertNotNull(root.get("roles"));
+        assertTrue(root.get("roles").isArray());
+        assertEquals(0, root.get("roles").size());
         assertNull(root.get("primary_address"));
         assertNull(root.get("billing_address"));
     }
@@ -230,10 +233,13 @@ public class JacksonSerializationTest {
         JsonNode rolesNode = root.get("roles");
         assertTrue(rolesNode.isArray());
         assertEquals(4, rolesNode.size());
-        assertEquals("ADMIN", rolesNode.get(0).asText());
-        assertEquals("USER", rolesNode.get(1).asText());
-        assertEquals("MODERATOR", rolesNode.get(2).asText());
-        assertEquals("VIEWER", rolesNode.get(3).asText());
+        
+        // Convert to set for comparison since Sets don't guarantee order
+        HashSet<String> actualRoles = new HashSet<>();
+        for (JsonNode roleNode : rolesNode) {
+            actualRoles.add(roleNode.asText());
+        }
+        assertEquals(new HashSet<>(Arrays.asList("ADMIN", "USER", "MODERATOR", "VIEWER")), actualRoles);
     }
     
     @Test

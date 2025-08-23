@@ -178,12 +178,12 @@ public class UserResourceV1 extends AbstractResource {
     @GET
     @Path("/{id}/admin")
     @JsonView(Views.Admin.class)
+    @RolesAllowed("ADMIN")
     public Response getAdminUser(@PathParam("id") Long id) {
         User user = users.get(id);
         if (user == null) {
             return Response.status(404).entity("User not found").build();
         }
-        // In real app, check auth: @RolesAllowed("ADMIN")
         return Response.ok(user).build();
     }
     

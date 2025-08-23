@@ -28,6 +28,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
     @Test
     public void testGetAllUsersV2Empty() {
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v2/users")
@@ -48,6 +49,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         
         Integer userId = 
             given()
+                .header("Authorization", "Bearer " + adminToken)
                 .contentType(ContentType.JSON)
                 .body(newUser)
             .when()
@@ -67,6 +69,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         
         // Verify the user can be retrieved
         given()
+                .header("Authorization", "Bearer " + adminToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v2/users/{id}", userId)
@@ -86,6 +89,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         newUser.setAge(30);
         
         given()
+                .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(newUser)
         .when()
@@ -104,6 +108,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         user.setLastName("Doe");
         
         given()
+                .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -123,6 +128,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         // Missing lastName
         
         given()
+                .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -143,6 +149,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         user.setAge(-5); // Invalid negative age
         
         given()
+                .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -163,6 +170,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         user.setAge(200); // Exceeds max
         
         given()
+                .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(user)
         .when()
@@ -183,6 +191,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         newUser.setLastName("Test");
         
         Integer userId = given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(newUser)
         .when()
@@ -202,6 +211,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         updatedUser.setAge(25);
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(updatedUser)
         .when()
@@ -223,6 +233,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         newUser.setLastName("Test");
         
         Integer userId = given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(newUser)
         .when()
@@ -234,6 +245,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         
         // Delete the user
         given()
+            .header("Authorization", "Bearer " + adminToken)
         .when()
             .delete("/v2/users/{id}", userId)
         .then()
@@ -241,6 +253,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         
         // Verify the user is gone
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v2/users/{id}", userId)
@@ -258,6 +271,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         v1User.setLastName("User");
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(v1User)
         .when()
@@ -273,6 +287,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         v2User.setLastName("User");
         
         given()
+            .header("Authorization", "Bearer " + adminToken)
             .contentType(ContentType.JSON)
             .body(v2User)
         .when()
@@ -282,6 +297,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         
         // V1 should have 1 user
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v1/users")
@@ -292,6 +308,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         
         // V2 should have 1 different user
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v2/users")
@@ -304,6 +321,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
     @Test
     public void testV1HasDeprecationHeaders() {
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v1/users")
@@ -317,6 +335,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
     @Test
     public void testV2NoDeprecationHeaders() {
         given()
+            .header("Authorization", "Bearer " + userToken)
             .accept(ContentType.JSON)
         .when()
             .get("/v2/users")

@@ -1,10 +1,12 @@
 package com.dbh.training.rest.test;
 
 import com.dbh.training.rest.Application;
+import com.dbh.training.rest.dto.LoginRequest;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.eclipse.jetty.server.Server;
 import org.junit.jupiter.api.AfterAll;
@@ -32,6 +34,8 @@ public abstract class BaseIntegrationTest {
     
     private static Server server;
     protected static RequestSpecification requestSpec;
+    protected static String adminToken;
+    protected static String userToken;
     
     @BeforeAll
     public static void startServer() throws Exception {
@@ -59,7 +63,45 @@ public abstract class BaseIntegrationTest {
             .log(LogDetail.ALL)
             .build();
         
+        // Get authentication tokens for tests
+        loginTestUsers();
+        
         logger.info("Test server started successfully");
+    }
+    
+    /**
+     * Login test users and get tokens
+     */
+    private static void loginTestUsers() {
+        try {
+            // Login as admin
+            LoginRequest adminLogin = new LoginRequest("admin", "admin123");
+            Response adminResponse = RestAssured.given()
+                .contentType(ContentType.JSON)
+                .body(adminLogin)
+                .when()
+                .post(BASE_URI + ":" + TEST_PORT + BASE_PATH + "/auth/login");
+            
+            if (adminResponse.getStatusCode() == 200) {
+                adminToken = adminResponse.jsonPath().getString("access_token");
+                logger.info("Admin token obtained for tests: {}", adminToken != null ? "success" : "failed");
+            }
+            
+            // Login as regular user
+            LoginRequest userLogin = new LoginRequest("user", "user123");
+            Response userResponse = RestAssured.given()
+                .contentType(ContentType.JSON)
+                .body(userLogin)
+                .when()
+                .post(BASE_URI + ":" + TEST_PORT + BASE_PATH + "/auth/login");
+            
+            if (userResponse.getStatusCode() == 200) {
+                userToken = userResponse.jsonPath().getString("access_token");
+                logger.info("User token obtained for tests: {}", userToken != null ? "success" : "failed");
+            }
+        } catch (Exception e) {
+            logger.warn("Could not obtain test tokens - tests may need to handle auth independently", e);
+        }
     }
     
     @AfterAll

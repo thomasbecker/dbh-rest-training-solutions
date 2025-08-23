@@ -425,3 +425,4 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home
 - This repo will be split into multiple smaller repos later
 - Remember to run gradle with Java 8: `export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home`
 - No shell scripts to start presentations - use presenterm directly
+- remember to run all tests after code changes in the solution project
