@@ -226,6 +226,170 @@ public class UserResourceTest extends BaseIntegrationTest {
             .statusCode(404);
     }
     
+    // ===== VALIDATION TESTS (Exercise 04) =====
+    
+    @Test
+    public void testCreateUserWithMissingUsername() {
+        User user = new User();
+        user.setEmail("valid@example.com");
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        
+        given()
+            .contentType(ContentType.JSON)
+            .body(user)
+        .when()
+            .post("/users")
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("Validation Failed"))
+            .body("errors", hasItem(containsString("Username is required")));
+    }
+    
+    @Test
+    public void testCreateUserWithShortUsername() {
+        User user = new User();
+        user.setUsername("ab"); // Too short - minimum is 3
+        user.setEmail("valid@example.com");
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        
+        given()
+            .contentType(ContentType.JSON)
+            .body(user)
+        .when()
+            .post("/users")
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("Validation Failed"))
+            .body("errors", hasItem(containsString("Username must be between 3 and 50 characters")));
+    }
+    
+    @Test
+    public void testCreateUserWithInvalidEmail() {
+        User user = new User();
+        user.setUsername("validuser");
+        user.setEmail("not-an-email");
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        
+        given()
+            .contentType(ContentType.JSON)
+            .body(user)
+        .when()
+            .post("/users")
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("Validation Failed"))
+            .body("errors", hasItem(containsString("Email must be valid")));
+    }
+    
+    @Test
+    public void testCreateUserWithMissingEmail() {
+        User user = new User();
+        user.setUsername("validuser");
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        
+        given()
+            .contentType(ContentType.JSON)
+            .body(user)
+        .when()
+            .post("/users")
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("Validation Failed"))
+            .body("errors", hasItem(containsString("Email is required")));
+    }
+    
+    @Test
+    public void testCreateUserWithMissingFirstName() {
+        User user = new User();
+        user.setUsername("validuser");
+        user.setEmail("valid@example.com");
+        user.setLastName("Doe");
+        
+        given()
+            .contentType(ContentType.JSON)
+            .body(user)
+        .when()
+            .post("/users")
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("Validation Failed"))
+            .body("errors", hasItem(containsString("First name is required")));
+    }
+    
+    @Test
+    public void testCreateUserWithMultipleValidationErrors() {
+        User user = new User();
+        user.setUsername("a"); // Too short
+        user.setEmail("invalid"); // Invalid format
+        // Missing firstName and lastName
+        
+        given()
+            .contentType(ContentType.JSON)
+            .body(user)
+        .when()
+            .post("/users")
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("Validation Failed"))
+            .body("errors", hasSize(4)) // All 4 validation errors
+            .body("errors", hasItem(containsString("Username must be between 3 and 50 characters")))
+            .body("errors", hasItem(containsString("Email must be valid")))
+            .body("errors", hasItem(containsString("First name is required")))
+            .body("errors", hasItem(containsString("Last name is required")));
+    }
+    
+    @Test
+    public void testUpdateUserWithInvalidData() {
+        // First create a valid user
+        Integer userId = createTestUser("originaluser", "original@example.com", "Original", "User");
+        
+        // Try to update with invalid data
+        User invalidUpdate = new User();
+        invalidUpdate.setUsername(""); // Blank username
+        invalidUpdate.setEmail("not-valid");
+        invalidUpdate.setFirstName("Updated");
+        invalidUpdate.setLastName("User");
+        
+        given()
+            .contentType(ContentType.JSON)
+            .body(invalidUpdate)
+        .when()
+            .put("/users/{id}", userId)
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("Validation Failed"))
+            .body("errors", hasItem(containsString("Username is required")))
+            .body("errors", hasItem(containsString("Email must be valid")));
+    }
+    
+    @Test
+    public void testCreateUserWithValidDataAfterAddingValidation() {
+        // This test ensures that valid data still works after adding validation
+        User user = new User();
+        user.setUsername("validuser");
+        user.setEmail("valid@example.com");
+        user.setFirstName("John");
+        user.setLastName("Doe");
+        
+        given()
+            .contentType(ContentType.JSON)
+            .body(user)
+        .when()
+            .post("/users")
+        .then()
+            .statusCode(201)
+            .header("Location", containsString("/api/users/"))
+            .body("id", notNullValue())
+            .body("username", equalTo("validuser"))
+            .body("email", equalTo("valid@example.com"))
+            .body("firstName", equalTo("John"))
+            .body("lastName", equalTo("Doe"));
+    }
+    
     // Helper method to create test users
     private Integer createTestUser(String username, String email, String firstName, String lastName) {
         User user = new User();
