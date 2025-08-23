@@ -40,7 +40,8 @@ public class UserResourceV1 extends AbstractResource {
      */
     @GET
     public Response getAllUsers() {
-        return Response.ok(new ArrayList<>(users.values()))
+        List<User> allUsers = new ArrayList<>(users.values());
+        return Response.ok(allUsers)
             .header("Sunset", "31 Dec 2024")
             .header("Deprecation", "true")
             .header("Link", "</api/v2/users>; rel=\"successor-version\"")
@@ -93,10 +94,8 @@ public class UserResourceV1 extends AbstractResource {
             return Response.status(404).entity("User not found").build();
         }
         
-        // Ensure ID matches
+        // Preserve the ID and update
         user.setId(id);
-        
-        // Update the user
         users.put(id, user);
         
         return ok(user);

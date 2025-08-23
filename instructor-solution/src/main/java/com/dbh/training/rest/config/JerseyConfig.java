@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import com.dbh.training.rest.filters.CORSFilter;
 import com.dbh.training.rest.filters.LoggingFilter;
-import com.dbh.training.rest.mappers.ValidationExceptionMapper;
+import com.dbh.training.rest.exceptions.ValidationExceptionMapper;
 import com.dbh.training.rest.resources.UserResourceV1;
 import com.dbh.training.rest.resources.UserResourceV2;
 import com.dbh.training.rest.resources.HealthResource;
@@ -37,7 +37,9 @@ public class JerseyConfig extends ResourceConfig {
         register(UserResourceV2.class);  // /v2/users - current
         register(HealthResource.class);  // /health
         
-        // Register Jackson for JSON processing
+        // Exercise 06: Register Jackson for JSON processing
+        // JacksonFeature enables Jackson JSON provider
+        // JacksonConfig customizes ObjectMapper settings
         register(JacksonFeature.class);
         register(JacksonConfig.class);
         

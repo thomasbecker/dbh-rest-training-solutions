@@ -65,7 +65,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .statusCode(200)
             .contentType(ContentType.JSON)
             .body("size()", equalTo(2))
-            .body("username", hasItems("alice", "bob"));
+            .body("user_name", hasItems("alice", "bob"));
     }
     
     @Test
@@ -88,13 +88,13 @@ public class UserResourceTest extends BaseIntegrationTest {
                 .statusCode(201)
                 .contentType(ContentType.JSON)
                 .header("Location", containsString("/users/"))
-                .body("id", notNullValue())
-                .body("username", equalTo("johndoe"))
-                .body("email", equalTo("john@example.com"))
-                .body("firstName", equalTo("John"))
-                .body("lastName", equalTo("Doe"))
+                .body("user_id", notNullValue())
+                .body("user_name", equalTo("johndoe"))
+                .body("email_address", equalTo("john@example.com"))
+                .body("first_name", equalTo("John"))
+                .body("last_name", equalTo("Doe"))
                 .extract()
-                .path("id");
+                .path("user_id");
         
         // Then: Verify the user can be retrieved
         given()
@@ -103,7 +103,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .get("/v1/users/{id}", userId)
         .then()
             .statusCode(200)
-            .body("username", equalTo("johndoe"));
+            .body("user_name", equalTo("johndoe"));
     }
     
     @Test
@@ -120,11 +120,11 @@ public class UserResourceTest extends BaseIntegrationTest {
         .then()
             .statusCode(200)
             .contentType(ContentType.JSON)
-            .body("id", equalTo(userId))
-            .body("username", equalTo("janesmith"))
-            .body("email", equalTo("jane@example.com"))
-            .body("firstName", equalTo("Jane"))
-            .body("lastName", equalTo("Smith"));
+            .body("user_id", equalTo(userId))
+            .body("user_name", equalTo("janesmith"))
+            .body("email_address", equalTo("jane@example.com"))
+            .body("first_name", equalTo("Jane"))
+            .body("last_name", equalTo("Smith"));
     }
     
     @Test
@@ -160,8 +160,8 @@ public class UserResourceTest extends BaseIntegrationTest {
         .then()
             .statusCode(200)
             .contentType(ContentType.JSON)
-            .body("email", equalTo("updated@example.com"))
-            .body("firstName", equalTo("Updated"));
+            .body("email_address", equalTo("updated@example.com"))
+            .body("first_name", equalTo("Updated"));
         
         // Then: Verify the update persisted
         given()
@@ -170,8 +170,8 @@ public class UserResourceTest extends BaseIntegrationTest {
             .get("/v1/users/{id}", userId)
         .then()
             .statusCode(200)
-            .body("email", equalTo("updated@example.com"))
-            .body("firstName", equalTo("Updated"));
+            .body("email_address", equalTo("updated@example.com"))
+            .body("first_name", equalTo("Updated"));
     }
     
     @Test
@@ -384,11 +384,11 @@ public class UserResourceTest extends BaseIntegrationTest {
         .then()
             .statusCode(201)
             .header("Location", containsString("/api/v1/users/"))
-            .body("id", notNullValue())
-            .body("username", equalTo("validuser"))
-            .body("email", equalTo("valid@example.com"))
-            .body("firstName", equalTo("John"))
-            .body("lastName", equalTo("Doe"));
+            .body("user_id", notNullValue())
+            .body("user_name", equalTo("validuser"))
+            .body("email_address", equalTo("valid@example.com"))
+            .body("first_name", equalTo("John"))
+            .body("last_name", equalTo("Doe"));
     }
     
     // Helper method to create test users
@@ -407,7 +407,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         .then()
             .statusCode(201)
             .extract()
-            .path("id");
+            .path("user_id");
     }
     
     // ===== BONUS TESTS (Uncomment when implementing bonus tasks) =====
@@ -453,7 +453,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         .then()
             .statusCode(200)
             .body("size()", equalTo(2))
-            .body("username", hasItems("johndoe", "janedoe"));
+            .body("user_name", hasItems("johndoe", "janedoe"));
     }
     
     @Test
@@ -471,9 +471,9 @@ public class UserResourceTest extends BaseIntegrationTest {
             .patch("/{id}", userId)
         .then()
             .statusCode(200)
-            .body("email", equalTo("patched@example.com"))
-            .body("username", equalTo("patchtest")) // Should not change
-            .body("firstName", equalTo("Patch"));    // Should not change
+            .body("email_address", equalTo("patched@example.com"))
+            .body("user_name", equalTo("patchtest")) // Should not change
+            .body("first_name", equalTo("Patch"));    // Should not change
     }
     */
 }

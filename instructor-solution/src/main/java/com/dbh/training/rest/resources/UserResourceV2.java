@@ -40,7 +40,8 @@ public class UserResourceV2 extends AbstractResource {
      */
     @GET
     public Response getAllUsers() {
-        return ok(new ArrayList<>(users.values()));
+        List<UserV2> allUsers = new ArrayList<>(users.values());
+        return ok(allUsers);
     }
     
     /**
@@ -93,12 +94,6 @@ public class UserResourceV2 extends AbstractResource {
         
         // Ensure ID consistency
         user.setId(id);
-        
-        // Preserve creation timestamp
-        UserV2 existing = users.get(id);
-        user.setCreatedAt(existing.getCreatedAt());
-        
-        // Update user
         users.put(id, user);
         
         return ok(user);

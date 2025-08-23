@@ -1,17 +1,21 @@
-package com.dbh.training.rest.mappers;
+package com.dbh.training.rest.exceptions;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * Exception mapper for Bean Validation errors
+ * Maps validation exceptions to proper HTTP responses
  * 
- * Exercise 04: Bean Validation
- * Converts ConstraintViolationException to user-friendly error responses
+ * Exercise 03: Bean Validation
+ * Converts ConstraintViolationExceptions into 400 Bad Request responses
+ * with structured error messages.
  */
 @Provider
 public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViolationException> {
@@ -24,14 +28,12 @@ public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViol
         
         List<String> errors = new ArrayList<>();
         for (ConstraintViolation<?> violation : exception.getConstraintViolations()) {
-            String field = violation.getPropertyPath().toString();
-            String message = violation.getMessage();
-            errors.add(field + ": " + message);
+            errors.add(violation.getMessage());
         }
         response.put("errors", errors);
         
         return Response.status(Response.Status.BAD_REQUEST)
-                      .entity(response)
-                      .build();
+                .entity(response)
+                .build();
     }
 }

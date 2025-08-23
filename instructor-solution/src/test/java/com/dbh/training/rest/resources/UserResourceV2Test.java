@@ -56,14 +56,14 @@ public class UserResourceV2Test extends BaseIntegrationTest {
                 .statusCode(201)
                 .contentType(ContentType.JSON)
                 .header("Location", containsString("/v2/users/"))
-                .body("id", notNullValue())
-                .body("username", equalTo("johndoe"))
-                .body("email", equalTo("john@example.com"))
-                .body("firstName", equalTo("John"))
-                .body("lastName", equalTo("Doe"))
+                .body("user_id", notNullValue())
+                .body("user_name", equalTo("johndoe"))
+                .body("email_address", equalTo("john@example.com"))
+                .body("first_name", equalTo("John"))
+                .body("last_name", equalTo("Doe"))
                 .body("age", nullValue())
                 .extract()
-                .path("id");
+                .path("user_id");
         
         // Verify the user can be retrieved
         given()
@@ -72,8 +72,8 @@ public class UserResourceV2Test extends BaseIntegrationTest {
             .get("/v2/users/{id}", userId)
         .then()
             .statusCode(200)
-            .body("firstName", equalTo("John"))
-            .body("lastName", equalTo("Doe"));
+            .body("first_name", equalTo("John"))
+            .body("last_name", equalTo("Doe"));
     }
     
     @Test
@@ -190,7 +190,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         .then()
             .statusCode(201)
             .extract()
-            .path("id");
+            .path("user_id");
         
         // Update the user
         UserV2 updatedUser = new UserV2();
@@ -208,8 +208,8 @@ public class UserResourceV2Test extends BaseIntegrationTest {
             .put("/v2/users/{id}", userId)
         .then()
             .statusCode(200)
-            .body("email", equalTo("updated@example.com"))
-            .body("firstName", equalTo("Updated"))
+            .body("email_address", equalTo("updated@example.com"))
+            .body("first_name", equalTo("Updated"))
             .body("age", equalTo(25));
     }
     
@@ -230,7 +230,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         .then()
             .statusCode(201)
             .extract()
-            .path("id");
+            .path("user_id");
         
         // Delete the user
         given()
@@ -288,7 +288,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         .then()
             .statusCode(200)
             .body("size()", equalTo(1))
-            .body("[0].username", equalTo("v1user"));
+            .body("[0].user_name", equalTo("v1user"));
         
         // V2 should have 1 different user
         given()
@@ -298,7 +298,7 @@ public class UserResourceV2Test extends BaseIntegrationTest {
         .then()
             .statusCode(200)
             .body("size()", equalTo(1))
-            .body("[0].username", equalTo("v2user"));
+            .body("[0].user_name", equalTo("v2user"));
     }
     
     @Test
