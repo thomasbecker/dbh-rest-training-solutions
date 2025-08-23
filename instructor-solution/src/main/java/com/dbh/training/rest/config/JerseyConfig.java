@@ -20,6 +20,7 @@ import com.dbh.training.rest.security.SecurityHeadersFilter;
 import com.dbh.training.rest.services.UserService;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.validation.ValidationFeature;
+import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
 
 /**
  * Jersey configuration class that sets up:
@@ -80,9 +81,14 @@ public class JerseyConfig extends ResourceConfig {
             }
         });
         
+        // Showcase: OpenAPI/Swagger Documentation
+        register(OpenApiResource.class);
+        register(SwaggerUIResource.class);
+        
         logger.info("Jersey configuration initialized successfully");
         logger.info("API versions registered: V1 (deprecated), V2 (current)");
         logger.info("Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging");
         logger.info("Security enabled: JWT Authentication, Role-based Authorization");
+        logger.info("Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui");
     }
 }

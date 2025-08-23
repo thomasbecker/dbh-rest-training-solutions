@@ -1,7 +1,18 @@
 package com.dbh.training.rest.resources;
 
 import com.dbh.training.rest.models.UserV2;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -22,6 +33,8 @@ import java.util.concurrent.atomic.AtomicLong;
 @Path("/v2/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
+@Tag(name = "User Management V2", description = "Current version of user management endpoints")
+@SecurityRequirement(name = "bearerAuth")
 public class UserResourceV2 extends AbstractResource {
     
     // Separate storage for V2 (in production, would share service layer)
@@ -66,6 +79,22 @@ public class UserResourceV2 extends AbstractResource {
      * Now requires separate firstName and lastName
      */
     @POST
+    @RolesAllowed("ADMIN")
+    @Operation(
+        summary = "Create a new user",
+        description = "Creates a new user with separate firstName and lastName fields (requires ADMIN role)"
+    )
+    @ApiResponses({
+        @ApiResponse(
+            responseCode = "201",
+            description = "User created successfully",
+            content = @Content(
+                schema = @Schema(implementation = UserV2.class)
+            )
+        ),
+        @ApiResponse(responseCode = "400", description = "Invalid input data"),
+        @ApiResponse(responseCode = "403", description = "Not authorized - requires ADMIN role")
+    })
     public Response createUser(@Valid UserV2 user) {
         // Generate ID and timestamp
         Long id = idGenerator.getAndIncrement();
@@ -85,7 +114,26 @@ public class UserResourceV2 extends AbstractResource {
      */
     @PUT
     @Path("/{id}")
-    public Response updateUser(@PathParam("id") Long id, @Valid UserV2 user) {
+    @RolesAllowed("ADMIN")
+    @Operation(
+        summary = "Update an existing user",
+        description = "Updates user information (requires ADMIN role)"
+    )
+    @ApiResponses({
+        @ApiResponse(
+            responseCode = "200",
+            description = "User updated successfully",
+            content = @Content(schema = @Schema(implementation = UserV2.class))
+        ),
+        @ApiResponse(responseCode = "400", description = "Invalid input data"),
+        @ApiResponse(responseCode = "404", description = "User not found"),
+        @ApiResponse(responseCode = "403", description = "Not authorized - requires ADMIN role")
+    })
+    public Response updateUser(
+        @Parameter(description = "User ID", required = true)
+        @PathParam("id") Long id,
+        @Parameter(description = "Updated user data", required = true)
+        @Valid UserV2 user) {
         if (!users.containsKey(id)) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("User not found")
@@ -105,7 +153,19 @@ public class UserResourceV2 extends AbstractResource {
      */
     @DELETE
     @Path("/{id}")
-    public Response deleteUser(@PathParam("id") Long id) {
+    @RolesAllowed("ADMIN")
+    @Operation(
+        summary = "Delete a user",
+        description = "Removes a user from the system (requires ADMIN role)"
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "204", description = "User deleted successfully"),
+        @ApiResponse(responseCode = "404", description = "User not found"),
+        @ApiResponse(responseCode = "403", description = "Not authorized - requires ADMIN role")
+    })
+    public Response deleteUser(
+        @Parameter(description = "User ID to delete", required = true)
+        @PathParam("id") Long id) {
         UserV2 removed = users.remove(id);
         if (removed == null) {
             return Response.status(Response.Status.NOT_FOUND)

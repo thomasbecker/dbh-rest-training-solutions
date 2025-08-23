@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import io.swagger.v3.oas.annotations.media.Schema;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -23,22 +24,26 @@ import java.util.List;
  * Domain model with V2 specific fields (separate name fields, age).
  * Jackson annotations for JSON processing
  */
+@Schema(description = "User representation in API v2 with separate name fields and optional age")
 public class UserV2 {
     
     @JsonView(Views.Public.class)
     @JsonProperty("user_id")
+    @Schema(description = "Unique user identifier", example = "1", readOnly = true)
     private Long id;
     
     @JsonView(Views.Public.class)
     @JsonProperty("user_name")
     @NotBlank(message = "Username is required")
     @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
+    @Schema(description = "Username for login", example = "johndoe", required = true, minLength = 3, maxLength = 50)
     private String username;
     
     @JsonView(Views.Public.class)
     @JsonProperty("email_address")
     @NotBlank(message = "Email is required")
     @Email(message = "Email must be valid")
+    @Schema(description = "User email address", example = "john.doe@example.com", required = true, pattern = "^[A-Za-z0-9+_.-]+@(.+)$")
     private String email;
     
     // V2: Separate name fields (breaking change from V1)
@@ -46,6 +51,7 @@ public class UserV2 {
     @JsonProperty("first_name")
     @NotBlank(message = "First name is required")
     @Size(min = 1, max = 50, message = "First name must be between 1 and 50 characters")
+    @Schema(description = "User's first name", example = "John", required = true, minLength = 1, maxLength = 50)
     private String firstName;
     
     @JsonView(Views.Public.class)
