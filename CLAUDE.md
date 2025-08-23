@@ -8,13 +8,43 @@ This repository contains training materials for a 2-day REST API workshop using 
 
 ## Slide Creation with Presenterm
 
+### 📋 SLIDE CREATION CHECKLIST (Use Every Time!)
+Before creating ANY new slide file:
+1. ✅ Check existing working slide (e.g., 01-rest-fundamentals.md) for format
+2. ✅ Frontmatter ends with `---` then content starts IMMEDIATELY
+3. ✅ NO extra `---` after frontmatter
+4. ✅ Speaker notes come AFTER content, not in frontmatter
+5. ✅ Use `<!-- end_slide -->` before each new `---` separator
+
 Presenterm is an alternative terminal presentation tool with additional features. Located at https://github.com/mfontanini/presenterm
 
 ### Presenterm Syntax
 
+#### CRITICAL: Frontmatter Format
+**IMPORTANT**: After the frontmatter closing `---`, start your content immediately. Do NOT add another `---` separator!
+
+```markdown
+---
+title: Your Title
+author: Author Name
+theme:
+  name: dark
+---
+
+# First Slide Content Here
+Content starts immediately after frontmatter
+
+<!-- end_slide -->
+
+---
+
+## Second Slide
+Now you can use --- for subsequent slides
+```
+
 #### Slide Separators
 
-- `---` to separate slides (standard)
+- `---` to separate slides (standard) - but NOT right after frontmatter!
 - `<!-- end_slide -->` for explicit slide ending
 
 #### Code Blocks with Features
@@ -101,6 +131,81 @@ echo "This will execute when shown"
 ````
 
 ````
+
+### Slide File Template (Copy This!)
+
+```markdown
+---
+title: Your Title Here
+author: Thomas Becker
+theme:
+  name: dark
+---
+
+# First Slide Title
+
+Your content here
+
+<!-- pause -->
+
+More content
+
+<!--
+speaker_note: |
+  Speaker notes here
+  - Point 1
+  - Point 2
+-->
+
+<!-- end_slide -->
+
+---
+
+## Second Slide
+
+Content for second slide
+
+<!-- end_slide -->
+```
+
+### Common Presenterm Mistakes to Avoid
+
+1. **❌ WRONG**: Adding `---` immediately after frontmatter
+```markdown
+---
+title: Title
+---
+---  # ❌ This extra --- breaks parsing!
+# Content
+```
+
+2. **✅ CORRECT**: Content starts right after frontmatter
+```markdown
+---
+title: Title
+---
+# Content starts here
+```
+
+3. **❌ WRONG**: Speaker notes in frontmatter
+```markdown
+---
+title: Title
+<!-- speaker_note: Notes -->  # ❌ Can't have this in frontmatter!
+---
+```
+
+4. **✅ CORRECT**: Speaker notes after content begins
+```markdown
+---
+title: Title
+---
+# Content
+<!--
+speaker_note: |
+  Notes go here
+-->
+```
 
 ### Running Presenterm
 ```bash

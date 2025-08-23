@@ -80,12 +80,14 @@
 - Deprecation strategies (Sunset headers)
 - **Exercise 05**: Implement versioned endpoints (exercises/05-api-versioning/)
 
-#### 5. Spring Boot Overview (30 min)
+#### 5. Spring Boot & Modern Alternatives Overview (35 min)
 
-**Slide**: To be reviewed/created
+**Slide**: `10-spring-boot-overview.md`
 
 - What Spring Boot abstracts
 - Jersey with vs without Spring Boot
+- Modern alternatives: Quarkus, MicroProfile
+- Framework selection criteria
 - When to use each approach
 - Migration considerations
 
@@ -162,6 +164,7 @@
 - ✅ 07-bean-validation-exercise.md (Exercise slides)
 - ✅ 08-api-versioning.md (45 min content)
 - ✅ 09-api-versioning-exercise.md (Exercise slides)
+- ✅ 10-spring-boot-overview.md (30 min content)
 
 ### Exercises Created
 

@@ -89,9 +89,9 @@ organization and easier sharing with participants.
    - [x] Bean validation exercise slides (07-bean-validation-exercise.md)
    - [x] API versioning slides (08-api-versioning.md)
    - [x] API versioning exercise slides (09-api-versioning-exercise.md)
+   - [x] Spring Boot overview slides (10-spring-boot-overview.md)
    - [x] All Day 1 exercises completed (01-05)
    - [x] All solution branches created
-   - [ ] Spring Boot overview slides (review needed)
 
 1. **Days 4-5: Day 2 Content**
 
@@ -652,7 +652,7 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - [x] Create slides/presenterm/07-bean-validation-exercise.md - Bean Validation Exercise (20 min hands-on)
 - [x] Create slides/presenterm/08-api-versioning.md - API Versioning Strategies (45 min content)
 - [x] Create slides/presenterm/09-api-versioning-exercise.md - API Versioning Exercise (25 min hands-on)
-- [x] Create slides/presenterm/08-spring-boot-overview.md - Spring Boot Overview (30 min content)
+- [x] Create slides/presenterm/10-spring-boot-overview.md - Spring Boot Overview (30 min content)
 
 **Day 2 Slides:**
 
