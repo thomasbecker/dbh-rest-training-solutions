@@ -7,6 +7,13 @@ focused on Jersey (plain Java) for DBH. The training emphasizes hands-on
 exercises with Jersey, REST fundamentals, security implementations, and Jackson
 for JSON processing.
 
+**Current Status**: ~95% Complete
+- ✅ All Day 1 content complete (slides + exercises)
+- ✅ Jackson content complete (Day 2 AM)
+- ✅ Security implementation complete (code + slides + exercise)
+- ⏳ Comprehensive final exercise needed (Exercise 09)
+- ⏳ Showcase demos needed (optional instructor demos)
+
 ## Customer Requirements Summary
 
 Based on meeting notes with DBH and subsequent updates:
@@ -95,11 +102,11 @@ organization and easier sharing with participants.
 
 1. **Days 4-5: Day 2 Content**
 
-   - [ ] Jackson basics slides (06-jackson-basics.md)
-   - [ ] Jackson advanced slides (07-jackson-advanced.md)
-   - [ ] Security implementation slides (08-security-implementation.md)
+   - [x] Jackson basics slides (11-jackson-basics.md)
+   - [x] Jackson advanced slides (13-jackson-advanced.md)
+   - [ ] Security implementation slides (15-security-implementation.md)
    - [ ] Security implementation guides
-   - [ ] Advanced exercises
+   - [x] Advanced exercises (Jackson exercises 06-07)
    - [ ] Showcase preparations
 
 1. **Days 6-8: Exercise Development**
@@ -192,16 +199,23 @@ organization and easier sharing with participants.
 
 1. **Slide Decks**
 
-   - 9 comprehensive modules (2 of 9 completed)
+   - 16 comprehensive modules completed (16 of 16 target) ✅
      - [x] 01-rest-fundamentals.md
      - [x] 02-resource-design.md
-     - [ ] 03-jersey-setup.md
-     - [ ] 04-jersey-crud.md
-     - [ ] 04b-bean-validation.md
-     - [ ] 05-api-versioning.md
-     - [ ] 06-jackson-basics.md
-     - [ ] 07-jackson-advanced.md
-     - [ ] 08-security-implementation.md
+     - [x] 03-idempotency-alternatives.md
+     - [x] 04-jersey-setup.md
+     - [x] 05-jersey-crud-exercise.md
+     - [x] 06-bean-validation.md
+     - [x] 07-bean-validation-exercise.md
+     - [x] 08-api-versioning.md
+     - [x] 09-api-versioning-exercise.md
+     - [x] 10-spring-boot-overview.md
+     - [x] 11-jackson-basics.md
+     - [x] 12-jackson-basics-exercise.md
+     - [x] 13-jackson-advanced.md
+     - [x] 14-jackson-advanced-exercise.md
+     - [x] 15-security-fundamentals.md
+     - [x] 16-security-implementation-exercise.md
    - Code examples included
    - Visual diagrams
    - Progressive complexity
@@ -284,12 +298,13 @@ organization and easier sharing with participants.
 **Solution Branches:**
 
 - Only for exercises that MODIFY existing files
-- `solution/03-validation` - UserResource with validation added
-- `solution/04-versioning` - UserResource with versioning added
-- `solution/06-jackson-basics` - UserResource with Jackson annotations on models
-- `solution/07-jackson-advanced` - Advanced Jackson features (Views, Serializers, Mix-ins)
-- `solution/07-security` - Security additions
-- `solution/08-final` - Final project modifications
+- [x] `solution/03-validation` - UserResource with validation added
+- [x] `solution/04-bean-validation` - Complete Bean Validation implementation
+- [x] `solution/05-api-versioning` - UserResource split into V1/V2
+- [x] `solution/06-jackson-basics` - UserResource with Jackson annotations on models
+- [x] `solution/07-jackson-advanced` - Advanced Jackson features (Views, Serializers, Mix-ins)
+- [x] `solution/08-security-implementation` - JWT auth and RBAC (all tests passing)
+- [ ] `solution/09-comprehensive` - Final comprehensive exercise
 
 ### Instructor Workflow
 
@@ -464,11 +479,12 @@ Each exercise gets concise slides (stored in `/slides/presenterm/XX-exercise-nam
 #### 1.2 Instructor Solution ✅ COMPLETED
 
 - [x] `instructor-solution/` - Complete reference implementation
-  - [x] All models with validation
+  - [x] All models with validation and security
   - [x] All DTOs with mappings
-  - [x] ModelMapper utility
-  - [x] Complete resources (to be added in 1.3)
+  - [x] JWT authentication and RBAC
+  - [x] Complete resources V1 and V2
   - [x] Full exception handling
+  - [x] All 73 tests passing
 
 **Note**: Domain models, DTOs, and validation are now EXERCISE TASKS, not base setup
 
@@ -576,15 +592,16 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - **Model**: claude-sonnet-4
 - **Implementation**: Full solution on branch solution/07-jackson-advanced
 
-##### 2.8 Security Implementation Exercise [30-40 min within 60 min slot]
+##### 2.8 Security Implementation Exercise [30-40 min within 60 min slot] ✅ COMPLETED
 
-- [ ] Create exercises/08-security-implementation/
-- [ ] **Trainees implement**: Basic Auth filter
-- [ ] **Trainees add**: Simple role checking
-- [ ] **Trainees test**: Protected endpoints
-- [ ] Provide security filter template
+- [x] Create exercises/08-security-implementation/
+- [x] **Trainees implement**: JWT authentication
+- [x] **Trainees add**: Role-based access control
+- [x] **Trainees test**: Protected endpoints
+- [x] Provide security filter template
 - **Note**: Fits within "Security Implementation" (Day 2 PM)
 - **Model**: claude-sonnet-4
+- **Status**: COMPLETE - Implementation, slides, and exercise materials all done
 
 ### PHASE 3: SHOWCASES, DOCUMENTATION & QUALITY
 
@@ -664,7 +681,8 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - [x] Create slides/presenterm/12-jackson-basics-exercise.md - Jackson Basics Exercise slides
 - [x] Create slides/presenterm/13-jackson-advanced.md - Advanced Jackson Features (60 min content)
 - [x] Create slides/presenterm/14-jackson-advanced-exercise.md - Jackson Advanced Exercise slides
-- [ ] Create slides/presenterm/11-security-implementation.md - Security Fundamentals & Implementation (90 min content)
+- [x] Create slides/presenterm/15-security-fundamentals.md - Security Fundamentals & Implementation (90 min content)
+- [x] Create slides/presenterm/16-security-implementation-exercise.md - Security Implementation Exercise slides
 
 **Supporting Materials:**
 

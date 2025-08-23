@@ -126,9 +126,11 @@
 
 #### 2. Showcases (45 min)
 
-- Client Certificate Authentication (Showcase)
-- OpenAPI/Swagger Documentation (Showcase)
-- Container/Kubernetes Outlook (brief)
+**Slides**: `17-showcase-client-certificates.md`, `18-showcase-openapi.md`, `19-showcase-containers.md`
+
+- Client Certificate Authentication (15 min demo)
+- OpenAPI/Swagger Documentation (15 min demo)  
+- Container/Kubernetes Deployment (15 min demo)
 
 #### 3. Comprehensive Exercise (90 min)
 
@@ -151,10 +153,11 @@
 - Emphasis on hands-on exercises throughout
 - Client Certificate Authentication is showcase only (no exercise)
 
-## Completed Materials (Day 1)
+## Completed Materials
 
 ### Slides Created
 
+#### Day 1 Slides
 - ✅ 01-rest-fundamentals.md (75 min content)
 - ✅ 02-resource-design.md (60 min content)
 - ✅ 03-idempotency-alternatives.md (45 min content)
@@ -166,6 +169,17 @@
 - ✅ 09-api-versioning-exercise.md (Exercise slides)
 - ✅ 10-spring-boot-overview.md (30 min content)
 
+#### Day 2 Slides
+- ✅ 11-jackson-basics.md (Jackson Integration)
+- ✅ 12-jackson-basics-exercise.md (Exercise slides)
+- ✅ 13-jackson-advanced.md (Advanced Jackson)
+- ✅ 14-jackson-advanced-exercise.md (Exercise slides)
+- ✅ 15-security-fundamentals.md (Security concepts)
+- ✅ 16-security-implementation-exercise.md (Exercise slides)
+- ✅ 17-showcase-client-certificates.md (Showcase demo)
+- ✅ 18-showcase-openapi.md (Showcase demo)
+- ✅ 19-showcase-containers.md (Showcase demo)
+
 ### Exercises Created
 
 - ✅ Exercise 01: REST Basics (01-rest-basics)
@@ -173,10 +187,22 @@
 - ✅ Exercise 03: Jersey CRUD (03-jersey-crud)
 - ✅ Exercise 04: Bean Validation (04-bean-validation)
 - ✅ Exercise 05: API Versioning (05-api-versioning)
+- ✅ Exercise 06: Jackson Basics (06-jackson-basics)
+- ✅ Exercise 07: Jackson Advanced (07-jackson-advanced)
+- ✅ Exercise 08: Security Implementation (08-security-implementation)
 
 ### Solution Branches
 
-- ✅ main: Base implementation
-- ✅ solution/03-validation: Basic validation
-- ✅ solution/04-bean-validation: Complete validation
+- ✅ main: Base implementation with initial solutions
+- ✅ solution/03-validation: Basic validation added
+- ✅ solution/04-bean-validation: Complete validation implementation
 - ✅ solution/05-api-versioning: Versioned API (V1/V2)
+- ✅ solution/06-jackson-basics: Jackson annotations on models
+- ✅ solution/07-jackson-advanced: Advanced Jackson features
+- ✅ solution/08-security-implementation: JWT auth and RBAC
+
+### Showcase Materials
+
+- ✅ Client Certificates: Demo scripts and slides
+- ✅ OpenAPI/Swagger: Demo configuration and slides
+- ✅ Docker/Kubernetes: Dockerfile, docker-compose, and slides

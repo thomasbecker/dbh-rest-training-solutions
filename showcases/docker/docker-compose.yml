@@ -1,0 +1,131 @@
+# Docker Compose for DBH REST API Training
+# Complete development environment with database
+
+version: '3.8'
+
+services:
+  # REST API Application
+  api:
+    build:
+      context: ../../instructor-solution
+      dockerfile: ../showcases/docker/Dockerfile
+    image: dbh-rest-api:latest
+    container_name: dbh-api
+    ports:
+      - "8080:8080"
+    environment:
+      # Server configuration
+      SERVER_PORT: 8080
+      LOG_LEVEL: INFO
+      
+      # Database configuration
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: restapi
+      DB_USER: ${DB_USER:-apiuser}
+      DB_PASSWORD: ${DB_PASSWORD:-apipass}
+      
+      # JWT configuration
+      JWT_SECRET: ${JWT_SECRET:-demo-secret-key-change-in-production}
+      JWT_EXPIRATION: 3600
+      
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - api-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:13-alpine
+    container_name: dbh-postgres
+    environment:
+      POSTGRES_DB: restapi
+      POSTGRES_USER: ${DB_USER:-apiuser}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-apipass}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8"
+    ports:
+      - "5432:5432"
+    volumes:
+      # Persist database data
+      - postgres-data:/var/lib/postgresql/data
+      # Initialize database (if you have init scripts)
+      # - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - api-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-apiuser} -d restapi"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Adminer - Database management UI (optional)
+  adminer:
+    image: adminer:latest
+    container_name: dbh-adminer
+    ports:
+      - "8081:8080"
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
+      ADMINER_DESIGN: pepa-linha
+    networks:
+      - api-network
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  # Swagger UI - API Documentation (optional)
+  swagger-ui:
+    image: swaggerapi/swagger-ui:latest
+    container_name: dbh-swagger
+    ports:
+      - "8082:8080"
+    environment:
+      SWAGGER_JSON_URL: "http://api:8080/api/openapi.json"
+      BASE_URL: /swagger
+    networks:
+      - api-network
+    depends_on:
+      - api
+    restart: unless-stopped
+
+# Volumes for data persistence
+volumes:
+  postgres-data:
+    name: dbh-postgres-data
+
+# Networks for service communication
+networks:
+  api-network:
+    name: dbh-network
+    driver: bridge
+
+# Usage:
+# 
+# 1. Start all services:
+#    docker-compose up -d
+#
+# 2. View logs:
+#    docker-compose logs -f api
+#
+# 3. Scale API instances:
+#    docker-compose up -d --scale api=3
+#
+# 4. Stop all services:
+#    docker-compose down
+#
+# 5. Stop and remove volumes:
+#    docker-compose down -v
+#
+# 6. Access services:
+#    - API: http://localhost:8080
+#    - Adminer: http://localhost:8081
+#    - Swagger: http://localhost:8082
