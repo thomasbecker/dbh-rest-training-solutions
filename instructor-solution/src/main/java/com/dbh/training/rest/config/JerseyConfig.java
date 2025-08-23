@@ -84,6 +84,7 @@ public class JerseyConfig extends ResourceConfig {
         // Showcase: OpenAPI/Swagger Documentation
         register(OpenApiResource.class);
         register(SwaggerUIResource.class);
+        register(OpenApiConfig.class);
         
         logger.info("Jersey configuration initialized successfully");
         logger.info("API versions registered: V1 (deprecated), V2 (current)");

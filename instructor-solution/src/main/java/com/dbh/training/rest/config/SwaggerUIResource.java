@@ -50,7 +50,7 @@ public class SwaggerUIResource {
         // Determine content type based on file extension
         String contentType = getContentType(path);
         
-        // Special handling for index.html to configure the OpenAPI URL
+        // Special handling for index.html to configure the title
         if (path.equals("index.html")) {
             try {
                 // Java 8 compatible way to read all bytes
@@ -62,14 +62,33 @@ public class SwaggerUIResource {
                 }
                 String html = new String(buffer.toByteArray());
                 
-                // Configure Swagger UI to load our OpenAPI spec
-                html = html.replace("https://petstore.swagger.io/v2/swagger.json", 
-                                  "/api/openapi.json");
+                // Configure page title
                 html = html.replace("<title>Swagger UI</title>", 
                                   "<title>DBH REST API Documentation</title>");
                 return Response.ok(html).type(contentType).build();
             } catch (IOException e) {
                 return Response.serverError().entity("Error loading Swagger UI").build();
+            }
+        }
+        
+        // Special handling for swagger-initializer.js to configure the OpenAPI URL
+        if (path.equals("swagger-initializer.js")) {
+            try {
+                // Java 8 compatible way to read all bytes
+                ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+                int nRead;
+                byte[] data = new byte[1024];
+                while ((nRead = resource.read(data, 0, data.length)) != -1) {
+                    buffer.write(data, 0, nRead);
+                }
+                String js = new String(buffer.toByteArray());
+                
+                // Configure Swagger UI to load our OpenAPI spec
+                js = js.replace("https://petstore.swagger.io/v2/swagger.json", 
+                               "/api/openapi.json");
+                return Response.ok(js).type(contentType).build();
+            } catch (IOException e) {
+                return Response.serverError().entity("Error loading Swagger initializer").build();
             }
         }
         
