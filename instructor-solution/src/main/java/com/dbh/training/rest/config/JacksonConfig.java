@@ -3,8 +3,11 @@ package com.dbh.training.rest.config;
 import javax.ws.rs.ext.ContextResolver;
 import javax.ws.rs.ext.Provider;
 
+import com.dbh.training.rest.config.jackson.ThirdPartyUserMixIn;
+import com.dbh.training.rest.thirdparty.ThirdPartyUser;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -53,6 +56,13 @@ public class JacksonConfig implements ContextResolver<ObjectMapper> {
         // For training purposes, we'll keep pretty printing enabled
         // In production, you might want to disable it for performance
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+        
+        // Exercise 07: Jackson Advanced - Mix-ins
+        // Register mix-in to control third-party class serialization
+        objectMapper.addMixIn(ThirdPartyUser.class, ThirdPartyUserMixIn.class);
+        
+        // Exercise 07: Enable JSON Views
+        objectMapper.enable(MapperFeature.DEFAULT_VIEW_INCLUSION);
     }
     
     @Override

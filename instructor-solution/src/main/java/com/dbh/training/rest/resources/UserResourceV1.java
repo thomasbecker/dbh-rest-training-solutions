@@ -1,11 +1,19 @@
 package com.dbh.training.rest.resources;
 
+import com.dbh.training.rest.dto.Views;
+import com.dbh.training.rest.models.Money;
 import com.dbh.training.rest.models.User;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonGenerator;
 
 import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.StreamingOutput;
+import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -114,5 +122,109 @@ public class UserResourceV1 extends AbstractResource {
         }
         // Using helper method from AbstractResource
         return noContent();
+    }
+    
+    // ===== Exercise 07: Jackson Advanced - JSON Views =====
+    
+    /**
+     * GET /users/{id}/public
+     * Public view - minimal fields for unauthenticated users
+     */
+    @GET
+    @Path("/{id}/public")
+    @JsonView(Views.Public.class)
+    public Response getPublicUser(@PathParam("id") Long id) {
+        User user = users.get(id);
+        if (user == null) {
+            return Response.status(404).entity("User not found").build();
+        }
+        return Response.ok(user).build();
+    }
+    
+    /**
+     * GET /users/{id}/details
+     * Internal view - more fields for authenticated users
+     */
+    @GET
+    @Path("/{id}/details")
+    @JsonView(Views.Internal.class)
+    public Response getInternalUser(@PathParam("id") Long id) {
+        User user = users.get(id);
+        if (user == null) {
+            return Response.status(404).entity("User not found").build();
+        }
+        // In real app, check auth: @RolesAllowed("USER")
+        return Response.ok(user).build();
+    }
+    
+    /**
+     * GET /users/{id}/admin
+     * Admin view - all fields except password
+     */
+    @GET
+    @Path("/{id}/admin")
+    @JsonView(Views.Admin.class)
+    public Response getAdminUser(@PathParam("id") Long id) {
+        User user = users.get(id);
+        if (user == null) {
+            return Response.status(404).entity("User not found").build();
+        }
+        // In real app, check auth: @RolesAllowed("ADMIN")
+        return Response.ok(user).build();
+    }
+    
+    // ===== Exercise 07: Jackson Advanced - Streaming =====
+    
+    /**
+     * GET /users/stream
+     * Stream all users efficiently for large datasets
+     */
+    @GET
+    @Path("/stream")
+    @Produces(MediaType.APPLICATION_JSON)
+    public StreamingOutput streamAllUsers() {
+        return output -> {
+            JsonFactory jsonFactory = new JsonFactory();
+            try (JsonGenerator gen = jsonFactory.createGenerator(output)) {
+                gen.writeStartArray();
+                
+                // Stream each user one by one
+                for (User user : users.values()) {
+                    gen.writeStartObject();
+                    gen.writeNumberField("user_id", user.getId());
+                    gen.writeStringField("user_name", user.getUsername());
+                    gen.writeStringField("email_address", user.getEmail());
+                    gen.writeStringField("first_name", user.getFirstName());
+                    gen.writeStringField("last_name", user.getLastName());
+                    gen.writeEndObject();
+                }
+                
+                gen.writeEndArray();
+                gen.flush();
+            } catch (IOException e) {
+                throw new WebApplicationException("Error streaming users", e);
+            }
+        };
+    }
+    
+    /**
+     * POST /users/test-money
+     * Test endpoint for Money serialization
+     */
+    @POST
+    @Path("/test-money")
+    public Response createUserWithMoney(@Valid User user) {
+        Long id = idGenerator.getAndIncrement();
+        user.setId(id);
+        user.setCreatedAt(LocalDateTime.now());
+        
+        // Add sample money balance for testing
+        user.setAccountBalance(new Money(
+            new BigDecimal("1250.50"), 
+            Currency.getInstance("EUR")
+        ));
+        
+        users.put(id, user);
+        return created(user, id);
     }
 }

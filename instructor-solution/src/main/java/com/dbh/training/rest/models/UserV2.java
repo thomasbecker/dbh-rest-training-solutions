@@ -1,8 +1,14 @@
 package com.dbh.training.rest.models;
 
+import com.dbh.training.rest.config.jackson.MoneyDeserializer;
+import com.dbh.training.rest.config.jackson.MoneySerializer;
+import com.dbh.training.rest.dto.Views;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -13,36 +19,43 @@ import java.util.List;
  * User model for API version 2.
  * 
  * Exercise 06: Jackson Basics
+ * Exercise 07: Jackson Advanced - Added JSON Views and Money field
  * Domain model with V2 specific fields (separate name fields, age).
  * Jackson annotations for JSON processing
  */
 public class UserV2 {
     
+    @JsonView(Views.Public.class)
     @JsonProperty("user_id")
     private Long id;
     
+    @JsonView(Views.Public.class)
     @JsonProperty("user_name")
     @NotBlank(message = "Username is required")
     @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
     private String username;
     
+    @JsonView(Views.Public.class)
     @JsonProperty("email_address")
     @NotBlank(message = "Email is required")
     @Email(message = "Email must be valid")
     private String email;
     
     // V2: Separate name fields (breaking change from V1)
+    @JsonView(Views.Public.class)
     @JsonProperty("first_name")
     @NotBlank(message = "First name is required")
     @Size(min = 1, max = 50, message = "First name must be between 1 and 50 characters")
     private String firstName;
     
+    @JsonView(Views.Public.class)
     @JsonProperty("last_name")
     @NotBlank(message = "Last name is required")
     @Size(min = 1, max = 50, message = "Last name must be between 1 and 50 characters")
     private String lastName;
     
     // V2: New optional field
+    @JsonView(Views.Public.class)
     @JsonProperty("age")
     @Min(value = 0, message = "Age cannot be negative")
     @Max(value = 150, message = "Age cannot exceed 150")
@@ -51,27 +64,44 @@ public class UserV2 {
     @JsonIgnore
     private String password;
     
+    @JsonView(Views.Internal.class)
     @JsonProperty("birth_date")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
     
+    @JsonView(Views.Internal.class)
     @JsonProperty("created_at")
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime createdAt;
     
+    @JsonView(Views.Internal.class)
     @JsonProperty("account_status")
     private AccountStatus status;
     
+    @JsonView(Views.Internal.class)
     @JsonProperty("roles")
     private List<String> roles;
     
+    @JsonView(Views.Internal.class)
     @JsonProperty("primary_address")
     @Valid
     private Address primaryAddress;
     
+    @JsonView(Views.Internal.class)
     @JsonProperty("billing_address")
     @Valid
     private Address billingAddress;
+    
+    @JsonView(Views.Admin.class)
+    @JsonProperty("last_login")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDateTime lastLogin;
+    
+    @JsonView(Views.Internal.class)
+    @JsonProperty("account_balance")
+    @JsonSerialize(using = MoneySerializer.class)
+    @JsonDeserialize(using = MoneyDeserializer.class)
+    private Money accountBalance;
     
     // Constructors
     public UserV2() {
@@ -187,6 +217,22 @@ public class UserV2 {
     
     public void setBillingAddress(Address billingAddress) {
         this.billingAddress = billingAddress;
+    }
+    
+    public LocalDateTime getLastLogin() {
+        return lastLogin;
+    }
+    
+    public void setLastLogin(LocalDateTime lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+    
+    public Money getAccountBalance() {
+        return accountBalance;
+    }
+    
+    public void setAccountBalance(Money accountBalance) {
+        this.accountBalance = accountBalance;
     }
     
     @Override

@@ -286,8 +286,8 @@ organization and easier sharing with participants.
 - Only for exercises that MODIFY existing files
 - `solution/03-validation` - UserResource with validation added
 - `solution/04-versioning` - UserResource with versioning added
-- `solution/05-jackson` - UserResource with Jackson features
-- `solution/06-jackson-advanced` - Advanced Jackson modifications
+- `solution/06-jackson-basics` - UserResource with Jackson annotations on models
+- `solution/07-jackson-advanced` - Advanced Jackson features (Views, Serializers, Mix-ins)
 - `solution/07-security` - Security additions
 - `solution/08-final` - Final project modifications
 
@@ -553,24 +553,28 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 
 #### Day 2 Training Exercises
 
-##### 2.6 Jackson Basics Exercise [45 min within 90 min slot]
+##### 2.6 Jackson Basics Exercise [45 min within 90 min slot] ✅ COMPLETED
 
-- [ ] Create exercises/06-jackson-basics/
-- [ ] **Trainees configure**: Jackson ObjectMapper
-- [ ] **Trainees implement**: Date formatting
-- [ ] **Trainees add**: @JsonProperty annotations
-- [ ] **Trainees test**: Serialization/deserialization
+- [x] Create exercises/06-jackson-basics/
+- [x] **Trainees configure**: Jackson ObjectMapper
+- [x] **Trainees implement**: Date formatting
+- [x] **Trainees add**: @JsonProperty annotations
+- [x] **Trainees test**: Serialization/deserialization
 - **Note**: Fits within "Jackson Integration" (Day 2 AM)
 - **Model**: claude-sonnet-4
+- **Implementation**: Exercise 06 complete with Jackson annotations directly on models
 
-##### 2.7 Jackson Advanced Exercise [30 min within 60 min slot]
+##### 2.7 Jackson Advanced Exercise [30 min within 60 min slot] ✅ COMPLETED
 
-- [ ] Create exercises/07-jackson-advanced/
-- [ ] **Trainees create**: One custom serializer
-- [ ] **Trainees implement**: @JsonIgnore and @JsonView
-- [ ] **Trainees test**: Different JSON representations
+- [x] Create exercises/07-jackson-advanced/
+- [x] **Trainees create**: Money serializer/deserializer
+- [x] **Trainees implement**: @JsonView (Public, Internal, Admin)
+- [x] **Trainees test**: Different JSON representations
+- [x] **Streaming API**: For large dataset performance
+- [x] **Mix-ins**: For third-party class control
 - **Note**: Fits within "Advanced Jackson Features" (Day 2 AM)
 - **Model**: claude-sonnet-4
+- **Implementation**: Full solution on branch solution/07-jackson-advanced
 
 ##### 2.8 Security Implementation Exercise [30-40 min within 60 min slot]
 
@@ -656,8 +660,10 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 
 **Day 2 Slides:**
 
-- [ ] Create slides/presenterm/09-jackson-basics.md - Jackson Integration with Jersey (90 min content)
-- [ ] Create slides/presenterm/10-jackson-advanced.md - Advanced Jackson Features (60 min content)
+- [x] Create slides/presenterm/11-jackson-basics.md - Jackson Integration with Jersey (90 min content)
+- [x] Create slides/presenterm/12-jackson-basics-exercise.md - Jackson Basics Exercise slides
+- [x] Create slides/presenterm/13-jackson-advanced.md - Advanced Jackson Features (60 min content)
+- [x] Create slides/presenterm/14-jackson-advanced-exercise.md - Jackson Advanced Exercise slides
 - [ ] Create slides/presenterm/11-security-implementation.md - Security Fundamentals & Implementation (90 min content)
 
 **Supporting Materials:**
