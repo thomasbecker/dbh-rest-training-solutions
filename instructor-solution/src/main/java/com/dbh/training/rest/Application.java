@@ -97,6 +97,19 @@ public class Application {
     }
     
     /**
+     * Starts a configured server for testing purposes.
+     * 
+     * @param port The port to run the server on
+     * @return Started Jetty server
+     * @throws Exception if server fails to start
+     */
+    public static Server startServer(int port) throws Exception {
+        Server server = createServer(port);
+        server.start();
+        return server;
+    }
+    
+    /**
      * Creates a configured server for testing purposes.
      * 
      * @param port The port to run the server on

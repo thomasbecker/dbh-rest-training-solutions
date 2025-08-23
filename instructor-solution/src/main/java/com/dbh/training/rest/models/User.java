@@ -11,9 +11,12 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  * User model with Bean Validation and Jackson annotations
@@ -53,7 +56,7 @@ public class User {
     private String lastName;
     
     @JsonIgnore
-    private String password;
+    private String passwordHash;
     
     @JsonView(Views.Internal.class)
     @JsonProperty("birth_date")
@@ -71,7 +74,7 @@ public class User {
     
     @JsonView(Views.Internal.class)
     @JsonProperty("roles")
-    private List<String> roles;
+    private Set<String> roles = new HashSet<>();
     
     @JsonView(Views.Internal.class)
     @JsonProperty("primary_address")
@@ -155,12 +158,20 @@ public class User {
         this.createdAt = createdAt;
     }
     
-    public String getPassword() {
-        return password;
+    public boolean checkPassword(String password) {
+        return passwordHash != null && BCrypt.checkpw(password, passwordHash);
     }
     
     public void setPassword(String password) {
-        this.password = password;
+        this.passwordHash = BCrypt.hashpw(password, BCrypt.gensalt());
+    }
+    
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+    
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
     }
     
     public LocalDate getBirthDate() {
@@ -179,11 +190,11 @@ public class User {
         this.status = status;
     }
     
-    public List<String> getRoles() {
+    public Set<String> getRoles() {
         return roles;
     }
     
-    public void setRoles(List<String> roles) {
+    public void setRoles(Set<String> roles) {
         this.roles = roles;
     }
     

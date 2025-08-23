@@ -18,6 +18,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Currency;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -240,7 +241,7 @@ public class JacksonAdvancedTest {
         user.setBirthDate(LocalDate.of(1990, 5, 15));
         user.setCreatedAt(LocalDateTime.of(2024, 1, 15, 10, 30));
         user.setStatus(com.dbh.training.rest.models.AccountStatus.ACTIVE);
-        user.setRoles(Arrays.asList("USER", "ADMIN"));
+        user.setRoles(new HashSet<>(Arrays.asList("USER", "ADMIN")));
         user.setLastLogin(LocalDateTime.of(2024, 2, 1, 14, 0));
         user.setAccountBalance(new Money(new BigDecimal("1000.00"), Currency.getInstance("USD")));
         return user;

@@ -7,10 +7,14 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.core.StreamingOutput;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -45,8 +49,10 @@ public class UserResourceV1 extends AbstractResource {
     /**
      * GET /users
      * Return all users
+     * Requires USER or ADMIN role
      */
     @GET
+    @RolesAllowed({"USER", "ADMIN"})
     public Response getAllUsers() {
         List<User> allUsers = new ArrayList<>(users.values());
         return Response.ok(allUsers)
@@ -59,9 +65,11 @@ public class UserResourceV1 extends AbstractResource {
     /**
      * GET /users/{id}
      * Return specific user or 404
+     * Requires USER or ADMIN role
      */
     @GET
     @Path("/{id}")
+    @RolesAllowed({"USER", "ADMIN"})
     public Response getUserById(@PathParam("id") Long id) {
         User user = users.get(id);
         if (user == null) {
@@ -74,8 +82,10 @@ public class UserResourceV1 extends AbstractResource {
      * POST /users
      * Create new user with generated ID and validation
      * Return 201 with Location header
+     * Requires ADMIN role
      */
     @POST
+    @RolesAllowed("ADMIN")
     public Response createUser(@Valid User user) {
         // Generate ID and set creation timestamp
         Long id = idGenerator.getAndIncrement();
@@ -93,9 +103,11 @@ public class UserResourceV1 extends AbstractResource {
     /**
      * PUT /users/{id}
      * Update existing user with validation or return 404
+     * Requires ADMIN role
      */
     @PUT
     @Path("/{id}")
+    @RolesAllowed("ADMIN")
     public Response updateUser(@PathParam("id") Long id, @Valid User user) {
         // Check if user exists
         if (!users.containsKey(id)) {
@@ -112,8 +124,10 @@ public class UserResourceV1 extends AbstractResource {
     /**
      * DELETE /users/{id}
      * Delete user, return 204 or 404
+     * Requires ADMIN role
      */
     @DELETE
+    @RolesAllowed("ADMIN")
     @Path("/{id}")
     public Response deleteUser(@PathParam("id") Long id) {
         User removed = users.remove(id);

@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.HashSet;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -45,7 +46,7 @@ public class JacksonSerializationTest {
         user.setBirthDate(LocalDate.of(1990, 5, 15));
         user.setCreatedAt(LocalDateTime.of(2024, 1, 15, 10, 30, 0));
         user.setStatus(AccountStatus.ACTIVE);
-        user.setRoles(Arrays.asList("USER", "ADMIN"));
+        user.setRoles(new HashSet<>(Arrays.asList("USER", "ADMIN")));
         
         // Serialize to JSON
         String json = objectMapper.writeValueAsString(user);
@@ -108,7 +109,7 @@ public class JacksonSerializationTest {
         assertEquals(Arrays.asList("USER", "MODERATOR"), user.getRoles());
         
         // Password should be null due to @JsonIgnore
-        assertNull(user.getPassword(), "Password should be ignored during deserialization");
+        assertNull(user.getPasswordHash(), "Password hash should be ignored during deserialization");
     }
     
     @Test
@@ -221,7 +222,7 @@ public class JacksonSerializationTest {
         user.setEmail("roles@example.com");
         user.setFirstName("Roles");
         user.setLastName("User");
-        user.setRoles(Arrays.asList("ADMIN", "USER", "MODERATOR", "VIEWER"));
+        user.setRoles(new HashSet<>(Arrays.asList("ADMIN", "USER", "MODERATOR", "VIEWER")));
         
         String json = objectMapper.writeValueAsString(user);
         JsonNode root = objectMapper.readTree(json);
@@ -265,7 +266,7 @@ public class JacksonSerializationTest {
         original.setBirthDate(LocalDate.of(1995, 6, 15));
         original.setCreatedAt(LocalDateTime.of(2024, 2, 29, 12, 0, 0));
         original.setStatus(AccountStatus.ACTIVE);
-        original.setRoles(Arrays.asList("USER"));
+        original.setRoles(new HashSet<>(Arrays.asList("USER")));
         
         Address address = new Address();
         address.setStreetLine1("999 Test Lane");
