@@ -78,7 +78,7 @@ organization and easier sharing with participants.
 
 ### Week 2-3: Content Development (10 days)
 
-1. **Days 1-3: Day 1 Content**
+1. **Days 1-3: Day 1 Content** ✅ COMPLETED
 
    - [x] REST fundamentals slides (01-rest-fundamentals.md)
    - [x] Resource design slides (02-resource-design.md)
@@ -86,11 +86,12 @@ organization and easier sharing with participants.
    - [x] Jersey setup slides (04-jersey-setup.md)
    - [x] Jersey CRUD exercise slides (05-jersey-crud-exercise.md)
    - [x] Bean validation slides (06-bean-validation.md)
+   - [x] Bean validation exercise slides (07-bean-validation-exercise.md)
    - [x] API versioning slides (08-api-versioning.md)
    - [x] API versioning exercise slides (09-api-versioning-exercise.md)
-   - [x] Spring Boot overview slides (08-spring-boot-overview.md)
-   - [x] Basic exercises and solutions (Exercise 01, 02, 03, 04, 05 completed)
-   - [x] Versioning implementation guide
+   - [x] All Day 1 exercises completed (01-05)
+   - [x] All solution branches created
+   - [ ] Spring Boot overview slides (review needed)
 
 1. **Days 4-5: Day 2 Content**
 
@@ -267,18 +268,21 @@ organization and easier sharing with participants.
 ## Solution Management Strategy
 
 ### Directory Structure
+
 - `/starter-project/` - Skeleton code with TODOs for attendees
 - `/instructor-solution/` - Complete solutions for instructor
 
 ### Branch Strategy
 
 **Main Branch:**
+
 - Contains the FIRST complete solution for each file
 - Example: `UserResource.java` (Exercise 02) → first solution on main
 - Example: `ValidationExceptionMapper.java` (Exercise 03) → first solution on main
 - All "first appearance" solutions accumulate in `/instructor-solution/` on main
 
 **Solution Branches:**
+
 - Only for exercises that MODIFY existing files
 - `solution/03-validation` - UserResource with validation added
 - `solution/04-versioning` - UserResource with versioning added
@@ -288,6 +292,7 @@ organization and easier sharing with participants.
 - `solution/08-final` - Final project modifications
 
 ### Instructor Workflow
+
 1. Show skeleton in `/starter-project/`
 2. Live code or show solution from `/instructor-solution/`
 3. For modified files, checkout solution branch
@@ -295,6 +300,7 @@ organization and easier sharing with participants.
 5. New files always shown from main first
 
 ### Maintenance Notes
+
 - Minimize duplication
 - Main branch is always complete and runnable
 - Branches only contain deltas
@@ -355,6 +361,7 @@ dbh-rest-with-jackson/
 Based on the successful Exercise 02 pattern, all exercises should follow this structure:
 
 #### README Location and Structure
+
 - **MUST stay in exercise folder** (e.g., `/exercises/02-jersey-crud/README.md`)
 - Serves as self-study reference and backup instructions
 - Contains comprehensive step-by-step instructions with:
@@ -372,6 +379,7 @@ Based on the successful Exercise 02 pattern, all exercises should follow this st
   - "Need Help?" section
 
 #### Slide Location and Structure
+
 - **Slides go in** `/slides/presenterm/XX-exercise-name.md`
 - Used for live instructor-led presentation
 - Screen-friendly with multiple short slides
@@ -387,6 +395,7 @@ Based on the successful Exercise 02 pattern, all exercises should follow this st
 - Speaker notes for instructor guidance
 
 #### Alignment Requirements
+
 - Tasks in slides MUST match README tasks exactly
 - Same numbering, same time allocations
 - Identical bonus tasks
@@ -396,6 +405,7 @@ Based on the successful Exercise 02 pattern, all exercises should follow this st
 ### Exercise Slide Guidelines
 
 Each exercise gets concise slides (stored in `/slides/presenterm/XX-exercise-name.md`):
+
 - Keep slides short - must fit on screen
 - Focus on code examples and key concepts
 - Include checkpoints at 20 and 40 minutes
@@ -436,11 +446,12 @@ Each exercise gets concise slides (stored in `/slides/presenterm/XX-exercise-nam
       **Tools**: Brave Search for training resources, Firecrawl for course outlines
       **Model**: claude-sonnet-4
 
-### PHASE 1: FOUNDATION (Critical Path - Sequential) ✅ RESTRUCTURED
+### PHASE 1: FOUNDATION ✅ COMPLETED
 
-#### 1.1 Starter Project Infrastructure [4 hours] ✅ COMPLETED
+#### 1.1 Starter Project Infrastructure ✅ COMPLETED
 
 **What We Created**:
+
 - [x] `starter-project/` - Skeleton with just infrastructure
   - [x] Application.java (server setup)
   - [x] JerseyConfig (basic configuration)
@@ -450,7 +461,7 @@ Each exercise gets concise slides (stored in `/slides/presenterm/XX-exercise-nam
   - [x] build.gradle with all dependencies
   - [x] README with exercise instructions
 
-#### 1.2 Instructor Solution [2 hours] ✅ COMPLETED
+#### 1.2 Instructor Solution ✅ COMPLETED
 
 - [x] `instructor-solution/` - Complete reference implementation
   - [x] All models with validation
@@ -461,7 +472,7 @@ Each exercise gets concise slides (stored in `/slides/presenterm/XX-exercise-nam
 
 **Note**: Domain models, DTOs, and validation are now EXERCISE TASKS, not base setup
 
-#### 1.3 REST Template [3 hours] ✅ COMPLETED
+#### 1.3 REST Template ✅ COMPLETED
 
 - [x] Create AbstractResource base class
 - [x] Implement ExampleUserResource with all HTTP methods
@@ -471,7 +482,7 @@ Each exercise gets concise slides (stored in `/slides/presenterm/XX-exercise-nam
 - **Agent**: backend-developer
 - **Model**: opus-4.1
 
-#### 1.4 Test Infrastructure [3 hours] ✅ COMPLETED
+#### 1.4 Test Infrastructure ✅ COMPLETED
 
 - [x] Configure JUnit 5 and REST Assured
 - [x] Create BaseIntegrationTest with server lifecycle
@@ -487,7 +498,7 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 
 #### Day 1 Training Exercises
 
-##### 2.1 REST Fundamentals Exercise [3 hours]
+##### 2.1 REST Fundamentals Exercise ✅ COMPLETED
 
 **Pre-task Research**:
 
@@ -503,13 +514,13 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - **Agent**: general-purpose
 - **Model**: claude-sonnet-4 (medium complexity)
 
-##### 2.2 Jersey Setup Exercise [15-20 min within 60 min slot]
+##### 2.2 Jersey Setup Exercise ✅ COMPLETED
 
 - [x] Create exercises/02-jersey-setup/
 - [x] Create basic project setup exercise
 - **Note**: Fits within "Plain Java with Jersey Setup" (Day 1 PM)
 
-##### 2.3 Jersey CRUD Exercise [45-50 min within 75 min slot]
+##### 2.3 Jersey CRUD Exercise ✅ COMPLETED
 
 - [x] Create exercises/03-jersey-crud/
 - [x] **Trainees implement**: Complete User model (partial starter provided)
@@ -520,7 +531,7 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - **Note**: Fits within "Building REST Controllers with Jersey" (Day 1 PM)
 - **Model**: claude-sonnet-4
 
-##### 2.4 Bean Validation Exercise [15-20 min within 30 min slot]
+##### 2.4 Bean Validation Exercise ✅ COMPLETED
 
 - [x] Create exercises/04-bean-validation/
 - [x] **Trainees add**: Validation annotations to User model

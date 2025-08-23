@@ -1,4 +1,4 @@
-# Exercise 02: Jersey CRUD Operations
+# Exercise 03: Jersey CRUD Operations
 
 **Time:** 45-50 minutes  
 **Objective:** Implement a complete CRUD REST API using Jersey with TDD approach

@@ -121,6 +121,32 @@ presenterm slides/presenterm/presentation.md --listen-speaker-notes
 #   always_publish: true
 ````
 
+## Current Project Structure
+
+```
+dbh-rest-with-jackson/
+├── starter-project/          # Skeleton code for attendees (TODOs)
+├── instructor-solution/      # Complete implementation for instructor
+├── exercises/               # Exercise instructions and materials
+│   ├── 01-rest-basics/     # REST fundamentals exercise
+│   ├── 02-jersey-setup/    # Jersey setup exercise
+│   ├── 03-jersey-crud/     # Jersey CRUD implementation
+│   ├── 04-bean-validation/ # Bean validation implementation
+│   └── 05-api-versioning/  # API versioning exercise
+├── slides/presenterm/       # All presentation slides
+│   ├── 01-rest-fundamentals.md
+│   ├── 02-resource-design.md
+│   ├── 03-idempotency-alternatives.md
+│   ├── 04-jersey-setup.md
+│   ├── 05-jersey-crud-exercise.md
+│   ├── 06-bean-validation.md
+│   ├── 07-bean-validation-exercise.md
+│   ├── 08-api-versioning.md
+│   └── 09-api-versioning-exercise.md
+└── docs/                    # Training documentation
+    ├── agenda.md           # 2-day training agenda
+    └── plan.md            # Preparation plan
+
 ## Development Workflow
 
 1. Research using Context7, Brave Search, and Firecrawl
@@ -181,10 +207,12 @@ Based on Exercise 02, maintain this structure for all exercises:
 
 ### Slide Best Practices
 
-- Keep slides screen-sized (use `<!-- end_slide -->` liberally)
+- Keep slides screen-sized (use `<!-- end_slide -->` between slides)
+- NEVER put `<!-- end_slide -->` in frontmatter section (between opening and closing `---`)
+- `<!-- end_slide -->` only goes between actual slide content sections
 - Start each task slide with docs + hint, then pause, then code
 - Use progressive revelation (`<!-- pause -->`) for step-by-step
-- Include speaker notes for instructor guidance
+- Include speaker notes for instructor guidance using multiline YAML syntax
 - Emoji usage: 📚 for docs, 💡 for hints, ✅ for success, ❌ for errors
 - Time checkpoints help instructors pace the session
 
@@ -223,17 +251,15 @@ curl -X GET http://localhost:8080/api/users
 
 **Main Branch:**
 
-- Contains the FIRST complete solution for each file in `/instructor-solution/`
-- Example: `UserResource.java` first appears in Exercise 02, so its Exercise 02 solution lives in `/instructor-solution/` on main
-- Example: If `ValidationExceptionMapper.java` first appears in Exercise 03, its Exercise 03 solution also lives on main
+- Contains the base instructor solution with all initial implementations
+- All first-appearance files live here in `/instructor-solution/`
 
-**Solution Branches:**
+**Solution Branches (Created):**
 
-- Only created when existing files need MODIFICATIONS in later exercises
-- Branch naming: `solution/03-validation`, `solution/04-versioning`, etc.
-- Example: `solution/03-validation` contains updated `UserResource.java` with validation added
-- Example: `solution/04-versioning` contains updated `UserResource.java` with versioning added
-- New files introduced in that exercise still go to main branch first
+- `solution/03-validation` - Adds Bean Validation to UserResource
+- `solution/04-bean-validation` - Complete Bean Validation implementation 
+- `solution/05-api-versioning` - Splits UserResource into V1/V2 with deprecation headers
+- Each branch builds on the previous one progressively
 
 ### Key Principles
 
@@ -277,11 +303,20 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home
 - [ ] Use Jackson 2.14.x
 - [ ] Lambda expressions OK
 - [ ] Stream API OK
-- no co-authored-by stuff when doing commits
-- remember that this repo will be split into multiple smaller repos later.
-- Remember how to run gradle and the tests with the correct java version, etc.
-- no auto commits. I want to commit manually
-- no shell scripts to start the presentations
+## Critical Rules
 
-- Remember how to end slides
-- no auto-commits! I want to commit manually. Thought I added that rule already to claude.md. Why are you ignoring that?
+### NO AUTO-COMMITS
+- **NEVER commit automatically**
+- Always let the user commit manually
+- No co-authored-by tags in commits
+
+### Slide Formatting Rules
+- `<!-- end_slide -->` goes BETWEEN slides, never in frontmatter
+- Frontmatter is between the opening `---` and closing `---`
+- First slide starts after frontmatter's closing `---`
+- Speaker notes use multiline YAML syntax
+
+### Other Important Rules
+- This repo will be split into multiple smaller repos later
+- Remember to run gradle with Java 8: `export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home`
+- No shell scripts to start presentations - use presenterm directly
