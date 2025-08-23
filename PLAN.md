@@ -86,7 +86,7 @@ organization and easier sharing with participants.
    - [x] Jersey setup slides (04-jersey-setup.md)
    - [x] Jersey CRUD exercise slides (05-jersey-crud-exercise.md)
    - [x] Bean validation slides (06-bean-validation.md)
-   - [ ] API versioning slides (07-api-versioning.md)
+   - [x] API versioning slides (08-api-versioning.md)
    - [x] Spring Boot overview slides (08-spring-boot-overview.md)
    - [x] Basic exercises and solutions (Exercise 01, 02, 03 completed)
    - [ ] Versioning implementation guide
@@ -531,10 +531,10 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 
 ##### 2.5 API Versioning Exercise [20-25 min within 45 min slot]
 
-- [ ] Create exercises/05-api-versioning/
-- [ ] **Trainees implement**: Simple /v1 to /v2 migration
-- [ ] **Trainees add**: One new field in v2
-- [ ] **Trainees test**: Both versions work
+- [x] Create exercises/05-api-versioning/
+- [x] **Trainees implement**: Simple /v1 to /v2 migration
+- [x] **Trainees add**: One new field in v2
+- [x] **Trainees test**: Both versions work
 - **Note**: Fits within "API Versioning Strategies" (Day 1 PM)
 - **Model**: claude-sonnet-4
 
@@ -637,7 +637,8 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - [x] Create slides/presenterm/05-jersey-crud-exercise.md - Jersey CRUD Exercise (45-50 min hands-on)
 - [x] Create slides/presenterm/06-bean-validation.md - Bean Validation with Jersey (30 min content)
 - [x] Create slides/presenterm/07-bean-validation-exercise.md - Bean Validation Exercise (20 min hands-on)
-- [ ] Create slides/presenterm/08-api-versioning.md - API Versioning Strategies (45 min content)
+- [x] Create slides/presenterm/08-api-versioning.md - API Versioning Strategies (45 min content)
+- [x] Create slides/presenterm/09-api-versioning-exercise.md - API Versioning Exercise (25 min hands-on)
 - [x] Create slides/presenterm/08-spring-boot-overview.md - Spring Boot Overview (30 min content)
 
 **Day 2 Slides:**

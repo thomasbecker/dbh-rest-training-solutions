@@ -9,6 +9,9 @@ import org.slf4j.LoggerFactory;
 import com.dbh.training.rest.filters.CORSFilter;
 import com.dbh.training.rest.filters.LoggingFilter;
 import com.dbh.training.rest.mappers.ValidationExceptionMapper;
+import com.dbh.training.rest.resources.UserResourceV1;
+import com.dbh.training.rest.resources.UserResourceV2;
+import com.dbh.training.rest.resources.HealthResource;
 import org.glassfish.jersey.server.validation.ValidationFeature;
 
 /**
@@ -28,10 +31,11 @@ public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
         logger.info("Initializing Jersey configuration...");
         
-        // Package scanning - Jersey will automatically find and register:
-        // - Resources (classes with @Path)
-        // - Providers (filters, exception mappers, etc.)
-        packages("com.dbh.training.rest");
+        // Exercise 05: Explicitly register both API versions
+        // Both versions coexist at different paths
+        register(UserResourceV1.class);  // /v1/users - deprecated
+        register(UserResourceV2.class);  // /v2/users - current
+        register(HealthResource.class);  // /health
         
         // Register Jackson for JSON processing
         register(JacksonFeature.class);
@@ -53,7 +57,7 @@ public class JerseyConfig extends ResourceConfig {
         property(ServerProperties.PROCESSING_RESPONSE_ERRORS_ENABLED, true);
         
         logger.info("Jersey configuration initialized successfully");
-        logger.info("Scanning packages: com.dbh.training.rest");
+        logger.info("API versions registered: V1 (deprecated), V2 (current)");
         logger.info("Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging");
     }
 }

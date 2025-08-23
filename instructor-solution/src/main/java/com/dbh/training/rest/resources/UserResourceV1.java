@@ -18,10 +18,10 @@ import java.util.concurrent.atomic.AtomicLong;
  * CRUD operations with validation using @Valid annotation.
  * This is what students should have after completing Exercise 04.
  */
-@Path("/users")
+@Path("/v1/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class UserResource extends AbstractResource {
+public class UserResourceV1 extends AbstractResource {
     
     // Thread-safe storage for users
     private static final Map<Long, User> users = new ConcurrentHashMap<>();
@@ -40,7 +40,11 @@ public class UserResource extends AbstractResource {
      */
     @GET
     public Response getAllUsers() {
-        return ok(new ArrayList<>(users.values()));
+        return Response.ok(new ArrayList<>(users.values()))
+            .header("Sunset", "31 Dec 2024")
+            .header("Deprecation", "true")
+            .header("Link", "</api/v2/users>; rel=\"successor-version\"")
+            .build();
     }
     
     /**

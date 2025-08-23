@@ -31,7 +31,8 @@ public class UserResourceTest extends BaseIntegrationTest {
         
         // Clear all users before each test to ensure test independence
         // Using package-private method for clean test isolation
-        UserResource.resetForTesting();
+        UserResourceV1.resetForTesting();
+        UserResourceV2.resetForTesting();
     }
     
     @Test
@@ -40,7 +41,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         given()
             .accept(ContentType.JSON)
         .when()
-            .get("/users")
+            .get("/v1/users")
         .then()
             .statusCode(200)
             .contentType(ContentType.JSON)
@@ -59,7 +60,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         given()
             .accept(ContentType.JSON)
         .when()
-            .get("/users")
+            .get("/v1/users")
         .then()
             .statusCode(200)
             .contentType(ContentType.JSON)
@@ -82,7 +83,7 @@ public class UserResourceTest extends BaseIntegrationTest {
                 .contentType(ContentType.JSON)
                 .body(newUser)
             .when()
-                .post("/users")
+                .post("/v1/users")
             .then()
                 .statusCode(201)
                 .contentType(ContentType.JSON)
@@ -99,7 +100,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         given()
             .accept(ContentType.JSON)
         .when()
-            .get("/users/{id}", userId)
+            .get("/v1/users/{id}", userId)
         .then()
             .statusCode(200)
             .body("username", equalTo("johndoe"));
@@ -115,7 +116,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         given()
             .accept(ContentType.JSON)
         .when()
-            .get("/users/{id}", userId)
+            .get("/v1/users/{id}", userId)
         .then()
             .statusCode(200)
             .contentType(ContentType.JSON)
@@ -133,7 +134,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         given()
             .accept(ContentType.JSON)
         .when()
-            .get("/users/{id}", 99999)
+            .get("/v1/users/{id}", 99999)
         .then()
             .statusCode(404);
     }
@@ -155,7 +156,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(updatedUser)
         .when()
-            .put("/users/{id}", userId)
+            .put("/v1/users/{id}", userId)
         .then()
             .statusCode(200)
             .contentType(ContentType.JSON)
@@ -166,7 +167,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         given()
             .accept(ContentType.JSON)
         .when()
-            .get("/users/{id}", userId)
+            .get("/v1/users/{id}", userId)
         .then()
             .statusCode(200)
             .body("email", equalTo("updated@example.com"))
@@ -189,7 +190,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(updateUser)
         .when()
-            .put("/users/{id}", 99999)
+            .put("/v1/users/{id}", 99999)
         .then()
             .statusCode(404);
     }
@@ -202,7 +203,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         // When: Delete the user
         given()
         .when()
-            .delete("/users/{id}", userId)
+            .delete("/v1/users/{id}", userId)
         .then()
             .statusCode(204);
         
@@ -210,7 +211,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         given()
             .accept(ContentType.JSON)
         .when()
-            .get("/users/{id}", userId)
+            .get("/v1/users/{id}", userId)
         .then()
             .statusCode(404);
     }
@@ -221,7 +222,7 @@ public class UserResourceTest extends BaseIntegrationTest {
         // Then: Should return 404
         given()
         .when()
-            .delete("/users/{id}", 99999)
+            .delete("/v1/users/{id}", 99999)
         .then()
             .statusCode(404);
     }
@@ -239,7 +240,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(user)
         .when()
-            .post("/users")
+            .post("/v1/users")
         .then()
             .statusCode(400)
             .body("error", equalTo("Validation Failed"))
@@ -258,7 +259,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(user)
         .when()
-            .post("/users")
+            .post("/v1/users")
         .then()
             .statusCode(400)
             .body("error", equalTo("Validation Failed"))
@@ -277,7 +278,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(user)
         .when()
-            .post("/users")
+            .post("/v1/users")
         .then()
             .statusCode(400)
             .body("error", equalTo("Validation Failed"))
@@ -295,7 +296,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(user)
         .when()
-            .post("/users")
+            .post("/v1/users")
         .then()
             .statusCode(400)
             .body("error", equalTo("Validation Failed"))
@@ -313,7 +314,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(user)
         .when()
-            .post("/users")
+            .post("/v1/users")
         .then()
             .statusCode(400)
             .body("error", equalTo("Validation Failed"))
@@ -331,7 +332,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(user)
         .when()
-            .post("/users")
+            .post("/v1/users")
         .then()
             .statusCode(400)
             .body("error", equalTo("Validation Failed"))
@@ -358,7 +359,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(invalidUpdate)
         .when()
-            .put("/users/{id}", userId)
+            .put("/v1/users/{id}", userId)
         .then()
             .statusCode(400)
             .body("error", equalTo("Validation Failed"))
@@ -379,10 +380,10 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(user)
         .when()
-            .post("/users")
+            .post("/v1/users")
         .then()
             .statusCode(201)
-            .header("Location", containsString("/api/users/"))
+            .header("Location", containsString("/api/v1/users/"))
             .body("id", notNullValue())
             .body("username", equalTo("validuser"))
             .body("email", equalTo("valid@example.com"))
@@ -402,7 +403,7 @@ public class UserResourceTest extends BaseIntegrationTest {
             .contentType(ContentType.JSON)
             .body(user)
         .when()
-            .post("/users")
+            .post("/v1/users")
         .then()
             .statusCode(201)
             .extract()
