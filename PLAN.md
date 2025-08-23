@@ -87,9 +87,10 @@ organization and easier sharing with participants.
    - [x] Jersey CRUD exercise slides (05-jersey-crud-exercise.md)
    - [x] Bean validation slides (06-bean-validation.md)
    - [x] API versioning slides (08-api-versioning.md)
+   - [x] API versioning exercise slides (09-api-versioning-exercise.md)
    - [x] Spring Boot overview slides (08-spring-boot-overview.md)
-   - [x] Basic exercises and solutions (Exercise 01, 02, 03 completed)
-   - [ ] Versioning implementation guide
+   - [x] Basic exercises and solutions (Exercise 01, 02, 03, 04, 05 completed)
+   - [x] Versioning implementation guide
 
 1. **Days 4-5: Day 2 Content**
 
@@ -529,12 +530,13 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 - **Note**: Fits within "Bean Validation with Jersey" (Day 1 PM)
 - **Model**: claude-sonnet-4
 
-##### 2.5 API Versioning Exercise [20-25 min within 45 min slot]
+##### 2.5 API Versioning Exercise [20-25 min within 45 min slot] ✅ COMPLETED
 
 - [x] Create exercises/05-api-versioning/
 - [x] **Trainees implement**: Simple /v1 to /v2 migration
 - [x] **Trainees add**: One new field in v2
 - [x] **Trainees test**: Both versions work
+- [x] Complete solution in solution/05-api-versioning branch
 - **Note**: Fits within "API Versioning Strategies" (Day 1 PM)
 - **Model**: claude-sonnet-4
 

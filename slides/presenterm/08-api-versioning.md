@@ -39,6 +39,8 @@ speaker_note: |
     - "Choose based on your context"
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Why Version APIs?
@@ -92,6 +94,8 @@ speaker_note: |
     - "How long do you support old versions?"
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Breaking vs Non-Breaking Changes
@@ -144,6 +148,8 @@ speaker_note: |
     - Document everything
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Three Main Versioning Strategies
@@ -181,6 +187,8 @@ speaker_note: |
     - Header gaining popularity
     - Media type most "RESTful"
 -->
+
+<!-- end_slide -->
 
 ---
 
@@ -235,6 +243,8 @@ speaker_note: |
     - Simple to implement
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## URI Versioning: Pros & Cons
@@ -281,6 +291,8 @@ speaker_note: |
     - Multiple client types
     - Need simple clarity
 -->
+
+<!-- end_slide -->
 
 ---
 
@@ -337,6 +349,8 @@ speaker_note: |
     - RESTful purists happier
     - Resources stay same
 -->
+
+<!-- end_slide -->
 
 ---
 
@@ -395,6 +409,8 @@ speaker_note: |
     - Context propagation
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Header Versioning: Pros & Cons
@@ -442,6 +458,8 @@ speaker_note: |
     - Need granular control
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Strategy 3: Media Type Versioning
@@ -485,6 +503,8 @@ speaker_note: |
     - GitHub API
     - Some enterprise APIs
 -->
+
+<!-- end_slide -->
 
 ---
 
@@ -539,6 +559,8 @@ speaker_note: |
     - Clear contracts
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Media Type: Pros & Cons
@@ -586,6 +608,8 @@ speaker_note: |
     - Complex versioning needs
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Comparison Matrix
@@ -629,6 +653,8 @@ speaker_note: |
     - Tool ecosystem
     - Business requirements
 -->
+
+<!-- end_slide -->
 
 ---
 
@@ -682,6 +708,8 @@ speaker_note: |
     - Migration guides
     - Clear communication
 -->
+
+<!-- end_slide -->
 
 ---
 
@@ -739,6 +767,8 @@ speaker_note: |
     - Blog posts
     - Gradual enforcement
 -->
+
+<!-- end_slide -->
 
 ---
 
@@ -800,6 +830,8 @@ speaker_note: |
     5. Remove old code
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Real-World Example: User Evolution
@@ -850,6 +882,8 @@ speaker_note: |
     - v2 clients use firstName/lastName
     - Gradual transition
 -->
+
+<!-- end_slide -->
 
 ---
 
@@ -909,6 +943,8 @@ speaker_note: |
     - Contract tests
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Choosing a Strategy
@@ -962,6 +998,8 @@ speaker_note: |
     - Migration strategies
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Common Pitfalls
@@ -1012,6 +1050,8 @@ speaker_note: |
     - Documentation nightmare
     - Solution: Pick one, stick to it
 -->
+
+<!-- end_slide -->
 
 ---
 
@@ -1064,6 +1104,8 @@ speaker_note: |
     - Team has GraphQL experience
 -->
 
+<!-- end_slide -->
+
 ---
 
 ## Key Takeaways
@@ -1103,6 +1145,8 @@ speaker_note: |
     - Create v1 and v2
     - See trade-offs firsthand
 -->
+
+<!-- end_slide -->
 
 ---
 

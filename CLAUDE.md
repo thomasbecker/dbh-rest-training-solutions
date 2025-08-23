@@ -284,3 +284,4 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home
 - no shell scripts to start the presentations
 
 - Remember how to end slides
+- no auto-commits! I want to commit manually. Thought I added that rule already to claude.md. Why are you ignoring that?
