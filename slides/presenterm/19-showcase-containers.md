@@ -658,6 +658,7 @@ speaker_note: |
 - **Docker Desktop** - Local development
 - **Kind** - Kubernetes in Docker
 - **Lens** - Kubernetes IDE
+- **k9s** - Terminal-based Kubernetes UI
 - **Dive** - Explore image layers
 
 ### 💡 Next Steps
