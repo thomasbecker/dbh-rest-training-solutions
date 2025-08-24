@@ -1,0 +1,1139 @@
+2025-08-24 11:43:07.630 [Thread-0] INFO  com.dbh.training.rest.Application - Stopping server...
+2025-08-24 11:43:07.635 [Thread-0] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 11:43:07.638 [Thread-0] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@7cb2651f{/,null,STOPPED}
+2025-08-24 11:43:07.640 [Thread-0] INFO  com.dbh.training.rest.Application - Server stopped.
+2025-08-24 11:52:54.866 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Starting test server on port 8081
+2025-08-24 11:52:54.874 [Test worker] INFO  org.eclipse.jetty.util.log - Logging initialized @266ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 11:52:54.892 [Test worker] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 11:52:54.952 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 11:52:54.962 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 11:52:54.962 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 11:52:54.962 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 11:52:54.962 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 11:52:54.962 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 11:52:55.101 [Test worker] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 11:52:55.149 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@1115433e{/,null,AVAILABLE}
+2025-08-24 11:52:55.152 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@43b6123e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:52:55.152 [Test worker] INFO  org.eclipse.jetty.server.Server - Started @545ms
+2025-08-24 11:52:56.718 [qtp249177573-66] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 11:52:56.719 [qtp249177573-66] INFO  c.d.t.rest.filters.LoggingFilter - [2d9b9add] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:52:56.719 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [2d9b9add] Header: Accept = [*/*]
+2025-08-24 11:52:56.719 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [2d9b9add] Header: Connection = [keep-alive]
+2025-08-24 11:52:56.719 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [2d9b9add] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:52:56.719 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [2d9b9add] Header: Host = [localhost:8081]
+2025-08-24 11:52:56.719 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [2d9b9add] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:52:56.720 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [2d9b9add] Header: Content-Length = [42]
+2025-08-24 11:52:56.720 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [2d9b9add] Header: Content-Type = [application/json]
+2025-08-24 11:52:56.741 [qtp249177573-66] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 11:52:56.801 [qtp249177573-66] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: admin
+2025-08-24 11:52:56.804 [qtp249177573-66] INFO  c.d.t.rest.filters.LoggingFilter - [2d9b9add] Response: 200 - 85 ms
+2025-08-24 11:52:56.958 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Admin token obtained for tests: success
+2025-08-24 11:52:56.965 [qtp249177573-51] INFO  c.d.t.rest.filters.LoggingFilter - [d0eb133e] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:52:56.965 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d0eb133e] Header: Accept = [*/*]
+2025-08-24 11:52:56.965 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d0eb133e] Header: Connection = [keep-alive]
+2025-08-24 11:52:56.965 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d0eb133e] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:52:56.965 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d0eb133e] Header: Host = [localhost:8081]
+2025-08-24 11:52:56.965 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d0eb133e] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:52:56.965 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d0eb133e] Header: Content-Length = [40]
+2025-08-24 11:52:56.965 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d0eb133e] Header: Content-Type = [application/json]
+2025-08-24 11:52:56.965 [qtp249177573-51] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 11:52:57.018 [qtp249177573-51] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 11:52:57.018 [qtp249177573-51] INFO  c.d.t.rest.filters.LoggingFilter - [d0eb133e] Response: 200 - 53 ms
+2025-08-24 11:52:57.022 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - User token obtained for tests: success
+2025-08-24 11:52:57.022 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server started successfully
+2025-08-24 11:52:57.149 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Stopping test server
+2025-08-24 11:52:57.151 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@43b6123e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:52:57.154 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@1115433e{/,null,STOPPED}
+2025-08-24 11:52:57.155 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server stopped
+2025-08-24 11:53:06.368 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Starting test server on port 8081
+2025-08-24 11:53:06.375 [Test worker] INFO  org.eclipse.jetty.util.log - Logging initialized @262ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 11:53:06.392 [Test worker] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 11:53:06.454 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 11:53:06.465 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 11:53:06.465 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 11:53:06.465 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 11:53:06.465 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 11:53:06.465 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 11:53:06.598 [Test worker] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 11:53:06.647 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@1115433e{/,null,AVAILABLE}
+2025-08-24 11:53:06.652 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@43b6123e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:53:06.652 [Test worker] INFO  org.eclipse.jetty.server.Server - Started @539ms
+2025-08-24 11:53:08.184 [qtp249177573-66] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 11:53:08.185 [qtp249177573-66] INFO  c.d.t.rest.filters.LoggingFilter - [9f95324a] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:53:08.185 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [9f95324a] Header: Accept = [*/*]
+2025-08-24 11:53:08.185 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [9f95324a] Header: Connection = [keep-alive]
+2025-08-24 11:53:08.185 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [9f95324a] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:53:08.185 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [9f95324a] Header: Host = [localhost:8081]
+2025-08-24 11:53:08.185 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [9f95324a] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:53:08.186 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [9f95324a] Header: Content-Length = [42]
+2025-08-24 11:53:08.186 [qtp249177573-66] DEBUG c.d.t.rest.filters.LoggingFilter - [9f95324a] Header: Content-Type = [application/json]
+2025-08-24 11:53:08.208 [qtp249177573-66] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 11:53:08.275 [qtp249177573-66] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: admin
+2025-08-24 11:53:08.277 [qtp249177573-66] INFO  c.d.t.rest.filters.LoggingFilter - [9f95324a] Response: 200 - 92 ms
+2025-08-24 11:53:08.425 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Admin token obtained for tests: success
+2025-08-24 11:53:08.431 [qtp249177573-51] INFO  c.d.t.rest.filters.LoggingFilter - [d7af20f7] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:53:08.432 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d7af20f7] Header: Accept = [*/*]
+2025-08-24 11:53:08.432 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d7af20f7] Header: Connection = [keep-alive]
+2025-08-24 11:53:08.432 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d7af20f7] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:53:08.432 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d7af20f7] Header: Host = [localhost:8081]
+2025-08-24 11:53:08.432 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d7af20f7] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:53:08.432 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d7af20f7] Header: Content-Length = [40]
+2025-08-24 11:53:08.432 [qtp249177573-51] DEBUG c.d.t.rest.filters.LoggingFilter - [d7af20f7] Header: Content-Type = [application/json]
+2025-08-24 11:53:08.432 [qtp249177573-51] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 11:53:08.485 [qtp249177573-51] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 11:53:08.485 [qtp249177573-51] INFO  c.d.t.rest.filters.LoggingFilter - [d7af20f7] Response: 200 - 54 ms
+2025-08-24 11:53:08.489 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - User token obtained for tests: success
+2025-08-24 11:53:08.489 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server started successfully
+2025-08-24 11:53:08.613 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Stopping test server
+2025-08-24 11:53:08.616 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@43b6123e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:53:08.619 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@1115433e{/,null,STOPPED}
+2025-08-24 11:53:08.619 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server stopped
+2025-08-24 11:56:04.996 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @111ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 11:56:05.010 [main] INFO  com.dbh.training.rest.Application - Starting DBH REST Training Server...
+2025-08-24 11:56:05.018 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 11:56:05.099 [main] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 11:56:05.112 [main] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 11:56:05.112 [main] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 11:56:05.112 [main] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 11:56:05.112 [main] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 11:56:05.112 [main] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 11:56:05.248 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 11:56:05.293 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5cbd159f{/,null,AVAILABLE}
+2025-08-24 11:56:05.301 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 11:56:05.301 [main] INFO  org.eclipse.jetty.server.Server - Started @416ms
+2025-08-24 11:56:05.301 [main] INFO  com.dbh.training.rest.Application - Server started successfully!
+2025-08-24 11:56:09.701 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [008f3d68] GET todos from curl/8.15.0
+2025-08-24 11:56:09.702 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [008f3d68] Header: Accept = [*/*]
+2025-08-24 11:56:09.702 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [008f3d68] Header: User-Agent = [curl/8.15.0]
+2025-08-24 11:56:09.702 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [008f3d68] Header: Host = [localhost:8080]
+2025-08-24 11:56:09.715 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [008f3d68] Response: 401 - 14 ms
+2025-08-24 11:56:09.737 [Thread-0] INFO  com.dbh.training.rest.Application - Stopping server...
+2025-08-24 11:56:09.739 [Thread-0] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 11:56:09.742 [Thread-0] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@5cbd159f{/,null,STOPPED}
+2025-08-24 11:56:09.742 [Thread-0] INFO  com.dbh.training.rest.Application - Server stopped.
+2025-08-24 11:56:19.599 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Starting test server on port 8081
+2025-08-24 11:56:19.605 [Test worker] INFO  org.eclipse.jetty.util.log - Logging initialized @544ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 11:56:19.621 [Test worker] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 11:56:19.681 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 11:56:19.688 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 11:56:19.689 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 11:56:19.689 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 11:56:19.689 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 11:56:19.689 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 11:56:19.784 [Test worker] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 11:56:19.832 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@640cc04b{/,null,AVAILABLE}
+2025-08-24 11:56:19.837 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@6a078481{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:19.838 [Test worker] INFO  org.eclipse.jetty.server.Server - Started @776ms
+2025-08-24 11:56:21.366 [qtp2128961136-66] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 11:56:21.367 [qtp2128961136-66] INFO  c.d.t.rest.filters.LoggingFilter - [50851c50] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:21.367 [qtp2128961136-66] DEBUG c.d.t.rest.filters.LoggingFilter - [50851c50] Header: Accept = [*/*]
+2025-08-24 11:56:21.367 [qtp2128961136-66] DEBUG c.d.t.rest.filters.LoggingFilter - [50851c50] Header: Connection = [keep-alive]
+2025-08-24 11:56:21.367 [qtp2128961136-66] DEBUG c.d.t.rest.filters.LoggingFilter - [50851c50] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:21.367 [qtp2128961136-66] DEBUG c.d.t.rest.filters.LoggingFilter - [50851c50] Header: Host = [localhost:8081]
+2025-08-24 11:56:21.367 [qtp2128961136-66] DEBUG c.d.t.rest.filters.LoggingFilter - [50851c50] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:21.367 [qtp2128961136-66] DEBUG c.d.t.rest.filters.LoggingFilter - [50851c50] Header: Content-Length = [42]
+2025-08-24 11:56:21.367 [qtp2128961136-66] DEBUG c.d.t.rest.filters.LoggingFilter - [50851c50] Header: Content-Type = [application/json]
+2025-08-24 11:56:21.387 [qtp2128961136-66] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 11:56:21.454 [qtp2128961136-66] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: admin
+2025-08-24 11:56:21.455 [qtp2128961136-66] INFO  c.d.t.rest.filters.LoggingFilter - [50851c50] Response: 200 - 88 ms
+2025-08-24 11:56:21.603 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Admin token obtained for tests: success
+2025-08-24 11:56:21.609 [qtp2128961136-51] INFO  c.d.t.rest.filters.LoggingFilter - [c51857a1] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:21.609 [qtp2128961136-51] DEBUG c.d.t.rest.filters.LoggingFilter - [c51857a1] Header: Accept = [*/*]
+2025-08-24 11:56:21.609 [qtp2128961136-51] DEBUG c.d.t.rest.filters.LoggingFilter - [c51857a1] Header: Connection = [keep-alive]
+2025-08-24 11:56:21.609 [qtp2128961136-51] DEBUG c.d.t.rest.filters.LoggingFilter - [c51857a1] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:21.610 [qtp2128961136-51] DEBUG c.d.t.rest.filters.LoggingFilter - [c51857a1] Header: Host = [localhost:8081]
+2025-08-24 11:56:21.610 [qtp2128961136-51] DEBUG c.d.t.rest.filters.LoggingFilter - [c51857a1] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:21.610 [qtp2128961136-51] DEBUG c.d.t.rest.filters.LoggingFilter - [c51857a1] Header: Content-Length = [40]
+2025-08-24 11:56:21.610 [qtp2128961136-51] DEBUG c.d.t.rest.filters.LoggingFilter - [c51857a1] Header: Content-Type = [application/json]
+2025-08-24 11:56:21.610 [qtp2128961136-51] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 11:56:21.663 [qtp2128961136-51] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 11:56:21.663 [qtp2128961136-51] INFO  c.d.t.rest.filters.LoggingFilter - [c51857a1] Response: 200 - 54 ms
+2025-08-24 11:56:21.667 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - User token obtained for tests: success
+2025-08-24 11:56:21.668 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server started successfully
+2025-08-24 11:56:21.745 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Stopping test server
+2025-08-24 11:56:21.747 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@6a078481{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:21.749 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@640cc04b{/,null,STOPPED}
+2025-08-24 11:56:21.750 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server stopped
+2025-08-24 11:56:21.818 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Starting test server on port 8081
+2025-08-24 11:56:21.818 [Test worker] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 11:56:21.822 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 11:56:21.822 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 11:56:21.823 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 11:56:21.823 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 11:56:21.823 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 11:56:21.823 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 11:56:21.843 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@28a3fc34{/,null,AVAILABLE}
+2025-08-24 11:56:21.844 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@31531d0d{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:21.844 [Test worker] INFO  org.eclipse.jetty.server.Server - Started @2782ms
+2025-08-24 11:56:23.045 [qtp1292576622-95] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 11:56:23.046 [qtp1292576622-95] INFO  c.d.t.rest.filters.LoggingFilter - [c5949140] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:23.046 [qtp1292576622-95] DEBUG c.d.t.rest.filters.LoggingFilter - [c5949140] Header: Accept = [*/*]
+2025-08-24 11:56:23.046 [qtp1292576622-95] DEBUG c.d.t.rest.filters.LoggingFilter - [c5949140] Header: Connection = [keep-alive]
+2025-08-24 11:56:23.046 [qtp1292576622-95] DEBUG c.d.t.rest.filters.LoggingFilter - [c5949140] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:23.046 [qtp1292576622-95] DEBUG c.d.t.rest.filters.LoggingFilter - [c5949140] Header: Host = [localhost:8081]
+2025-08-24 11:56:23.046 [qtp1292576622-95] DEBUG c.d.t.rest.filters.LoggingFilter - [c5949140] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:23.046 [qtp1292576622-95] DEBUG c.d.t.rest.filters.LoggingFilter - [c5949140] Header: Content-Length = [42]
+2025-08-24 11:56:23.046 [qtp1292576622-95] DEBUG c.d.t.rest.filters.LoggingFilter - [c5949140] Header: Content-Type = [application/json]
+2025-08-24 11:56:23.048 [qtp1292576622-95] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 11:56:23.101 [qtp1292576622-95] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: admin
+2025-08-24 11:56:23.101 [qtp1292576622-95] INFO  c.d.t.rest.filters.LoggingFilter - [c5949140] Response: 200 - 55 ms
+2025-08-24 11:56:23.106 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Admin token obtained for tests: success
+2025-08-24 11:56:23.110 [qtp1292576622-85] INFO  c.d.t.rest.filters.LoggingFilter - [1b1de6bd] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:23.110 [qtp1292576622-85] DEBUG c.d.t.rest.filters.LoggingFilter - [1b1de6bd] Header: Accept = [*/*]
+2025-08-24 11:56:23.110 [qtp1292576622-85] DEBUG c.d.t.rest.filters.LoggingFilter - [1b1de6bd] Header: Connection = [keep-alive]
+2025-08-24 11:56:23.110 [qtp1292576622-85] DEBUG c.d.t.rest.filters.LoggingFilter - [1b1de6bd] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:23.110 [qtp1292576622-85] DEBUG c.d.t.rest.filters.LoggingFilter - [1b1de6bd] Header: Host = [localhost:8081]
+2025-08-24 11:56:23.110 [qtp1292576622-85] DEBUG c.d.t.rest.filters.LoggingFilter - [1b1de6bd] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:23.110 [qtp1292576622-85] DEBUG c.d.t.rest.filters.LoggingFilter - [1b1de6bd] Header: Content-Length = [40]
+2025-08-24 11:56:23.110 [qtp1292576622-85] DEBUG c.d.t.rest.filters.LoggingFilter - [1b1de6bd] Header: Content-Type = [application/json]
+2025-08-24 11:56:23.111 [qtp1292576622-85] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 11:56:23.163 [qtp1292576622-85] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 11:56:23.163 [qtp1292576622-85] INFO  c.d.t.rest.filters.LoggingFilter - [1b1de6bd] Response: 200 - 53 ms
+2025-08-24 11:56:23.166 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - User token obtained for tests: success
+2025-08-24 11:56:23.166 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server started successfully
+2025-08-24 11:56:23.235 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Stopping test server
+2025-08-24 11:56:23.236 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@31531d0d{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:23.237 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@28a3fc34{/,null,STOPPED}
+2025-08-24 11:56:23.237 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server stopped
+2025-08-24 11:56:23.238 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Starting test server on port 8081
+2025-08-24 11:56:23.238 [Test worker] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 11:56:23.241 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 11:56:23.241 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 11:56:23.241 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 11:56:23.241 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 11:56:23.241 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 11:56:23.241 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 11:56:23.264 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@169d4aba{/,null,AVAILABLE}
+2025-08-24 11:56:23.265 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@6bf28f61{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:23.265 [Test worker] INFO  org.eclipse.jetty.server.Server - Started @4203ms
+2025-08-24 11:56:24.478 [qtp597521407-110] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 11:56:24.478 [qtp597521407-110] INFO  c.d.t.rest.filters.LoggingFilter - [9e66584b] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.478 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [9e66584b] Header: Accept = [*/*]
+2025-08-24 11:56:24.478 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [9e66584b] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.478 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [9e66584b] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.478 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [9e66584b] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.478 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [9e66584b] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.479 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [9e66584b] Header: Content-Length = [42]
+2025-08-24 11:56:24.479 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [9e66584b] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.480 [qtp597521407-110] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 11:56:24.533 [qtp597521407-110] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: admin
+2025-08-24 11:56:24.533 [qtp597521407-110] INFO  c.d.t.rest.filters.LoggingFilter - [9e66584b] Response: 200 - 55 ms
+2025-08-24 11:56:24.537 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Admin token obtained for tests: success
+2025-08-24 11:56:24.540 [qtp597521407-100] INFO  c.d.t.rest.filters.LoggingFilter - [f86517c2] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.540 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [f86517c2] Header: Accept = [*/*]
+2025-08-24 11:56:24.540 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [f86517c2] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.540 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [f86517c2] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.540 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [f86517c2] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.540 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [f86517c2] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.540 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [f86517c2] Header: Content-Length = [40]
+2025-08-24 11:56:24.540 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [f86517c2] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.540 [qtp597521407-100] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 11:56:24.594 [qtp597521407-100] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 11:56:24.594 [qtp597521407-100] INFO  c.d.t.rest.filters.LoggingFilter - [f86517c2] Response: 200 - 54 ms
+2025-08-24 11:56:24.597 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - User token obtained for tests: success
+2025-08-24 11:56:24.597 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server started successfully
+2025-08-24 11:56:24.607 [qtp597521407-101] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.607 [qtp597521407-101] INFO  c.d.t.rest.filters.LoggingFilter - [dfc29dcc] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.607 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [dfc29dcc] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.607 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [dfc29dcc] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.607 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [dfc29dcc] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.608 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [dfc29dcc] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.608 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [dfc29dcc] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.608 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [dfc29dcc] Header: Content-Length = [270]
+2025-08-24 11:56:24.608 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [dfc29dcc] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.616 [qtp597521407-101] INFO  c.d.t.rest.filters.LoggingFilter - [dfc29dcc] Response: 201 - 9 ms
+2025-08-24 11:56:24.644 [qtp597521407-102] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.644 [qtp597521407-102] INFO  c.d.t.rest.filters.LoggingFilter - [76d9fd31] PUT v1/users/99999 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.644 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [76d9fd31] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.645 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [76d9fd31] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.645 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [76d9fd31] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.645 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [76d9fd31] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.645 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [76d9fd31] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.645 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [76d9fd31] Header: Content-Length = [269]
+2025-08-24 11:56:24.645 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [76d9fd31] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.646 [qtp597521407-102] INFO  c.d.t.rest.filters.LoggingFilter - [76d9fd31] Response: 404 - 2 ms
+2025-08-24 11:56:24.651 [qtp597521407-103] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.651 [qtp597521407-103] INFO  c.d.t.rest.filters.LoggingFilter - [fc369882] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.651 [qtp597521407-103] DEBUG c.d.t.rest.filters.LoggingFilter - [fc369882] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.651 [qtp597521407-103] DEBUG c.d.t.rest.filters.LoggingFilter - [fc369882] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.651 [qtp597521407-103] DEBUG c.d.t.rest.filters.LoggingFilter - [fc369882] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.651 [qtp597521407-103] DEBUG c.d.t.rest.filters.LoggingFilter - [fc369882] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.651 [qtp597521407-103] DEBUG c.d.t.rest.filters.LoggingFilter - [fc369882] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.651 [qtp597521407-103] DEBUG c.d.t.rest.filters.LoggingFilter - [fc369882] Header: Content-Length = [249]
+2025-08-24 11:56:24.651 [qtp597521407-103] DEBUG c.d.t.rest.filters.LoggingFilter - [fc369882] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.652 [qtp597521407-103] INFO  c.d.t.rest.filters.LoggingFilter - [fc369882] Response: 400 - 1 ms
+2025-08-24 11:56:24.672 [qtp597521407-104] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.672 [qtp597521407-104] INFO  c.d.t.rest.filters.LoggingFilter - [72485837] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.672 [qtp597521407-104] DEBUG c.d.t.rest.filters.LoggingFilter - [72485837] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.672 [qtp597521407-104] DEBUG c.d.t.rest.filters.LoggingFilter - [72485837] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.672 [qtp597521407-104] DEBUG c.d.t.rest.filters.LoggingFilter - [72485837] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.672 [qtp597521407-104] DEBUG c.d.t.rest.filters.LoggingFilter - [72485837] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.672 [qtp597521407-104] DEBUG c.d.t.rest.filters.LoggingFilter - [72485837] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.672 [qtp597521407-104] DEBUG c.d.t.rest.filters.LoggingFilter - [72485837] Header: Content-Length = [275]
+2025-08-24 11:56:24.672 [qtp597521407-104] DEBUG c.d.t.rest.filters.LoggingFilter - [72485837] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.672 [qtp597521407-104] INFO  c.d.t.rest.filters.LoggingFilter - [72485837] Response: 201 - 0 ms
+2025-08-24 11:56:24.680 [qtp597521407-105] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.680 [qtp597521407-105] INFO  c.d.t.rest.filters.LoggingFilter - [bcfc0440] PUT v1/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.680 [qtp597521407-105] DEBUG c.d.t.rest.filters.LoggingFilter - [bcfc0440] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.680 [qtp597521407-105] DEBUG c.d.t.rest.filters.LoggingFilter - [bcfc0440] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.680 [qtp597521407-105] DEBUG c.d.t.rest.filters.LoggingFilter - [bcfc0440] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.680 [qtp597521407-105] DEBUG c.d.t.rest.filters.LoggingFilter - [bcfc0440] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.680 [qtp597521407-105] DEBUG c.d.t.rest.filters.LoggingFilter - [bcfc0440] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.680 [qtp597521407-105] DEBUG c.d.t.rest.filters.LoggingFilter - [bcfc0440] Header: Content-Length = [274]
+2025-08-24 11:56:24.680 [qtp597521407-105] DEBUG c.d.t.rest.filters.LoggingFilter - [bcfc0440] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.681 [qtp597521407-105] INFO  c.d.t.rest.filters.LoggingFilter - [bcfc0440] Response: 200 - 1 ms
+2025-08-24 11:56:24.689 [qtp597521407-98] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:24.689 [qtp597521407-98] INFO  c.d.t.rest.filters.LoggingFilter - [d3746bc4] GET v1/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.689 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [d3746bc4] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.690 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [d3746bc4] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.690 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [d3746bc4] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.690 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [d3746bc4] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.690 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [d3746bc4] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.690 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [d3746bc4] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.690 [qtp597521407-98] INFO  c.d.t.rest.filters.LoggingFilter - [d3746bc4] Response: 200 - 1 ms
+2025-08-24 11:56:24.699 [qtp597521407-102] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.699 [qtp597521407-102] INFO  c.d.t.rest.filters.LoggingFilter - [4ef3c297] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.699 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [4ef3c297] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.699 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [4ef3c297] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.699 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [4ef3c297] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.699 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [4ef3c297] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.699 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [4ef3c297] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.699 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [4ef3c297] Header: Content-Length = [263]
+2025-08-24 11:56:24.699 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [4ef3c297] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.700 [qtp597521407-102] INFO  c.d.t.rest.filters.LoggingFilter - [4ef3c297] Response: 400 - 1 ms
+2025-08-24 11:56:24.708 [qtp597521407-108] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.709 [qtp597521407-108] INFO  c.d.t.rest.filters.LoggingFilter - [26c6463c] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.709 [qtp597521407-108] DEBUG c.d.t.rest.filters.LoggingFilter - [26c6463c] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.709 [qtp597521407-108] DEBUG c.d.t.rest.filters.LoggingFilter - [26c6463c] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.709 [qtp597521407-108] DEBUG c.d.t.rest.filters.LoggingFilter - [26c6463c] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.709 [qtp597521407-108] DEBUG c.d.t.rest.filters.LoggingFilter - [26c6463c] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.709 [qtp597521407-108] DEBUG c.d.t.rest.filters.LoggingFilter - [26c6463c] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.709 [qtp597521407-108] DEBUG c.d.t.rest.filters.LoggingFilter - [26c6463c] Header: Content-Length = [255]
+2025-08-24 11:56:24.709 [qtp597521407-108] DEBUG c.d.t.rest.filters.LoggingFilter - [26c6463c] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.709 [qtp597521407-108] INFO  c.d.t.rest.filters.LoggingFilter - [26c6463c] Response: 400 - 0 ms
+2025-08-24 11:56:24.718 [qtp597521407-110] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.718 [qtp597521407-110] INFO  c.d.t.rest.filters.LoggingFilter - [dbca90fb] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.718 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [dbca90fb] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.718 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [dbca90fb] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.718 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [dbca90fb] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.718 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [dbca90fb] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.718 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [dbca90fb] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.718 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [dbca90fb] Header: Content-Length = [281]
+2025-08-24 11:56:24.718 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [dbca90fb] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.719 [qtp597521407-110] INFO  c.d.t.rest.filters.LoggingFilter - [dbca90fb] Response: 201 - 1 ms
+2025-08-24 11:56:24.725 [qtp597521407-100] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.725 [qtp597521407-100] INFO  c.d.t.rest.filters.LoggingFilter - [6cd5eaec] PUT v1/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.725 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [6cd5eaec] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.725 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [6cd5eaec] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.725 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [6cd5eaec] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.725 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [6cd5eaec] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.725 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [6cd5eaec] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.725 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [6cd5eaec] Header: Content-Length = [257]
+2025-08-24 11:56:24.725 [qtp597521407-100] DEBUG c.d.t.rest.filters.LoggingFilter - [6cd5eaec] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.726 [qtp597521407-100] INFO  c.d.t.rest.filters.LoggingFilter - [6cd5eaec] Response: 400 - 1 ms
+2025-08-24 11:56:24.737 [qtp597521407-101] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.737 [qtp597521407-101] INFO  c.d.t.rest.filters.LoggingFilter - [79dd223a] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.737 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [79dd223a] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.737 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [79dd223a] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.737 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [79dd223a] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.737 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [79dd223a] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.737 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [79dd223a] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.737 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [79dd223a] Header: Content-Length = [263]
+2025-08-24 11:56:24.737 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [79dd223a] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.737 [qtp597521407-101] INFO  c.d.t.rest.filters.LoggingFilter - [79dd223a] Response: 400 - 0 ms
+2025-08-24 11:56:24.745 [qtp597521407-113] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:24.745 [qtp597521407-113] INFO  c.d.t.rest.filters.LoggingFilter - [d0cbd923] GET v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.745 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [d0cbd923] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.745 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [d0cbd923] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.745 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [d0cbd923] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.745 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [d0cbd923] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.745 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [d0cbd923] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.745 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [d0cbd923] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.745 [qtp597521407-113] INFO  c.d.t.rest.filters.LoggingFilter - [d0cbd923] Response: 200 - 0 ms
+2025-08-24 11:56:24.758 [qtp597521407-111] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.758 [qtp597521407-111] INFO  c.d.t.rest.filters.LoggingFilter - [4477df49] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.758 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [4477df49] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.758 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [4477df49] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.758 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [4477df49] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.758 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [4477df49] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.758 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [4477df49] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.758 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [4477df49] Header: Content-Length = [268]
+2025-08-24 11:56:24.758 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [4477df49] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.758 [qtp597521407-111] INFO  c.d.t.rest.filters.LoggingFilter - [4477df49] Response: 400 - 0 ms
+2025-08-24 11:56:24.766 [qtp597521407-117] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.766 [qtp597521407-117] INFO  c.d.t.rest.filters.LoggingFilter - [80678495] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.766 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [80678495] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.766 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [80678495] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.766 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [80678495] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.766 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [80678495] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.766 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [80678495] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.767 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [80678495] Header: Content-Length = [267]
+2025-08-24 11:56:24.767 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [80678495] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.767 [qtp597521407-117] INFO  c.d.t.rest.filters.LoggingFilter - [80678495] Response: 201 - 1 ms
+2025-08-24 11:56:24.780 [qtp597521407-116] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:24.780 [qtp597521407-116] INFO  c.d.t.rest.filters.LoggingFilter - [a4996a3c] GET v1/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.780 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [a4996a3c] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.780 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [a4996a3c] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.780 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [a4996a3c] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.780 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [a4996a3c] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.780 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [a4996a3c] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.781 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [a4996a3c] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.781 [qtp597521407-116] INFO  c.d.t.rest.filters.LoggingFilter - [a4996a3c] Response: 200 - 1 ms
+2025-08-24 11:56:24.787 [qtp597521407-101] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.787 [qtp597521407-101] INFO  c.d.t.rest.filters.LoggingFilter - [d7356f83] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.787 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [d7356f83] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.787 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [d7356f83] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.787 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [d7356f83] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.787 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [d7356f83] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.787 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [d7356f83] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.787 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [d7356f83] Header: Content-Length = [275]
+2025-08-24 11:56:24.787 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [d7356f83] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.788 [qtp597521407-101] INFO  c.d.t.rest.filters.LoggingFilter - [d7356f83] Response: 201 - 1 ms
+2025-08-24 11:56:24.794 [qtp597521407-110] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.794 [qtp597521407-110] INFO  c.d.t.rest.filters.LoggingFilter - [70f3c3c8] DELETE v1/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.794 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [70f3c3c8] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.794 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [70f3c3c8] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.794 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [70f3c3c8] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.794 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [70f3c3c8] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.794 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [70f3c3c8] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.794 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [70f3c3c8] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.794 [qtp597521407-110] INFO  c.d.t.rest.filters.LoggingFilter - [70f3c3c8] Response: 204 - 0 ms
+2025-08-24 11:56:24.797 [qtp597521407-98] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:24.797 [qtp597521407-98] INFO  c.d.t.rest.filters.LoggingFilter - [1e6c74d3] GET v1/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.797 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [1e6c74d3] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.797 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [1e6c74d3] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.797 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [1e6c74d3] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.797 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [1e6c74d3] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.797 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [1e6c74d3] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.797 [qtp597521407-98] DEBUG c.d.t.rest.filters.LoggingFilter - [1e6c74d3] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.798 [qtp597521407-98] INFO  c.d.t.rest.filters.LoggingFilter - [1e6c74d3] Response: 404 - 1 ms
+2025-08-24 11:56:24.803 [qtp597521407-114] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.803 [qtp597521407-114] INFO  c.d.t.rest.filters.LoggingFilter - [bb6fc20a] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.803 [qtp597521407-114] DEBUG c.d.t.rest.filters.LoggingFilter - [bb6fc20a] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.803 [qtp597521407-114] DEBUG c.d.t.rest.filters.LoggingFilter - [bb6fc20a] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.803 [qtp597521407-114] DEBUG c.d.t.rest.filters.LoggingFilter - [bb6fc20a] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.803 [qtp597521407-114] DEBUG c.d.t.rest.filters.LoggingFilter - [bb6fc20a] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.803 [qtp597521407-114] DEBUG c.d.t.rest.filters.LoggingFilter - [bb6fc20a] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.803 [qtp597521407-114] DEBUG c.d.t.rest.filters.LoggingFilter - [bb6fc20a] Header: Content-Length = [265]
+2025-08-24 11:56:24.803 [qtp597521407-114] DEBUG c.d.t.rest.filters.LoggingFilter - [bb6fc20a] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.804 [qtp597521407-114] INFO  c.d.t.rest.filters.LoggingFilter - [bb6fc20a] Response: 400 - 1 ms
+2025-08-24 11:56:24.812 [qtp597521407-113] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.813 [qtp597521407-113] INFO  c.d.t.rest.filters.LoggingFilter - [6eea3a0f] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.813 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [6eea3a0f] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.813 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [6eea3a0f] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.813 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [6eea3a0f] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.813 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [6eea3a0f] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.813 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [6eea3a0f] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.813 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [6eea3a0f] Header: Content-Length = [271]
+2025-08-24 11:56:24.813 [qtp597521407-113] DEBUG c.d.t.rest.filters.LoggingFilter - [6eea3a0f] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.813 [qtp597521407-113] INFO  c.d.t.rest.filters.LoggingFilter - [6eea3a0f] Response: 201 - 0 ms
+2025-08-24 11:56:24.819 [qtp597521407-102] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:24.819 [qtp597521407-102] INFO  c.d.t.rest.filters.LoggingFilter - [b92dc360] GET v1/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.819 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [b92dc360] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.819 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [b92dc360] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.819 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [b92dc360] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.819 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [b92dc360] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.819 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [b92dc360] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.819 [qtp597521407-102] DEBUG c.d.t.rest.filters.LoggingFilter - [b92dc360] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.819 [qtp597521407-102] INFO  c.d.t.rest.filters.LoggingFilter - [b92dc360] Response: 200 - 0 ms
+2025-08-24 11:56:24.832 [qtp597521407-111] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:24.832 [qtp597521407-111] INFO  c.d.t.rest.filters.LoggingFilter - [2892ce04] GET v1/users/99999 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.832 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [2892ce04] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.832 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [2892ce04] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.832 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [2892ce04] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.832 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [2892ce04] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.832 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [2892ce04] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.832 [qtp597521407-111] DEBUG c.d.t.rest.filters.LoggingFilter - [2892ce04] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.832 [qtp597521407-111] INFO  c.d.t.rest.filters.LoggingFilter - [2892ce04] Response: 404 - 0 ms
+2025-08-24 11:56:24.835 [qtp597521407-117] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.835 [qtp597521407-117] INFO  c.d.t.rest.filters.LoggingFilter - [b18f6df2] DELETE v1/users/99999 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.835 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [b18f6df2] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.835 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [b18f6df2] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.835 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [b18f6df2] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.835 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [b18f6df2] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.835 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [b18f6df2] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.835 [qtp597521407-117] DEBUG c.d.t.rest.filters.LoggingFilter - [b18f6df2] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.835 [qtp597521407-117] INFO  c.d.t.rest.filters.LoggingFilter - [b18f6df2] Response: 404 - 0 ms
+2025-08-24 11:56:24.840 [qtp597521407-116] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.840 [qtp597521407-116] INFO  c.d.t.rest.filters.LoggingFilter - [b6d908d5] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.840 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [b6d908d5] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.840 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [b6d908d5] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.840 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [b6d908d5] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.840 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [b6d908d5] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.840 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [b6d908d5] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.840 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [b6d908d5] Header: Content-Length = [269]
+2025-08-24 11:56:24.840 [qtp597521407-116] DEBUG c.d.t.rest.filters.LoggingFilter - [b6d908d5] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.840 [qtp597521407-116] INFO  c.d.t.rest.filters.LoggingFilter - [b6d908d5] Response: 201 - 0 ms
+2025-08-24 11:56:24.847 [qtp597521407-101] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:24.847 [qtp597521407-101] INFO  c.d.t.rest.filters.LoggingFilter - [2a1dca0b] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.847 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [2a1dca0b] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.847 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [2a1dca0b] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.847 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [2a1dca0b] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.847 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [2a1dca0b] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.847 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [2a1dca0b] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.847 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [2a1dca0b] Header: Content-Length = [263]
+2025-08-24 11:56:24.847 [qtp597521407-101] DEBUG c.d.t.rest.filters.LoggingFilter - [2a1dca0b] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.847 [qtp597521407-101] INFO  c.d.t.rest.filters.LoggingFilter - [2a1dca0b] Response: 201 - 0 ms
+2025-08-24 11:56:24.852 [qtp597521407-110] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:24.852 [qtp597521407-110] INFO  c.d.t.rest.filters.LoggingFilter - [3a46e09e] GET v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:24.852 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [3a46e09e] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:24.852 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [3a46e09e] Header: Connection = [keep-alive]
+2025-08-24 11:56:24.854 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [3a46e09e] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:24.854 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [3a46e09e] Header: Host = [localhost:8081]
+2025-08-24 11:56:24.854 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [3a46e09e] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:24.854 [qtp597521407-110] DEBUG c.d.t.rest.filters.LoggingFilter - [3a46e09e] Header: Content-Type = [application/json]
+2025-08-24 11:56:24.854 [qtp597521407-110] INFO  c.d.t.rest.filters.LoggingFilter - [3a46e09e] Response: 200 - 2 ms
+2025-08-24 11:56:24.860 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Stopping test server
+2025-08-24 11:56:24.861 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@6bf28f61{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:24.867 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@169d4aba{/,null,STOPPED}
+2025-08-24 11:56:24.868 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server stopped
+2025-08-24 11:56:24.868 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Starting test server on port 8081
+2025-08-24 11:56:24.869 [Test worker] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 11:56:24.871 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 11:56:24.872 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 11:56:24.872 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 11:56:24.872 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 11:56:24.872 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 11:56:24.872 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 11:56:24.887 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@271a140c{/,null,AVAILABLE}
+2025-08-24 11:56:24.888 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@6b6c0b7c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:24.888 [Test worker] INFO  org.eclipse.jetty.server.Server - Started @5826ms
+2025-08-24 11:56:26.080 [qtp322033405-138] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 11:56:26.080 [qtp322033405-138] INFO  c.d.t.rest.filters.LoggingFilter - [1c1e2f18] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.080 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [1c1e2f18] Header: Accept = [*/*]
+2025-08-24 11:56:26.080 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [1c1e2f18] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.080 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [1c1e2f18] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.080 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [1c1e2f18] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.080 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [1c1e2f18] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.080 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [1c1e2f18] Header: Content-Length = [42]
+2025-08-24 11:56:26.080 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [1c1e2f18] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.082 [qtp322033405-138] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 11:56:26.135 [qtp322033405-138] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: admin
+2025-08-24 11:56:26.135 [qtp322033405-138] INFO  c.d.t.rest.filters.LoggingFilter - [1c1e2f18] Response: 200 - 55 ms
+2025-08-24 11:56:26.138 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Admin token obtained for tests: success
+2025-08-24 11:56:26.141 [qtp322033405-128] INFO  c.d.t.rest.filters.LoggingFilter - [aad811bf] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.141 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [aad811bf] Header: Accept = [*/*]
+2025-08-24 11:56:26.141 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [aad811bf] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.141 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [aad811bf] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.141 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [aad811bf] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.141 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [aad811bf] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.141 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [aad811bf] Header: Content-Length = [40]
+2025-08-24 11:56:26.141 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [aad811bf] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.141 [qtp322033405-128] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 11:56:26.193 [qtp322033405-128] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 11:56:26.194 [qtp322033405-128] INFO  c.d.t.rest.filters.LoggingFilter - [aad811bf] Response: 200 - 53 ms
+2025-08-24 11:56:26.196 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - User token obtained for tests: success
+2025-08-24 11:56:26.196 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server started successfully
+2025-08-24 11:56:26.202 [qtp322033405-129] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.203 [qtp322033405-129] INFO  c.d.t.rest.filters.LoggingFilter - [8171968d] POST v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.203 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [8171968d] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.203 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [8171968d] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.203 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [8171968d] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.203 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [8171968d] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.203 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [8171968d] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.203 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [8171968d] Header: Content-Length = [280]
+2025-08-24 11:56:26.203 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [8171968d] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.207 [qtp322033405-129] INFO  c.d.t.rest.filters.LoggingFilter - [8171968d] Response: 400 - 4 ms
+2025-08-24 11:56:26.217 [qtp322033405-130] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.217 [qtp322033405-130] INFO  c.d.t.rest.filters.LoggingFilter - [89edacc7] POST v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.217 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [89edacc7] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.217 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [89edacc7] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.217 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [89edacc7] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.217 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [89edacc7] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.217 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [89edacc7] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.217 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [89edacc7] Header: Content-Length = [278]
+2025-08-24 11:56:26.217 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [89edacc7] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.217 [qtp322033405-130] INFO  c.d.t.rest.filters.LoggingFilter - [89edacc7] Response: 201 - 0 ms
+2025-08-24 11:56:26.225 [qtp322033405-131] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:26.225 [qtp322033405-131] INFO  c.d.t.rest.filters.LoggingFilter - [a7581f48] GET v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.225 [qtp322033405-131] DEBUG c.d.t.rest.filters.LoggingFilter - [a7581f48] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.225 [qtp322033405-131] DEBUG c.d.t.rest.filters.LoggingFilter - [a7581f48] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.225 [qtp322033405-131] DEBUG c.d.t.rest.filters.LoggingFilter - [a7581f48] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.225 [qtp322033405-131] DEBUG c.d.t.rest.filters.LoggingFilter - [a7581f48] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.225 [qtp322033405-131] DEBUG c.d.t.rest.filters.LoggingFilter - [a7581f48] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.225 [qtp322033405-131] DEBUG c.d.t.rest.filters.LoggingFilter - [a7581f48] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.226 [qtp322033405-131] INFO  c.d.t.rest.filters.LoggingFilter - [a7581f48] Response: 200 - 1 ms
+2025-08-24 11:56:26.231 [qtp322033405-132] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.231 [qtp322033405-132] INFO  c.d.t.rest.filters.LoggingFilter - [cd6f7e1f] POST v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.231 [qtp322033405-132] DEBUG c.d.t.rest.filters.LoggingFilter - [cd6f7e1f] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.231 [qtp322033405-132] DEBUG c.d.t.rest.filters.LoggingFilter - [cd6f7e1f] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.231 [qtp322033405-132] DEBUG c.d.t.rest.filters.LoggingFilter - [cd6f7e1f] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.231 [qtp322033405-132] DEBUG c.d.t.rest.filters.LoggingFilter - [cd6f7e1f] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.232 [qtp322033405-132] DEBUG c.d.t.rest.filters.LoggingFilter - [cd6f7e1f] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.232 [qtp322033405-132] DEBUG c.d.t.rest.filters.LoggingFilter - [cd6f7e1f] Header: Content-Length = [279]
+2025-08-24 11:56:26.232 [qtp322033405-132] DEBUG c.d.t.rest.filters.LoggingFilter - [cd6f7e1f] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.232 [qtp322033405-132] INFO  c.d.t.rest.filters.LoggingFilter - [cd6f7e1f] Response: 400 - 1 ms
+2025-08-24 11:56:26.240 [qtp322033405-133] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.240 [qtp322033405-133] INFO  c.d.t.rest.filters.LoggingFilter - [e48afbba] POST v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.240 [qtp322033405-133] DEBUG c.d.t.rest.filters.LoggingFilter - [e48afbba] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.240 [qtp322033405-133] DEBUG c.d.t.rest.filters.LoggingFilter - [e48afbba] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.240 [qtp322033405-133] DEBUG c.d.t.rest.filters.LoggingFilter - [e48afbba] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.240 [qtp322033405-133] DEBUG c.d.t.rest.filters.LoggingFilter - [e48afbba] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.240 [qtp322033405-133] DEBUG c.d.t.rest.filters.LoggingFilter - [e48afbba] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.240 [qtp322033405-133] DEBUG c.d.t.rest.filters.LoggingFilter - [e48afbba] Header: Content-Length = [288]
+2025-08-24 11:56:26.240 [qtp322033405-133] DEBUG c.d.t.rest.filters.LoggingFilter - [e48afbba] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.241 [qtp322033405-133] INFO  c.d.t.rest.filters.LoggingFilter - [e48afbba] Response: 201 - 1 ms
+2025-08-24 11:56:26.247 [qtp322033405-126] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.247 [qtp322033405-126] INFO  c.d.t.rest.filters.LoggingFilter - [627c5012] PUT v2/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.247 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [627c5012] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.247 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [627c5012] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.247 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [627c5012] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.247 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [627c5012] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.247 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [627c5012] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.247 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [627c5012] Header: Content-Length = [285]
+2025-08-24 11:56:26.247 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [627c5012] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.247 [qtp322033405-126] INFO  c.d.t.rest.filters.LoggingFilter - [627c5012] Response: 200 - 0 ms
+2025-08-24 11:56:26.261 [qtp322033405-128] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.261 [qtp322033405-128] INFO  c.d.t.rest.filters.LoggingFilter - [f0211e77] POST v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.261 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [f0211e77] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.261 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [f0211e77] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.261 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [f0211e77] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.261 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [f0211e77] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.261 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [f0211e77] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.261 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [f0211e77] Header: Content-Length = [288]
+2025-08-24 11:56:26.261 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [f0211e77] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.262 [qtp322033405-128] INFO  c.d.t.rest.filters.LoggingFilter - [f0211e77] Response: 201 - 1 ms
+2025-08-24 11:56:26.267 [qtp322033405-136] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.267 [qtp322033405-136] INFO  c.d.t.rest.filters.LoggingFilter - [27fb397f] DELETE v2/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.267 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [27fb397f] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.267 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [27fb397f] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.267 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [27fb397f] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.267 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [27fb397f] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.267 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [27fb397f] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.267 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [27fb397f] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.267 [qtp322033405-136] INFO  c.d.t.rest.filters.LoggingFilter - [27fb397f] Response: 204 - 0 ms
+2025-08-24 11:56:26.269 [qtp322033405-138] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.269 [qtp322033405-138] INFO  c.d.t.rest.filters.LoggingFilter - [473ce3b1] GET v2/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.269 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [473ce3b1] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.269 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [473ce3b1] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.269 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [473ce3b1] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.269 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [473ce3b1] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.269 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [473ce3b1] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.269 [qtp322033405-138] DEBUG c.d.t.rest.filters.LoggingFilter - [473ce3b1] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.269 [qtp322033405-138] INFO  c.d.t.rest.filters.LoggingFilter - [473ce3b1] Response: 404 - 0 ms
+2025-08-24 11:56:26.272 [qtp322033405-139] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:26.272 [qtp322033405-139] INFO  c.d.t.rest.filters.LoggingFilter - [126194c9] GET v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.272 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [126194c9] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.272 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [126194c9] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.272 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [126194c9] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.272 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [126194c9] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.272 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [126194c9] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.272 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [126194c9] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.272 [qtp322033405-139] INFO  c.d.t.rest.filters.LoggingFilter - [126194c9] Response: 200 - 0 ms
+2025-08-24 11:56:26.279 [qtp322033405-129] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.279 [qtp322033405-129] INFO  c.d.t.rest.filters.LoggingFilter - [a439bf24] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.279 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [a439bf24] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.279 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [a439bf24] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.279 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [a439bf24] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.279 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [a439bf24] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.279 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [a439bf24] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.279 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [a439bf24] Header: Content-Length = [263]
+2025-08-24 11:56:26.279 [qtp322033405-129] DEBUG c.d.t.rest.filters.LoggingFilter - [a439bf24] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.281 [qtp322033405-129] INFO  c.d.t.rest.filters.LoggingFilter - [a439bf24] Response: 201 - 2 ms
+2025-08-24 11:56:26.285 [qtp322033405-140] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.285 [qtp322033405-140] INFO  c.d.t.rest.filters.LoggingFilter - [07ea3939] POST v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.285 [qtp322033405-140] DEBUG c.d.t.rest.filters.LoggingFilter - [07ea3939] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.285 [qtp322033405-140] DEBUG c.d.t.rest.filters.LoggingFilter - [07ea3939] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.285 [qtp322033405-140] DEBUG c.d.t.rest.filters.LoggingFilter - [07ea3939] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.285 [qtp322033405-140] DEBUG c.d.t.rest.filters.LoggingFilter - [07ea3939] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.285 [qtp322033405-140] DEBUG c.d.t.rest.filters.LoggingFilter - [07ea3939] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.285 [qtp322033405-140] DEBUG c.d.t.rest.filters.LoggingFilter - [07ea3939] Header: Content-Length = [276]
+2025-08-24 11:56:26.285 [qtp322033405-140] DEBUG c.d.t.rest.filters.LoggingFilter - [07ea3939] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.285 [qtp322033405-140] INFO  c.d.t.rest.filters.LoggingFilter - [07ea3939] Response: 201 - 0 ms
+2025-08-24 11:56:26.289 [qtp322033405-130] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:26.289 [qtp322033405-130] INFO  c.d.t.rest.filters.LoggingFilter - [8dfea6a7] GET v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.289 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [8dfea6a7] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.289 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [8dfea6a7] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.289 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [8dfea6a7] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.289 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [8dfea6a7] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.289 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [8dfea6a7] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.289 [qtp322033405-130] DEBUG c.d.t.rest.filters.LoggingFilter - [8dfea6a7] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.290 [qtp322033405-130] INFO  c.d.t.rest.filters.LoggingFilter - [8dfea6a7] Response: 200 - 1 ms
+2025-08-24 11:56:26.306 [qtp322033405-126] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:26.306 [qtp322033405-126] INFO  c.d.t.rest.filters.LoggingFilter - [6e601cc7] GET v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.306 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [6e601cc7] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.306 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [6e601cc7] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.306 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [6e601cc7] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.306 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [6e601cc7] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.306 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [6e601cc7] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.306 [qtp322033405-126] DEBUG c.d.t.rest.filters.LoggingFilter - [6e601cc7] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.306 [qtp322033405-126] INFO  c.d.t.rest.filters.LoggingFilter - [6e601cc7] Response: 200 - 0 ms
+2025-08-24 11:56:26.314 [qtp322033405-127] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.314 [qtp322033405-127] INFO  c.d.t.rest.filters.LoggingFilter - [cd657783] POST v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.314 [qtp322033405-127] DEBUG c.d.t.rest.filters.LoggingFilter - [cd657783] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.314 [qtp322033405-127] DEBUG c.d.t.rest.filters.LoggingFilter - [cd657783] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.314 [qtp322033405-127] DEBUG c.d.t.rest.filters.LoggingFilter - [cd657783] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.314 [qtp322033405-127] DEBUG c.d.t.rest.filters.LoggingFilter - [cd657783] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.314 [qtp322033405-127] DEBUG c.d.t.rest.filters.LoggingFilter - [cd657783] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.314 [qtp322033405-127] DEBUG c.d.t.rest.filters.LoggingFilter - [cd657783] Header: Content-Length = [279]
+2025-08-24 11:56:26.314 [qtp322033405-127] DEBUG c.d.t.rest.filters.LoggingFilter - [cd657783] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.314 [qtp322033405-127] INFO  c.d.t.rest.filters.LoggingFilter - [cd657783] Response: 400 - 0 ms
+2025-08-24 11:56:26.320 [qtp322033405-128] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:26.320 [qtp322033405-128] INFO  c.d.t.rest.filters.LoggingFilter - [0b12edf3] GET v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.320 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [0b12edf3] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.320 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [0b12edf3] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.320 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [0b12edf3] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.320 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [0b12edf3] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.320 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [0b12edf3] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.320 [qtp322033405-128] DEBUG c.d.t.rest.filters.LoggingFilter - [0b12edf3] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.320 [qtp322033405-128] INFO  c.d.t.rest.filters.LoggingFilter - [0b12edf3] Response: 200 - 0 ms
+2025-08-24 11:56:26.324 [qtp322033405-136] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.324 [qtp322033405-136] INFO  c.d.t.rest.filters.LoggingFilter - [c6869175] POST v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.324 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [c6869175] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.324 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [c6869175] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.324 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [c6869175] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.324 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [c6869175] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.324 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [c6869175] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.324 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [c6869175] Header: Content-Length = [280]
+2025-08-24 11:56:26.324 [qtp322033405-136] DEBUG c.d.t.rest.filters.LoggingFilter - [c6869175] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.324 [qtp322033405-136] INFO  c.d.t.rest.filters.LoggingFilter - [c6869175] Response: 400 - 0 ms
+2025-08-24 11:56:26.330 [qtp322033405-149] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.330 [qtp322033405-149] INFO  c.d.t.rest.filters.LoggingFilter - [4202efa0] POST v2/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.330 [qtp322033405-149] DEBUG c.d.t.rest.filters.LoggingFilter - [4202efa0] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.330 [qtp322033405-149] DEBUG c.d.t.rest.filters.LoggingFilter - [4202efa0] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.330 [qtp322033405-149] DEBUG c.d.t.rest.filters.LoggingFilter - [4202efa0] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.330 [qtp322033405-149] DEBUG c.d.t.rest.filters.LoggingFilter - [4202efa0] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.330 [qtp322033405-149] DEBUG c.d.t.rest.filters.LoggingFilter - [4202efa0] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.330 [qtp322033405-149] DEBUG c.d.t.rest.filters.LoggingFilter - [4202efa0] Header: Content-Length = [280]
+2025-08-24 11:56:26.331 [qtp322033405-149] DEBUG c.d.t.rest.filters.LoggingFilter - [4202efa0] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.331 [qtp322033405-149] INFO  c.d.t.rest.filters.LoggingFilter - [4202efa0] Response: 201 - 1 ms
+2025-08-24 11:56:26.344 [qtp322033405-139] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.344 [qtp322033405-139] INFO  c.d.t.rest.filters.LoggingFilter - [1f285704] GET v2/users/1 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.344 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [1f285704] Header: Accept = [application/json, application/javascript, text/javascript, text/json]
+2025-08-24 11:56:26.344 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [1f285704] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.344 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [1f285704] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.344 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [1f285704] Header: Host = [localhost:8081]
+2025-08-24 11:56:26.344 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [1f285704] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.344 [qtp322033405-139] DEBUG c.d.t.rest.filters.LoggingFilter - [1f285704] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.344 [qtp322033405-139] INFO  c.d.t.rest.filters.LoggingFilter - [1f285704] Response: 200 - 0 ms
+2025-08-24 11:56:26.348 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Stopping test server
+2025-08-24 11:56:26.349 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@6b6c0b7c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:26.349 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@271a140c{/,null,STOPPED}
+2025-08-24 11:56:26.350 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server stopped
+2025-08-24 11:56:26.350 [Test worker] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 11:56:26.353 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 11:56:26.353 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 11:56:26.353 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 11:56:26.353 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 11:56:26.353 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 11:56:26.353 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 11:56:26.373 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@e2344da{/,null,AVAILABLE}
+2025-08-24 11:56:26.373 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@28e24663{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+2025-08-24 11:56:26.373 [Test worker] INFO  org.eclipse.jetty.server.Server - Started @7312ms
+2025-08-24 11:56:26.534 [qtp531301268-170] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 11:56:26.535 [qtp531301268-170] INFO  c.d.t.rest.filters.LoggingFilter - [d68eb677] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.535 [qtp531301268-170] DEBUG c.d.t.rest.filters.LoggingFilter - [d68eb677] Header: Accept = [*/*]
+2025-08-24 11:56:26.535 [qtp531301268-170] DEBUG c.d.t.rest.filters.LoggingFilter - [d68eb677] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.535 [qtp531301268-170] DEBUG c.d.t.rest.filters.LoggingFilter - [d68eb677] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.535 [qtp531301268-170] DEBUG c.d.t.rest.filters.LoggingFilter - [d68eb677] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.535 [qtp531301268-170] DEBUG c.d.t.rest.filters.LoggingFilter - [d68eb677] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.535 [qtp531301268-170] DEBUG c.d.t.rest.filters.LoggingFilter - [d68eb677] Header: Content-Length = [42]
+2025-08-24 11:56:26.535 [qtp531301268-170] DEBUG c.d.t.rest.filters.LoggingFilter - [d68eb677] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.536 [qtp531301268-170] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 11:56:26.589 [qtp531301268-170] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: admin
+2025-08-24 11:56:26.589 [qtp531301268-170] INFO  c.d.t.rest.filters.LoggingFilter - [d68eb677] Response: 200 - 54 ms
+2025-08-24 11:56:26.601 [qtp531301268-160] INFO  c.d.t.rest.filters.LoggingFilter - [56c8f6b3] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.601 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [56c8f6b3] Header: Accept = [*/*]
+2025-08-24 11:56:26.601 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [56c8f6b3] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.601 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [56c8f6b3] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.601 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [56c8f6b3] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.601 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [56c8f6b3] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.601 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [56c8f6b3] Header: Content-Length = [47]
+2025-08-24 11:56:26.601 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [56c8f6b3] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.601 [qtp531301268-160] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 11:56:26.654 [qtp531301268-160] WARN  c.d.t.rest.resources.AuthResource - Failed login attempt for user: admin
+2025-08-24 11:56:26.654 [qtp531301268-160] INFO  c.d.t.rest.filters.LoggingFilter - [56c8f6b3] Response: 401 - 53 ms
+2025-08-24 11:56:26.659 [qtp531301268-161] INFO  c.d.t.rest.filters.LoggingFilter - [c4ac0a66] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.659 [qtp531301268-161] DEBUG c.d.t.rest.filters.LoggingFilter - [c4ac0a66] Header: Accept = [*/*]
+2025-08-24 11:56:26.659 [qtp531301268-161] DEBUG c.d.t.rest.filters.LoggingFilter - [c4ac0a66] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.659 [qtp531301268-161] DEBUG c.d.t.rest.filters.LoggingFilter - [c4ac0a66] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.659 [qtp531301268-161] DEBUG c.d.t.rest.filters.LoggingFilter - [c4ac0a66] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.659 [qtp531301268-161] DEBUG c.d.t.rest.filters.LoggingFilter - [c4ac0a66] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.659 [qtp531301268-161] DEBUG c.d.t.rest.filters.LoggingFilter - [c4ac0a66] Header: Content-Length = [40]
+2025-08-24 11:56:26.659 [qtp531301268-161] DEBUG c.d.t.rest.filters.LoggingFilter - [c4ac0a66] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.660 [qtp531301268-161] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 11:56:26.713 [qtp531301268-161] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 11:56:26.713 [qtp531301268-161] INFO  c.d.t.rest.filters.LoggingFilter - [c4ac0a66] Response: 200 - 54 ms
+2025-08-24 11:56:26.724 [qtp531301268-163] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.724 [qtp531301268-163] INFO  c.d.t.rest.filters.LoggingFilter - [2e28fe82] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.724 [qtp531301268-163] DEBUG c.d.t.rest.filters.LoggingFilter - [2e28fe82] Header: Accept = [*/*]
+2025-08-24 11:56:26.724 [qtp531301268-163] DEBUG c.d.t.rest.filters.LoggingFilter - [2e28fe82] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.724 [qtp531301268-163] DEBUG c.d.t.rest.filters.LoggingFilter - [2e28fe82] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.724 [qtp531301268-163] DEBUG c.d.t.rest.filters.LoggingFilter - [2e28fe82] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.724 [qtp531301268-163] DEBUG c.d.t.rest.filters.LoggingFilter - [2e28fe82] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.724 [qtp531301268-163] DEBUG c.d.t.rest.filters.LoggingFilter - [2e28fe82] Header: Content-Length = [105]
+2025-08-24 11:56:26.724 [qtp531301268-163] DEBUG c.d.t.rest.filters.LoggingFilter - [2e28fe82] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.727 [qtp531301268-163] INFO  c.d.t.rest.filters.LoggingFilter - [2e28fe82] Response: 201 - 3 ms
+2025-08-24 11:56:26.729 [qtp531301268-164] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.730 [qtp531301268-164] INFO  c.d.t.rest.filters.LoggingFilter - [54219786] GET v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.730 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [54219786] Header: Accept = [*/*]
+2025-08-24 11:56:26.730 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [54219786] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.730 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [54219786] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.730 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [54219786] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.730 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [54219786] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.730 [qtp531301268-164] INFO  c.d.t.rest.filters.LoggingFilter - [54219786] Response: 200 - 0 ms
+2025-08-24 11:56:26.735 [qtp531301268-165] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:26.736 [qtp531301268-165] INFO  c.d.t.rest.filters.LoggingFilter - [9355dc67] GET v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.736 [qtp531301268-165] DEBUG c.d.t.rest.filters.LoggingFilter - [9355dc67] Header: Accept = [*/*]
+2025-08-24 11:56:26.736 [qtp531301268-165] DEBUG c.d.t.rest.filters.LoggingFilter - [9355dc67] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.736 [qtp531301268-165] DEBUG c.d.t.rest.filters.LoggingFilter - [9355dc67] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.736 [qtp531301268-165] DEBUG c.d.t.rest.filters.LoggingFilter - [9355dc67] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.736 [qtp531301268-165] DEBUG c.d.t.rest.filters.LoggingFilter - [9355dc67] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.736 [qtp531301268-165] INFO  c.d.t.rest.filters.LoggingFilter - [9355dc67] Response: 200 - 0 ms
+2025-08-24 11:56:26.738 [qtp531301268-158] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.738 [qtp531301268-158] INFO  c.d.t.rest.filters.LoggingFilter - [87943038] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.738 [qtp531301268-158] DEBUG c.d.t.rest.filters.LoggingFilter - [87943038] Header: Accept = [*/*]
+2025-08-24 11:56:26.738 [qtp531301268-158] DEBUG c.d.t.rest.filters.LoggingFilter - [87943038] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.738 [qtp531301268-158] DEBUG c.d.t.rest.filters.LoggingFilter - [87943038] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.738 [qtp531301268-158] DEBUG c.d.t.rest.filters.LoggingFilter - [87943038] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.738 [qtp531301268-158] DEBUG c.d.t.rest.filters.LoggingFilter - [87943038] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.738 [qtp531301268-158] DEBUG c.d.t.rest.filters.LoggingFilter - [87943038] Header: Content-Length = [105]
+2025-08-24 11:56:26.738 [qtp531301268-158] DEBUG c.d.t.rest.filters.LoggingFilter - [87943038] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.739 [qtp531301268-158] INFO  c.d.t.rest.filters.LoggingFilter - [87943038] Response: 201 - 1 ms
+2025-08-24 11:56:26.743 [qtp531301268-159] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.743 [qtp531301268-159] INFO  c.d.t.rest.filters.LoggingFilter - [d1976cc8] GET v1/users/2/admin from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.743 [qtp531301268-159] DEBUG c.d.t.rest.filters.LoggingFilter - [d1976cc8] Header: Accept = [*/*]
+2025-08-24 11:56:26.743 [qtp531301268-159] DEBUG c.d.t.rest.filters.LoggingFilter - [d1976cc8] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.743 [qtp531301268-159] DEBUG c.d.t.rest.filters.LoggingFilter - [d1976cc8] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.743 [qtp531301268-159] DEBUG c.d.t.rest.filters.LoggingFilter - [d1976cc8] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.743 [qtp531301268-159] DEBUG c.d.t.rest.filters.LoggingFilter - [d1976cc8] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.743 [qtp531301268-159] INFO  c.d.t.rest.filters.LoggingFilter - [d1976cc8] Response: 200 - 0 ms
+2025-08-24 11:56:26.745 [qtp531301268-168] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.745 [qtp531301268-168] INFO  c.d.t.rest.filters.LoggingFilter - [e5b566a2] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.745 [qtp531301268-168] DEBUG c.d.t.rest.filters.LoggingFilter - [e5b566a2] Header: Accept = [*/*]
+2025-08-24 11:56:26.745 [qtp531301268-168] DEBUG c.d.t.rest.filters.LoggingFilter - [e5b566a2] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.745 [qtp531301268-168] DEBUG c.d.t.rest.filters.LoggingFilter - [e5b566a2] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.745 [qtp531301268-168] DEBUG c.d.t.rest.filters.LoggingFilter - [e5b566a2] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.745 [qtp531301268-168] DEBUG c.d.t.rest.filters.LoggingFilter - [e5b566a2] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.745 [qtp531301268-168] DEBUG c.d.t.rest.filters.LoggingFilter - [e5b566a2] Header: Content-Length = [105]
+2025-08-24 11:56:26.745 [qtp531301268-168] DEBUG c.d.t.rest.filters.LoggingFilter - [e5b566a2] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.746 [qtp531301268-168] INFO  c.d.t.rest.filters.LoggingFilter - [e5b566a2] Response: 201 - 1 ms
+2025-08-24 11:56:26.749 [qtp531301268-170] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:26.752 [qtp531301268-160] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.752 [qtp531301268-160] INFO  c.d.t.rest.filters.LoggingFilter - [ca536d3f] POST v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.752 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [ca536d3f] Header: Accept = [*/*]
+2025-08-24 11:56:26.752 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [ca536d3f] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.752 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [ca536d3f] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.752 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [ca536d3f] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.752 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [ca536d3f] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.752 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [ca536d3f] Header: Content-Length = [119]
+2025-08-24 11:56:26.752 [qtp531301268-160] DEBUG c.d.t.rest.filters.LoggingFilter - [ca536d3f] Header: Content-Type = [application/json]
+2025-08-24 11:56:26.752 [qtp531301268-160] INFO  c.d.t.rest.filters.LoggingFilter - [ca536d3f] Response: 201 - 0 ms
+2025-08-24 11:56:26.755 [qtp531301268-161] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:26.757 [qtp531301268-162] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.757 [qtp531301268-162] INFO  c.d.t.rest.filters.LoggingFilter - [abbc35dd] DELETE v1/users/3 from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.757 [qtp531301268-162] DEBUG c.d.t.rest.filters.LoggingFilter - [abbc35dd] Header: Accept = [*/*]
+2025-08-24 11:56:26.757 [qtp531301268-162] DEBUG c.d.t.rest.filters.LoggingFilter - [abbc35dd] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.757 [qtp531301268-162] DEBUG c.d.t.rest.filters.LoggingFilter - [abbc35dd] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.757 [qtp531301268-162] DEBUG c.d.t.rest.filters.LoggingFilter - [abbc35dd] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.757 [qtp531301268-162] DEBUG c.d.t.rest.filters.LoggingFilter - [abbc35dd] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.757 [qtp531301268-162] INFO  c.d.t.rest.filters.LoggingFilter - [abbc35dd] Response: 204 - 0 ms
+2025-08-24 11:56:26.761 [qtp531301268-163] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 11:56:26.763 [qtp531301268-164] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 11:56:26.763 [qtp531301268-164] INFO  c.d.t.rest.filters.LoggingFilter - [7363662a] GET v1/users from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.763 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [7363662a] Header: Accept = [*/*]
+2025-08-24 11:56:26.763 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [7363662a] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.763 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [7363662a] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.763 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [7363662a] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.763 [qtp531301268-164] DEBUG c.d.t.rest.filters.LoggingFilter - [7363662a] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.763 [qtp531301268-164] INFO  c.d.t.rest.filters.LoggingFilter - [7363662a] Response: 200 - 0 ms
+2025-08-24 11:56:26.766 [qtp531301268-160] WARN  c.d.t.r.s.AuthenticationFilter - Invalid JWT token: JWT strings must contain exactly 2 period characters. Found: 0
+2025-08-24 11:56:26.769 [qtp531301268-173] INFO  c.d.t.rest.filters.LoggingFilter - [a6725bd5] GET auth/health from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:26.769 [qtp531301268-173] DEBUG c.d.t.rest.filters.LoggingFilter - [a6725bd5] Header: Accept = [*/*]
+2025-08-24 11:56:26.769 [qtp531301268-173] DEBUG c.d.t.rest.filters.LoggingFilter - [a6725bd5] Header: Connection = [keep-alive]
+2025-08-24 11:56:26.769 [qtp531301268-173] DEBUG c.d.t.rest.filters.LoggingFilter - [a6725bd5] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:26.769 [qtp531301268-173] DEBUG c.d.t.rest.filters.LoggingFilter - [a6725bd5] Header: Host = [localhost:8089]
+2025-08-24 11:56:26.769 [qtp531301268-173] DEBUG c.d.t.rest.filters.LoggingFilter - [a6725bd5] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:26.769 [qtp531301268-173] INFO  c.d.t.rest.filters.LoggingFilter - [a6725bd5] Response: 200 - 0 ms
+2025-08-24 11:56:26.773 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@28e24663{HTTP/1.1, (http/1.1)}{0.0.0.0:8089}
+2025-08-24 11:56:26.773 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@e2344da{/,null,STOPPED}
+2025-08-24 11:56:36.282 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Starting test server on port 8081
+2025-08-24 11:56:36.289 [Test worker] INFO  org.eclipse.jetty.util.log - Logging initialized @262ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 11:56:36.306 [Test worker] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 11:56:36.365 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 11:56:36.375 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 11:56:36.375 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 11:56:36.375 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 11:56:36.375 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 11:56:36.375 [Test worker] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 11:56:36.508 [Test worker] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 11:56:36.554 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@7c781c42{/,null,AVAILABLE}
+2025-08-24 11:56:36.557 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@6b53bcc2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:36.558 [Test worker] INFO  org.eclipse.jetty.server.Server - Started @531ms
+2025-08-24 11:56:38.103 [qtp215078753-66] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 11:56:38.104 [qtp215078753-66] INFO  c.d.t.rest.filters.LoggingFilter - [12612eaf] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:38.104 [qtp215078753-66] DEBUG c.d.t.rest.filters.LoggingFilter - [12612eaf] Header: Accept = [*/*]
+2025-08-24 11:56:38.105 [qtp215078753-66] DEBUG c.d.t.rest.filters.LoggingFilter - [12612eaf] Header: Connection = [keep-alive]
+2025-08-24 11:56:38.105 [qtp215078753-66] DEBUG c.d.t.rest.filters.LoggingFilter - [12612eaf] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:38.105 [qtp215078753-66] DEBUG c.d.t.rest.filters.LoggingFilter - [12612eaf] Header: Host = [localhost:8081]
+2025-08-24 11:56:38.105 [qtp215078753-66] DEBUG c.d.t.rest.filters.LoggingFilter - [12612eaf] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:38.105 [qtp215078753-66] DEBUG c.d.t.rest.filters.LoggingFilter - [12612eaf] Header: Content-Length = [42]
+2025-08-24 11:56:38.105 [qtp215078753-66] DEBUG c.d.t.rest.filters.LoggingFilter - [12612eaf] Header: Content-Type = [application/json]
+2025-08-24 11:56:38.127 [qtp215078753-66] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 11:56:38.189 [qtp215078753-66] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: admin
+2025-08-24 11:56:38.190 [qtp215078753-66] INFO  c.d.t.rest.filters.LoggingFilter - [12612eaf] Response: 200 - 86 ms
+2025-08-24 11:56:38.337 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Admin token obtained for tests: success
+2025-08-24 11:56:38.343 [qtp215078753-51] INFO  c.d.t.rest.filters.LoggingFilter - [9fd52f5b] POST auth/login from Apache-HttpClient/4.5.13 (Java/24.0.2)
+2025-08-24 11:56:38.343 [qtp215078753-51] DEBUG c.d.t.rest.filters.LoggingFilter - [9fd52f5b] Header: Accept = [*/*]
+2025-08-24 11:56:38.343 [qtp215078753-51] DEBUG c.d.t.rest.filters.LoggingFilter - [9fd52f5b] Header: Connection = [keep-alive]
+2025-08-24 11:56:38.343 [qtp215078753-51] DEBUG c.d.t.rest.filters.LoggingFilter - [9fd52f5b] Header: User-Agent = [Apache-HttpClient/4.5.13 (Java/24.0.2)]
+2025-08-24 11:56:38.343 [qtp215078753-51] DEBUG c.d.t.rest.filters.LoggingFilter - [9fd52f5b] Header: Host = [localhost:8081]
+2025-08-24 11:56:38.343 [qtp215078753-51] DEBUG c.d.t.rest.filters.LoggingFilter - [9fd52f5b] Header: Accept-Encoding = [gzip,deflate]
+2025-08-24 11:56:38.343 [qtp215078753-51] DEBUG c.d.t.rest.filters.LoggingFilter - [9fd52f5b] Header: Content-Length = [40]
+2025-08-24 11:56:38.343 [qtp215078753-51] DEBUG c.d.t.rest.filters.LoggingFilter - [9fd52f5b] Header: Content-Type = [application/json]
+2025-08-24 11:56:38.343 [qtp215078753-51] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 11:56:38.397 [qtp215078753-51] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 11:56:38.397 [qtp215078753-51] INFO  c.d.t.rest.filters.LoggingFilter - [9fd52f5b] Response: 200 - 54 ms
+2025-08-24 11:56:38.401 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - User token obtained for tests: success
+2025-08-24 11:56:38.402 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server started successfully
+2025-08-24 11:56:38.530 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Stopping test server
+2025-08-24 11:56:38.532 [Test worker] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@6b53bcc2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2025-08-24 11:56:38.535 [Test worker] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@7c781c42{/,null,STOPPED}
+2025-08-24 11:56:38.535 [Test worker] INFO  c.d.t.rest.test.BaseIntegrationTest - Test server stopped
+2025-08-24 12:02:31.716 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @110ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 12:02:31.729 [main] INFO  com.dbh.training.rest.Application - Starting DBH REST Training Server...
+2025-08-24 12:02:31.737 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 12:02:31.814 [main] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 12:02:31.826 [main] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 12:02:31.826 [main] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 12:02:31.826 [main] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 12:02:31.826 [main] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 12:02:31.826 [main] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 12:02:31.960 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 12:02:32.005 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5cbd159f{/,null,AVAILABLE}
+2025-08-24 12:02:32.014 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:02:32.014 [main] INFO  org.eclipse.jetty.server.Server - Started @410ms
+2025-08-24 12:02:32.014 [main] INFO  com.dbh.training.rest.Application - Server started successfully!
+2025-08-24 12:02:36.423 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [80d9dc5b] GET todos from curl/8.15.0
+2025-08-24 12:02:36.424 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [80d9dc5b] Header: Accept = [*/*]
+2025-08-24 12:02:36.424 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [80d9dc5b] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:02:36.424 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [80d9dc5b] Header: Host = [localhost:8080]
+2025-08-24 12:02:36.438 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [80d9dc5b] Response: 401 - 15 ms
+2025-08-24 12:02:36.616 [qtp681384962-39] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 12:02:36.617 [qtp681384962-39] INFO  c.d.t.rest.filters.LoggingFilter - [ea34c9b7] POST auth/login from curl/8.15.0
+2025-08-24 12:02:36.617 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [ea34c9b7] Header: Accept = [*/*]
+2025-08-24 12:02:36.617 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [ea34c9b7] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:02:36.617 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [ea34c9b7] Header: Host = [localhost:8080]
+2025-08-24 12:02:36.617 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [ea34c9b7] Header: Content-Length = [40]
+2025-08-24 12:02:36.617 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [ea34c9b7] Header: Content-Type = [application/json]
+2025-08-24 12:02:36.647 [qtp681384962-39] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 12:02:36.717 [qtp681384962-39] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 12:02:36.717 [qtp681384962-39] INFO  c.d.t.rest.filters.LoggingFilter - [ea34c9b7] Response: 200 - 100 ms
+2025-08-24 12:02:36.732 [qtp681384962-37] INFO  c.d.t.rest.filters.LoggingFilter - [3b6b4a2b] GET todos from curl/8.15.0
+2025-08-24 12:02:36.732 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [3b6b4a2b] Header: Accept = [*/*]
+2025-08-24 12:02:36.732 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [3b6b4a2b] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:02:36.732 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [3b6b4a2b] Header: Host = [localhost:8080]
+2025-08-24 12:02:36.733 [qtp681384962-37] INFO  c.d.t.rest.filters.LoggingFilter - [3b6b4a2b] Response: 401 - 1 ms
+2025-08-24 12:02:36.742 [qtp681384962-40] INFO  c.d.t.rest.filters.LoggingFilter - [5f501a9a] POST todos from curl/8.15.0
+2025-08-24 12:02:36.742 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [5f501a9a] Header: Accept = [*/*]
+2025-08-24 12:02:36.742 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [5f501a9a] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:02:36.742 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [5f501a9a] Header: Host = [localhost:8080]
+2025-08-24 12:02:36.742 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [5f501a9a] Header: Content-Length = [71]
+2025-08-24 12:02:36.743 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [5f501a9a] Header: Content-Type = [application/json]
+2025-08-24 12:02:36.752 [qtp681384962-40] INFO  c.d.t.rest.filters.LoggingFilter - [5f501a9a] Response: 401 - 10 ms
+2025-08-24 12:02:37.123 [Thread-0] INFO  com.dbh.training.rest.Application - Stopping server...
+2025-08-24 12:02:37.126 [Thread-0] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:02:37.129 [Thread-0] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@5cbd159f{/,null,STOPPED}
+2025-08-24 12:02:37.129 [Thread-0] INFO  com.dbh.training.rest.Application - Server stopped.
+2025-08-24 12:03:31.411 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @111ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 12:03:31.425 [main] INFO  com.dbh.training.rest.Application - Starting DBH REST Training Server...
+2025-08-24 12:03:31.432 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 12:03:31.511 [main] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 12:03:31.523 [main] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 12:03:31.523 [main] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 12:03:31.523 [main] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 12:03:31.523 [main] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 12:03:31.523 [main] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 12:03:31.660 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 12:03:31.705 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5cbd159f{/,null,AVAILABLE}
+2025-08-24 12:03:31.713 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:03:31.713 [main] INFO  org.eclipse.jetty.server.Server - Started @415ms
+2025-08-24 12:03:31.713 [main] INFO  com.dbh.training.rest.Application - Server started successfully!
+2025-08-24 12:03:33.160 [main] INFO  com.dbh.training.rest.Application - Server running at http://localhost:8080
+2025-08-24 12:03:33.161 [main] INFO  com.dbh.training.rest.Application - API endpoint: http://localhost:8080/api
+2025-08-24 12:03:33.161 [main] INFO  com.dbh.training.rest.Application - Health check: http://localhost:8080/api/health
+2025-08-24 12:03:33.161 [main] INFO  com.dbh.training.rest.Application - Press Ctrl+C to stop the server...
+2025-08-24 12:03:36.278 [qtp681384962-60] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 12:03:36.279 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [78733882] POST auth/login from curl/8.15.0
+2025-08-24 12:03:36.280 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [78733882] Header: Accept = [*/*]
+2025-08-24 12:03:36.280 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [78733882] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:03:36.280 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [78733882] Header: Host = [localhost:8080]
+2025-08-24 12:03:36.280 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [78733882] Header: Content-Length = [40]
+2025-08-24 12:03:36.280 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [78733882] Header: Content-Type = [application/json]
+2025-08-24 12:03:36.310 [qtp681384962-60] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 12:03:36.378 [qtp681384962-60] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 12:03:36.379 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [78733882] Response: 200 - 100 ms
+2025-08-24 12:03:36.759 [Thread-0] INFO  com.dbh.training.rest.Application - Stopping server...
+2025-08-24 12:03:36.762 [Thread-0] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:03:36.764 [Thread-0] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@5cbd159f{/,null,STOPPED}
+2025-08-24 12:03:36.765 [Thread-0] INFO  com.dbh.training.rest.Application - Server stopped.
+2025-08-24 12:05:34.711 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @110ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 12:05:34.726 [main] INFO  com.dbh.training.rest.Application - Starting DBH REST Training Server...
+2025-08-24 12:05:34.734 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 12:05:34.811 [main] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 12:05:34.824 [main] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 12:05:34.824 [main] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 12:05:34.824 [main] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 12:05:34.824 [main] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 12:05:34.824 [main] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 12:05:34.959 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 12:05:35.004 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5cbd159f{/,null,AVAILABLE}
+2025-08-24 12:05:35.012 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:05:35.012 [main] INFO  org.eclipse.jetty.server.Server - Started @412ms
+2025-08-24 12:05:35.012 [main] INFO  com.dbh.training.rest.Application - Server started successfully!
+2025-08-24 12:05:39.579 [qtp681384962-60] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 12:05:39.580 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [3f66818c] POST auth/login from curl/8.15.0
+2025-08-24 12:05:39.581 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [3f66818c] Header: Accept = [*/*]
+2025-08-24 12:05:39.581 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [3f66818c] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:05:39.581 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [3f66818c] Header: Host = [localhost:8080]
+2025-08-24 12:05:39.581 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [3f66818c] Header: Content-Length = [40]
+2025-08-24 12:05:39.581 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [3f66818c] Header: Content-Type = [application/json]
+2025-08-24 12:05:39.611 [qtp681384962-60] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 12:05:39.679 [qtp681384962-60] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 12:05:39.680 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [3f66818c] Response: 200 - 100 ms
+2025-08-24 12:05:39.718 [qtp681384962-37] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 12:05:39.718 [qtp681384962-37] INFO  c.d.t.rest.filters.LoggingFilter - [97de23c7] GET todos from curl/8.15.0
+2025-08-24 12:05:39.718 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [97de23c7] Header: Accept = [*/*]
+2025-08-24 12:05:39.718 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [97de23c7] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:05:39.718 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [97de23c7] Header: Host = [localhost:8080]
+2025-08-24 12:05:39.723 [qtp681384962-37] INFO  c.d.t.rest.filters.LoggingFilter - [97de23c7] Response: 200 - 5 ms
+2025-08-24 12:05:39.734 [qtp681384962-38] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 12:05:39.735 [qtp681384962-38] INFO  c.d.t.rest.filters.LoggingFilter - [abcc7c8d] POST todos from curl/8.15.0
+2025-08-24 12:05:39.735 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [abcc7c8d] Header: Accept = [*/*]
+2025-08-24 12:05:39.735 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [abcc7c8d] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:05:39.735 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [abcc7c8d] Header: Host = [localhost:8080]
+2025-08-24 12:05:39.735 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [abcc7c8d] Header: Content-Length = [121]
+2025-08-24 12:05:39.735 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [abcc7c8d] Header: Content-Type = [application/json]
+2025-08-24 12:05:39.743 [qtp681384962-38] INFO  c.d.t.rest.filters.LoggingFilter - [abcc7c8d] Response: 201 - 8 ms
+2025-08-24 12:05:39.773 [qtp681384962-40] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 12:05:39.773 [qtp681384962-40] INFO  c.d.t.rest.filters.LoggingFilter - [2256e601] GET todos from curl/8.15.0
+2025-08-24 12:05:39.773 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [2256e601] Header: Accept = [*/*]
+2025-08-24 12:05:39.773 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [2256e601] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:05:39.773 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [2256e601] Header: Host = [localhost:8080]
+2025-08-24 12:05:39.774 [qtp681384962-40] INFO  c.d.t.rest.filters.LoggingFilter - [2256e601] Response: 200 - 1 ms
+2025-08-24 12:05:40.153 [Thread-0] INFO  com.dbh.training.rest.Application - Stopping server...
+2025-08-24 12:05:40.155 [Thread-0] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:05:40.158 [Thread-0] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@5cbd159f{/,null,STOPPED}
+2025-08-24 12:05:40.159 [Thread-0] INFO  com.dbh.training.rest.Application - Server stopped.
+2025-08-24 12:06:31.801 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @109ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 12:06:31.815 [main] INFO  com.dbh.training.rest.Application - Starting DBH REST Training Server...
+2025-08-24 12:06:31.822 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 12:06:31.901 [main] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 12:06:31.914 [main] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 12:06:31.914 [main] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 12:06:31.914 [main] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 12:06:31.914 [main] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 12:06:31.914 [main] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 12:06:32.052 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 12:06:32.097 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5cbd159f{/,null,AVAILABLE}
+2025-08-24 12:06:32.105 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:06:32.106 [main] INFO  org.eclipse.jetty.server.Server - Started @414ms
+2025-08-24 12:06:32.106 [main] INFO  com.dbh.training.rest.Application - Server started successfully!
+2025-08-24 12:06:32.113 [main] INFO  com.dbh.training.rest.Application - Server running at http://localhost:8080
+2025-08-24 12:06:32.113 [main] INFO  com.dbh.training.rest.Application - API endpoint: http://localhost:8080/api
+2025-08-24 12:06:32.113 [main] INFO  com.dbh.training.rest.Application - Health check: http://localhost:8080/api/health
+2025-08-24 12:06:32.113 [main] INFO  com.dbh.training.rest.Application - Press Ctrl+C to stop the server...
+2025-08-24 12:06:36.662 [qtp681384962-60] INFO  c.d.t.rest.services.UserService - Initialized 3 default users
+2025-08-24 12:06:36.663 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [f865a13b] POST auth/login from curl/8.15.0
+2025-08-24 12:06:36.663 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [f865a13b] Header: Accept = [*/*]
+2025-08-24 12:06:36.663 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [f865a13b] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:06:36.663 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [f865a13b] Header: Host = [localhost:8080]
+2025-08-24 12:06:36.663 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [f865a13b] Header: Content-Length = [40]
+2025-08-24 12:06:36.663 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [f865a13b] Header: Content-Type = [application/json]
+2025-08-24 12:06:36.694 [qtp681384962-60] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: user
+2025-08-24 12:06:36.762 [qtp681384962-60] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: user
+2025-08-24 12:06:36.764 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [f865a13b] Response: 200 - 101 ms
+2025-08-24 12:06:36.780 [qtp681384962-39] INFO  c.d.t.rest.filters.LoggingFilter - [bdaf9814] POST auth/login from curl/8.15.0
+2025-08-24 12:06:36.780 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [bdaf9814] Header: Accept = [*/*]
+2025-08-24 12:06:36.780 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [bdaf9814] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:06:36.780 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [bdaf9814] Header: Host = [localhost:8080]
+2025-08-24 12:06:36.780 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [bdaf9814] Header: Content-Length = [42]
+2025-08-24 12:06:36.780 [qtp681384962-39] DEBUG c.d.t.rest.filters.LoggingFilter - [bdaf9814] Header: Content-Type = [application/json]
+2025-08-24 12:06:36.781 [qtp681384962-39] INFO  c.d.t.rest.resources.AuthResource - Login attempt for user: admin
+2025-08-24 12:06:36.834 [qtp681384962-39] INFO  c.d.t.rest.resources.AuthResource - Successful login for user: admin
+2025-08-24 12:06:36.834 [qtp681384962-39] INFO  c.d.t.rest.filters.LoggingFilter - [bdaf9814] Response: 200 - 54 ms
+2025-08-24 12:06:36.852 [qtp681384962-38] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 12:06:36.852 [qtp681384962-38] INFO  c.d.t.rest.filters.LoggingFilter - [417f2340] POST todos from curl/8.15.0
+2025-08-24 12:06:36.852 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [417f2340] Header: Accept = [*/*]
+2025-08-24 12:06:36.852 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [417f2340] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:06:36.852 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [417f2340] Header: Host = [localhost:8080]
+2025-08-24 12:06:36.852 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [417f2340] Header: Content-Length = [74]
+2025-08-24 12:06:36.852 [qtp681384962-38] DEBUG c.d.t.rest.filters.LoggingFilter - [417f2340] Header: Content-Type = [application/json]
+2025-08-24 12:06:36.863 [qtp681384962-38] INFO  c.d.t.rest.filters.LoggingFilter - [417f2340] Response: 201 - 11 ms
+2025-08-24 12:06:36.877 [qtp681384962-37] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 12:06:36.877 [qtp681384962-37] INFO  c.d.t.rest.filters.LoggingFilter - [4a95b6e4] POST todos from curl/8.15.0
+2025-08-24 12:06:36.877 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [4a95b6e4] Header: Accept = [*/*]
+2025-08-24 12:06:36.877 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [4a95b6e4] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:06:36.877 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [4a95b6e4] Header: Host = [localhost:8080]
+2025-08-24 12:06:36.877 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [4a95b6e4] Header: Content-Length = [97]
+2025-08-24 12:06:36.877 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [4a95b6e4] Header: Content-Type = [application/json]
+2025-08-24 12:06:36.878 [qtp681384962-37] INFO  c.d.t.rest.filters.LoggingFilter - [4a95b6e4] Response: 201 - 1 ms
+2025-08-24 12:06:36.891 [qtp681384962-40] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 12:06:36.891 [qtp681384962-40] INFO  c.d.t.rest.filters.LoggingFilter - [2cf9932b] GET todos from curl/8.15.0
+2025-08-24 12:06:36.891 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [2cf9932b] Header: Accept = [*/*]
+2025-08-24 12:06:36.891 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [2cf9932b] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:06:36.891 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [2cf9932b] Header: Host = [localhost:8080]
+2025-08-24 12:06:36.894 [qtp681384962-40] INFO  c.d.t.rest.filters.LoggingFilter - [2cf9932b] Response: 200 - 3 ms
+2025-08-24 12:06:36.906 [qtp681384962-41] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 12:06:36.907 [qtp681384962-41] INFO  c.d.t.rest.filters.LoggingFilter - [f6ef0af6] GET todos from curl/8.15.0
+2025-08-24 12:06:36.907 [qtp681384962-41] DEBUG c.d.t.rest.filters.LoggingFilter - [f6ef0af6] Header: Accept = [*/*]
+2025-08-24 12:06:36.907 [qtp681384962-41] DEBUG c.d.t.rest.filters.LoggingFilter - [f6ef0af6] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:06:36.907 [qtp681384962-41] DEBUG c.d.t.rest.filters.LoggingFilter - [f6ef0af6] Header: Host = [localhost:8080]
+2025-08-24 12:06:36.907 [qtp681384962-41] INFO  c.d.t.rest.filters.LoggingFilter - [f6ef0af6] Response: 200 - 0 ms
+2025-08-24 12:06:36.923 [qtp681384962-42] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 12:06:36.923 [qtp681384962-42] INFO  c.d.t.rest.filters.LoggingFilter - [279bec5d] PATCH todos/1/complete from curl/8.15.0
+2025-08-24 12:06:36.923 [qtp681384962-42] DEBUG c.d.t.rest.filters.LoggingFilter - [279bec5d] Header: Accept = [*/*]
+2025-08-24 12:06:36.923 [qtp681384962-42] DEBUG c.d.t.rest.filters.LoggingFilter - [279bec5d] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:06:36.923 [qtp681384962-42] DEBUG c.d.t.rest.filters.LoggingFilter - [279bec5d] Header: Host = [localhost:8080]
+2025-08-24 12:06:36.924 [qtp681384962-42] INFO  c.d.t.rest.filters.LoggingFilter - [279bec5d] Response: 200 - 1 ms
+2025-08-24 12:06:36.938 [qtp681384962-35] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: admin with roles: [ADMIN, USER]
+2025-08-24 12:06:36.938 [qtp681384962-35] INFO  c.d.t.rest.filters.LoggingFilter - [bfcdfdea] POST todos from curl/8.15.0
+2025-08-24 12:06:36.938 [qtp681384962-35] DEBUG c.d.t.rest.filters.LoggingFilter - [bfcdfdea] Header: Accept = [*/*]
+2025-08-24 12:06:36.938 [qtp681384962-35] DEBUG c.d.t.rest.filters.LoggingFilter - [bfcdfdea] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:06:36.938 [qtp681384962-35] DEBUG c.d.t.rest.filters.LoggingFilter - [bfcdfdea] Header: Host = [localhost:8080]
+2025-08-24 12:06:36.938 [qtp681384962-35] DEBUG c.d.t.rest.filters.LoggingFilter - [bfcdfdea] Header: Content-Length = [80]
+2025-08-24 12:06:36.938 [qtp681384962-35] DEBUG c.d.t.rest.filters.LoggingFilter - [bfcdfdea] Header: Content-Type = [application/json]
+2025-08-24 12:06:36.938 [qtp681384962-35] INFO  c.d.t.rest.filters.LoggingFilter - [bfcdfdea] Response: 201 - 0 ms
+2025-08-24 12:06:36.952 [qtp681384962-36] DEBUG c.d.t.r.s.AuthenticationFilter - Authenticated user: user with roles: [USER]
+2025-08-24 12:06:36.952 [qtp681384962-36] INFO  c.d.t.rest.filters.LoggingFilter - [4261dc3f] GET todos/3 from curl/8.15.0
+2025-08-24 12:06:36.952 [qtp681384962-36] DEBUG c.d.t.rest.filters.LoggingFilter - [4261dc3f] Header: Accept = [*/*]
+2025-08-24 12:06:36.952 [qtp681384962-36] DEBUG c.d.t.rest.filters.LoggingFilter - [4261dc3f] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:06:36.952 [qtp681384962-36] DEBUG c.d.t.rest.filters.LoggingFilter - [4261dc3f] Header: Host = [localhost:8080]
+2025-08-24 12:06:36.952 [qtp681384962-36] INFO  c.d.t.rest.filters.LoggingFilter - [4261dc3f] Response: 404 - 0 ms
+2025-08-24 12:06:37.366 [Thread-0] INFO  com.dbh.training.rest.Application - Stopping server...
+2025-08-24 12:06:37.368 [Thread-0] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:06:37.371 [Thread-0] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@5cbd159f{/,null,STOPPED}
+2025-08-24 12:06:37.371 [Thread-0] INFO  com.dbh.training.rest.Application - Server stopped.
+2025-08-24 12:09:21.308 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @112ms to org.eclipse.jetty.util.log.Slf4jLog
+2025-08-24 12:09:21.323 [main] INFO  com.dbh.training.rest.Application - Starting DBH REST Training Server...
+2025-08-24 12:09:21.330 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.4.51.v20230217; built: 2023-02-17T08:19:37.309Z; git: b45c405e4544384de066f814ed42ae3dceacdd49; jvm 24.0.2+12
+2025-08-24 12:09:21.413 [main] INFO  c.d.t.rest.config.JerseyConfig - Initializing Jersey configuration...
+2025-08-24 12:09:21.426 [main] INFO  c.d.t.rest.config.JerseyConfig - Jersey configuration initialized successfully
+2025-08-24 12:09:21.426 [main] INFO  c.d.t.rest.config.JerseyConfig - API versions registered: V1 (deprecated), V2 (current)
+2025-08-24 12:09:21.426 [main] INFO  c.d.t.rest.config.JerseyConfig - Features enabled: Jackson JSON, Bean Validation, CORS, Request/Response Logging
+2025-08-24 12:09:21.426 [main] INFO  c.d.t.rest.config.JerseyConfig - Security enabled: JWT Authentication, Role-based Authorization
+2025-08-24 12:09:21.426 [main] INFO  c.d.t.rest.config.JerseyConfig - Documentation: OpenAPI/Swagger available at /openapi.json and /swagger-ui
+2025-08-24 12:09:21.567 [main] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2025-08-24 12:09:21.613 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@5cbd159f{/,null,AVAILABLE}
+2025-08-24 12:09:21.622 [main] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:09:21.622 [main] INFO  org.eclipse.jetty.server.Server - Started @427ms
+2025-08-24 12:09:21.622 [main] INFO  com.dbh.training.rest.Application - Server started successfully!
+2025-08-24 12:09:25.991 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [625aa767] GET openapi.json from curl/8.15.0
+2025-08-24 12:09:25.992 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [625aa767] Header: Accept = [*/*]
+2025-08-24 12:09:25.992 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [625aa767] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:09:25.992 [qtp681384962-60] DEBUG c.d.t.rest.filters.LoggingFilter - [625aa767] Header: Host = [localhost:8080]
+2025-08-24 12:09:26.183 [qtp681384962-60] INFO  c.d.t.rest.filters.LoggingFilter - [625aa767] Response: 200 - 192 ms
+2025-08-24 12:09:26.200 [qtp681384962-40] INFO  c.d.t.rest.filters.LoggingFilter - [a058d170] GET swagger-ui from curl/8.15.0
+2025-08-24 12:09:26.200 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [a058d170] Header: Accept = [*/*]
+2025-08-24 12:09:26.201 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [a058d170] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:09:26.201 [qtp681384962-40] DEBUG c.d.t.rest.filters.LoggingFilter - [a058d170] Header: Host = [localhost:8080]
+2025-08-24 12:09:26.202 [qtp681384962-40] INFO  c.d.t.rest.filters.LoggingFilter - [a058d170] Response: 200 - 2 ms
+2025-08-24 12:09:26.213 [qtp681384962-37] INFO  c.d.t.rest.filters.LoggingFilter - [bd06bfe8] GET openapi.json from curl/8.15.0
+2025-08-24 12:09:26.213 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [bd06bfe8] Header: Accept = [*/*]
+2025-08-24 12:09:26.213 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [bd06bfe8] Header: User-Agent = [curl/8.15.0]
+2025-08-24 12:09:26.213 [qtp681384962-37] DEBUG c.d.t.rest.filters.LoggingFilter - [bd06bfe8] Header: Host = [localhost:8080]
+2025-08-24 12:09:26.215 [qtp681384962-37] INFO  c.d.t.rest.filters.LoggingFilter - [bd06bfe8] Response: 200 - 2 ms
+2025-08-24 12:09:26.587 [Thread-0] INFO  com.dbh.training.rest.Application - Stopping server...
+2025-08-24 12:09:26.590 [Thread-0] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@5606c0b{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-08-24 12:09:26.593 [Thread-0] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@5cbd159f{/,null,STOPPED}
+2025-08-24 12:09:26.593 [Thread-0] INFO  com.dbh.training.rest.Application - Server stopped.

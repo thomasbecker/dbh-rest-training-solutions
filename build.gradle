@@ -1,0 +1,146 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.dbh.training'
+version = '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+// Main class for running the application
+application {
+    mainClass = 'com.dbh.training.rest.Application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    jerseyVersion = '2.35'
+    jettyVersion = '9.4.51.v20230217'  // Latest 9.4.x for Java 8
+    jacksonVersion = '2.14.3'  // Latest 2.14.x for Java 8
+    slf4jVersion = '1.7.36'
+    logbackVersion = '1.2.12'  // Latest 1.2.x for Java 8
+    junitVersion = '5.9.3'
+    restAssuredVersion = '5.3.2'
+}
+
+dependencies {
+    // Jersey Core
+    implementation "org.glassfish.jersey.core:jersey-server:${jerseyVersion}"
+    implementation "org.glassfish.jersey.core:jersey-common:${jerseyVersion}"
+    implementation "org.glassfish.jersey.inject:jersey-hk2:${jerseyVersion}"
+    
+    // Jersey Container - Jetty HTTP & Servlet
+    implementation "org.glassfish.jersey.containers:jersey-container-jetty-http:${jerseyVersion}"
+    implementation "org.glassfish.jersey.containers:jersey-container-servlet:${jerseyVersion}"
+    implementation "org.glassfish.jersey.containers:jersey-container-servlet-core:${jerseyVersion}"
+    
+    // Jersey Media - Jackson for JSON
+    implementation "org.glassfish.jersey.media:jersey-media-json-jackson:${jerseyVersion}"
+    
+    // Jackson
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
+    
+    // Jetty Server
+    implementation "org.eclipse.jetty:jetty-server:${jettyVersion}"
+    implementation "org.eclipse.jetty:jetty-servlet:${jettyVersion}"
+    implementation "org.eclipse.jetty:jetty-util:${jettyVersion}"
+    
+    // Logging
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+    
+    // Bean Validation
+    implementation "org.glassfish.jersey.ext:jersey-bean-validation:${jerseyVersion}"
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    implementation 'org.hibernate.validator:hibernate-validator:6.2.5.Final'
+    implementation 'org.glassfish:javax.el:3.0.0'
+    
+    // Security Dependencies
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    implementation 'org.mindrot:jbcrypt:0.4'
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+    
+    // OpenAPI/Swagger Dependencies
+    implementation 'io.swagger.core.v3:swagger-jaxrs2:2.2.8'
+    implementation 'io.swagger.core.v3:swagger-jaxrs2-servlet-initializer:2.2.8'
+    implementation 'org.webjars:swagger-ui:4.15.5'
+    
+    // Test Dependencies
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+    testImplementation "io.rest-assured:rest-assured:${restAssuredVersion}"
+    testImplementation "io.rest-assured:json-path:${restAssuredVersion}"
+    testImplementation "io.rest-assured:json-schema-validator:${restAssuredVersion}"
+    testImplementation "org.hamcrest:hamcrest:2.2"
+    testImplementation "org.mockito:mockito-core:4.11.0"
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+    }
+}
+
+run {
+    // Pass system properties to the application
+    systemProperties = System.properties
+    
+    // JVM arguments for better debugging
+    jvmArgs = ['-Xmx512m', '-Xms256m']
+    
+    // Enable assertions in development
+    enableAssertions = true
+}
+
+// Create a fat JAR with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.dbh.training.rest.Application'
+    }
+    archiveClassifier = 'all'
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+}
+
+// Task to display project information
+task info {
+    doLast {
+        println "DBH REST Training - Base Project"
+        println "================================="
+        println "Jersey Version: ${jerseyVersion}"
+        println "Jetty Version: ${jettyVersion}"
+        println "Jackson Version: ${jacksonVersion}"
+        println "Java Version: ${java.sourceCompatibility}"
+        println ""
+        println "To run the application:"
+        println "  ./gradlew run"
+        println ""
+        println "To run tests:"
+        println "  ./gradlew test"
+        println ""
+        println "To build fat JAR:"
+        println "  ./gradlew fatJar"
+    }
+}
+
+// Wrapper task to ensure consistent Gradle version
+wrapper {
+    gradleVersion = '7.6.3'  // Latest 7.x that works well with Java 8
+    distributionType = Wrapper.DistributionType.ALL
+}
