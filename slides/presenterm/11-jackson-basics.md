@@ -9,8 +9,11 @@ theme:
 
 JSON Processing Made Easy
 
-⏱️ **Duration**: 90 minutes  
+⏱️ **Duration**: 90 minutes → 75 min optimal
 🎯 **Goal**: Master JSON handling in Jersey applications
+⏱️ Start: 9:00 | End: 10:30
+⏱️ Checkpoint 30min: Annotations covered
+⏱️ Checkpoint 60min: Start exercise
 
 <!--
 speaker_note: |
@@ -694,7 +697,7 @@ speaker_note: |
 
 ---
 
-## Polymorphic Types
+## [OPTIONAL - DEEP DIVE] Polymorphic Types
 
 ### Handling Inheritance
 
@@ -809,7 +812,7 @@ speaker_note: |
 
 ---
 
-## Configuration Best Practices
+## [OPTIONAL] Configuration Best Practices
 
 ### Centralized ObjectMapper
 
@@ -870,7 +873,7 @@ speaker_note: |
 
 ---
 
-## Performance Optimization
+## [OPTIONAL] Performance Optimization
 
 ### Tips for Large Payloads
 
@@ -1054,7 +1057,7 @@ speaker_note: |
 
 ---
 
-## DTOs vs Entities
+## [OPTIONAL] DTOs vs Entities
 
 ### Separation of Concerns
 
@@ -1122,7 +1125,7 @@ speaker_note: |
 
 ---
 
-## Integration with Bean Validation
+## [OPTIONAL] Integration with Bean Validation
 
 ### Validation + JSON
 

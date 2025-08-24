@@ -10,8 +10,11 @@ theme:
 
 Modern approaches to evolving REST APIs
 
-⏱️ **Duration**: 45 minutes  
+⏱️ **Duration**: 45 minutes → 35 min optimal
 📚 **Module 7**: Day 1 Afternoon
+⏱️ Start: 15:45 | End: 16:30
+⏱️ Checkpoint 15min: Strategy 1 (URI)
+⏱️ Checkpoint 30min: Start exercise prep
 
 <!--
 speaker_note: |
@@ -296,7 +299,7 @@ speaker_note: |
 
 ---
 
-## Strategy 2: Header Versioning
+## [OPTIONAL] Strategy 2: Header Versioning
 
 ### Version in Custom Header
 
@@ -462,7 +465,7 @@ speaker_note: |
 
 ---
 
-## Strategy 3: Media Type Versioning
+## [OPTIONAL] Strategy 3: Media Type Versioning
 
 ### Version in Accept Header
 
@@ -508,7 +511,7 @@ speaker_note: |
 
 ---
 
-## Media Type: Jersey Implementation
+## [OPTIONAL] Media Type: Jersey Implementation
 
 ### Using @Produces
 
@@ -563,7 +566,7 @@ speaker_note: |
 
 ---
 
-## Media Type: Pros & Cons
+## [OPTIONAL] Media Type: Pros & Cons
 
 ### Pros ✅
 
@@ -772,7 +775,7 @@ speaker_note: |
 
 ---
 
-## Version Migration Patterns
+## [OPTIONAL] Version Migration Patterns
 
 ### 1. Dual-Write Period
 
@@ -1002,7 +1005,7 @@ speaker_note: |
 
 ---
 
-## Common Pitfalls
+## [OPTIONAL] Common Pitfalls
 
 ### ❌ Over-versioning
 Every small change gets a version
@@ -1055,7 +1058,7 @@ speaker_note: |
 
 ---
 
-## GraphQL Alternative
+## [OPTIONAL - DEEP DIVE] GraphQL Alternative
 
 ### Different Philosophy
 

@@ -9,8 +9,10 @@ theme:
 
 Securing your APIs in production
 
-⏱️ **Duration**: 30 minutes  
-🎯 **Goal**: Understand and implement core security patterns
+⏱️ **Duration**: 30 minutes → 15 min optimal (focus on JWT)
+🎯 **Goal**: Understand and implement JWT authentication
+⏱️ Start: 11:30 | End: 12:00
+⏱️ If behind: Skip to JWT directly
 
 <!-- end_slide -->
 
@@ -231,7 +233,7 @@ speaker_note: |
 
 ---
 
-## Basic Authentication
+## [OPTIONAL] Basic Authentication
 
 ### Simple but Limited
 
@@ -305,7 +307,7 @@ speaker_note: |
 
 ---
 
-## Basic Auth: Security Considerations
+## [OPTIONAL] Basic Auth: Security Considerations
 
 ### ⚠️ Critical Limitations
 
@@ -610,7 +612,7 @@ speaker_note: |
 
 ---
 
-## API Key Authentication
+## [OPTIONAL] API Key Authentication
 
 ### For Service-to-Service Communication
 
@@ -684,7 +686,7 @@ speaker_note: |
 
 ---
 
-## API Key Best Practices
+## [OPTIONAL] API Key Best Practices
 
 ### 🔑 Key Management
 
@@ -758,7 +760,7 @@ speaker_note: |
 
 ---
 
-## Rate Limiting & Throttling
+## [OPTIONAL] Rate Limiting & Throttling
 
 ### Protect Your API from Abuse
 
@@ -902,7 +904,7 @@ speaker_note: |
 
 ---
 
-## CORS Security
+## [OPTIONAL] CORS Security
 
 ### Cross-Origin Resource Sharing
 
@@ -962,7 +964,7 @@ speaker_note: |
 
 ---
 
-## Security Headers
+## [OPTIONAL] Security Headers
 
 ### Essential HTTP Security Headers
 
@@ -1027,7 +1029,7 @@ speaker_note: |
 
 ---
 
-## Secure Password Storage
+## [OPTIONAL] Secure Password Storage
 
 ### Never Store Plain Text Passwords!
 
@@ -1097,7 +1099,7 @@ speaker_note: |
 
 ---
 
-## Audit Logging
+## [OPTIONAL] Audit Logging
 
 ### Track Everything Security-Related
 
@@ -1230,7 +1232,7 @@ speaker_note: |
 
 ---
 
-## Security Testing
+## [OPTIONAL] Security Testing
 
 ### Validate Your Security
 
@@ -1350,7 +1352,7 @@ speaker_note: |
 
 ---
 
-## Resources & Standards
+## [OPTIONAL] Resources & Standards
 
 ### Industry Standards
 

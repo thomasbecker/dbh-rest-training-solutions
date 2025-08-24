@@ -9,7 +9,9 @@ date: August 2025
 
 Safe Operations and API Paradigms
 
-Duration: 45 minutes
+Duration: 45 minutes → **30 min optimal**
+
+⏱️ **Checkpoint: Should be ~11:00 AM**
 
 <!--
 speaker_note: |
@@ -25,29 +27,21 @@ speaker_note: |
 
 ## Agenda
 
-1. Safe vs Idempotent Operations
-1. Idempotency in Practice
-1. REST Alternatives Overview
-1. GraphQL Deep Dive
-1. gRPC Overview
-1. SOAP Legacy Systems
-1. When to Use Which
+1. Safe vs Idempotent Operations [CORE - 15 min]
+1. Idempotency in Practice [CORE - 10 min]
+1. REST Alternatives Overview [OPTIONAL - 10 min]
+1. When to Use Which [OPTIONAL - 5 min]
+
+⏱️ **Focus on idempotency, skip alternatives if behind**
 
 <!--
 speaker_note: |
-  MODULE INTRODUCTION (2 minutes)
-
-  • Transition from Module 2:
-    - "We've designed resources"
-    - "Now: operational concerns"
-    - "And alternative approaches"
-
-  • Why this matters:
-    - Network failures happen
-    - Duplicate operations costly
-    - REST isn't always the answer
-
-  • Set expectations:
+  [TIMING: 1 minute]
+  [PRIORITY: CORE]
+  
+  • Focus on IDEMPOTENCY (critical)
+  • Alternatives are OPTIONAL
+  • If behind: Skip to "When to Use Which"
     - 45 minutes total
     - Theory + practical examples
     - Decision framework

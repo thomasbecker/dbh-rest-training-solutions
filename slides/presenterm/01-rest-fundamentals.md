@@ -562,7 +562,7 @@ DELETE /api/orders/456
 
 <!--
 speaker_note: |
-  RICHARDSON LEVELS 1-2 (4 minutes)
+  RICHARDSON MODEL (2 minutes)
 
   • Level 1: Resources
     - Multiple URIs ✓
@@ -1083,7 +1083,6 @@ speaker_note: |
 
 - Multiple endpoints
 - Fixed data structure
-- Over/Under fetching
 - Simple caching
 - Mature ecosystem
 
@@ -1093,7 +1092,6 @@ speaker_note: |
 
 - Single endpoint
 - Flexible queries
-- Exact data needs
 - Complex caching
 - Growing adoption
 
@@ -1103,27 +1101,14 @@ speaker_note: |
 
 <!--
 speaker_note: |
-  REST VS GRAPHQL (3 minutes)
+  [OPTIONAL - SKIP IF SHORT ON TIME]
 
-  • REST characteristics:
-    - Multiple endpoints (one per resource)
-    - Fixed response structure
-    - Over/under fetching common
-    - Simple, well understood
+  REST VS GRAPHQL (2 minutes MAX)
 
-  • GraphQL characteristics:
-    - Single endpoint
-    - Client specifies what it needs
-    - Solves over-fetching
-    - More complex to implement
-
-  • Why REST for this training:
-    - REST still 90% of APIs
-    - Enterprise standard
-    - Jersey is REST-only
-    - GraphQL = different training
-
-  • Key point: REST is NOT obsolete!
+  • Quick comparison only if asked
+  • Key point: REST still dominates enterprise
+  • We focus on REST with Jersey
+  • GraphQL = different training entirely
 -->
 
 <!-- end_slide -->
