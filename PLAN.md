@@ -7,12 +7,13 @@ focused on Jersey (plain Java) for DBH. The training emphasizes hands-on
 exercises with Jersey, REST fundamentals, security implementations, and Jackson
 for JSON processing.
 
-**Current Status**: ~95% Complete
+**Current Status**: ~97% Complete
+
 - ✅ All Day 1 content complete (slides + exercises)
 - ✅ Jackson content complete (Day 2 AM)
 - ✅ Security implementation complete (code + slides + exercise)
+- ✅ All showcases complete (OpenAPI with implementation, others presentation-only)
 - ⏳ Comprehensive final exercise needed (Exercise 09)
-- ⏳ Showcase demos needed (optional instructor demos)
 
 ## Customer Requirements Summary
 
@@ -607,34 +608,28 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 
 #### Showcases (Demo Only)
 
-##### 3.1 Client Certificate Authentication [3 hours]
+##### 3.1 Client Certificate Authentication ✅ PRESENTATION ONLY
 
-- [ ] Create showcases/client-certificates/
-- [ ] Generate self-signed certificates
-- [ ] Configure mutual TLS in Jersey
-- [ ] Create demo script with curl commands
-- [ ] Document setup process
-- **Agent**: backend-developer
-- **Model**: opus-4.1 (complex security)
+- [x] Create showcase slides (slides/presenterm/17-showcase-client-certificates.md)
+- **Status**: COMPLETE - Presentation-only showcase
+- **Note**: No implementation needed - concepts explained through slides
 
-##### 3.2 OpenAPI/Swagger Integration [2 hours]
+##### 3.2 OpenAPI/Swagger Integration [2 hours] ✅ COMPLETED
 
-- [ ] Create showcases/openapi/
-- [ ] Add Swagger annotations to resources
-- [ ] Integrate Swagger UI
-- [ ] Generate API documentation
-- [ ] Create usage examples
+- [x] Create showcases/openapi/ (integrated in instructor-solution)
+- [x] Add Swagger annotations to resources
+- [x] Integrate Swagger UI (SwaggerUIResource.java)
+- [x] Generate API documentation (OpenApiConfig.java)
+- [x] Create usage examples (in slides/presenterm/18-showcase-openapi.md)
 - **Agent**: documentation-specialist
 - **Model**: claude-sonnet-4 (documentation task)
+- **Status**: COMPLETE - OpenAPI configuration and Swagger UI fully integrated
 
-##### 3.3 Container Deployment [1 hour]
+##### 3.3 Container Deployment ✅ PRESENTATION ONLY
 
-- [ ] Create showcases/docker/
-- [ ] Create Dockerfile for Java 8 app
-- [ ] Docker Compose with PostgreSQL
-- [ ] Basic Kubernetes deployment YAML
-- **Agent**: general-purpose
-- **Model**: claude-sonnet-4
+- [x] Create showcase slides (slides/presenterm/19-showcase-containers.md)
+- **Status**: COMPLETE - Presentation-only showcase
+- **Note**: No implementation needed - concepts explained through slides
 
 #### Documentation & Support
 
@@ -793,14 +788,41 @@ For critical components, use multiple AI models and compare:
 - Validates architectural decisions
 - Reduces rework and technical debt
 
+## Showcases Summary
+
+All three showcase demonstrations are complete:
+
+1. **OpenAPI/Swagger** - ✅ FULLY IMPLEMENTED
+
+   - Slides: `18-showcase-openapi.md`
+   - Code: `OpenApiConfig.java`, `SwaggerUIResource.java`
+   - Status: Complete with working Swagger UI integration for live demo
+
+2. **Client Certificates** - ✅ PRESENTATION ONLY
+
+   - Slides: `17-showcase-client-certificates.md`
+   - Status: Complete presentation explaining mTLS concepts
+
+3. **Container Deployment** - ✅ PRESENTATION ONLY
+   - Slides: `19-showcase-containers.md`
+   - Status: Complete presentation covering Docker and Kubernetes deployment
+
+**Note**: OpenAPI showcase can be demonstrated live with working code. Client Certificates
+and Container Deployment are presentation-only showcases that explain the concepts through
+slides without requiring implementation.
+
 ## Next Actions
 
 1. ~~**Execute Phase 0 Research**~~ ✅ COMPLETED
-1. **Create base-project folder structure** (Critical - Do First)
-1. Set up Gradle build with Java 8 configuration
-1. Implement domain models
-1. Launch parallel exercise development with multiple agents
-1. Begin Java 8 compatibility testing early
+1. ~~**Create base-project folder structure**~~ ✅ COMPLETED
+1. ~~Set up Gradle build with Java 8 configuration~~ ✅ COMPLETED
+1. ~~Implement domain models~~ ✅ COMPLETED
+1. ~~Launch parallel exercise development~~ ✅ COMPLETED
+1. ~~Begin Java 8 compatibility testing~~ ✅ COMPLETED
+1. **Remaining Tasks:**
+   - [ ] Exercise 09 - Comprehensive final exercise
+   - [ ] Final instructor guide polish
+   - [ ] Common Q&A documentation
 
 ## Appendix: Research Queries
 
