@@ -14,6 +14,7 @@ import com.dbh.training.rest.resources.AuthResource;
 import com.dbh.training.rest.resources.UserResourceV1;
 import com.dbh.training.rest.resources.UserResourceV2;
 import com.dbh.training.rest.resources.HealthResource;
+import com.dbh.training.rest.resources.TodoResource;
 import com.dbh.training.rest.security.AuthenticationFilter;
 import com.dbh.training.rest.security.JwtService;
 import com.dbh.training.rest.security.SecurityHeadersFilter;
@@ -44,6 +45,9 @@ public class JerseyConfig extends ResourceConfig {
         register(UserResourceV1.class);  // /v1/users - deprecated
         register(UserResourceV2.class);  // /v2/users - current
         register(HealthResource.class);  // /health
+        
+        // Exercise 09: Comprehensive Todo API
+        register(TodoResource.class);    // /todos - complete CRUD with security
         
         // Exercise 08: Security Implementation
         register(AuthResource.class);    // /auth - login endpoint

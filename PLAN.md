@@ -7,13 +7,13 @@ focused on Jersey (plain Java) for DBH. The training emphasizes hands-on
 exercises with Jersey, REST fundamentals, security implementations, and Jackson
 for JSON processing.
 
-**Current Status**: ~97% Complete
+**Current Status**: ~98% Complete
 
 - ✅ All Day 1 content complete (slides + exercises)
 - ✅ Jackson content complete (Day 2 AM)
 - ✅ Security implementation complete (code + slides + exercise)
 - ✅ All showcases complete (OpenAPI with implementation, others presentation-only)
-- ⏳ Comprehensive final exercise needed (Exercise 09)
+- ✅ Comprehensive final exercise created (Exercise 09 - Todo API)
 
 ## Customer Requirements Summary
 
@@ -633,15 +633,16 @@ Can be done simultaneously by multiple agents after Phase 1 completion.
 
 #### Documentation & Support
 
-##### 2.9 Comprehensive Exercise [90 min - Day 2 PM]
+##### 2.9 Comprehensive Exercise [90 min - Day 2 PM] ✅ COMPLETED
 
-- [ ] Create exercises/09-comprehensive/
-- [ ] **Trainees build**: Complete REST API for a Todo application
-- [ ] **Combines**: CRUD, validation, JSON handling, basic security
-- [ ] **Trainees implement**: All concepts from Day 1 and 2
-- [ ] Provide detailed requirements and test suite
+- [x] Create exercises/09-comprehensive-todo/
+- [x] **Trainees build**: Complete REST API for a Todo application
+- [x] **Combines**: CRUD, validation, JSON handling, basic security
+- [x] **Trainees implement**: All concepts from Day 1 and 2
+- [x] Provide detailed requirements and test suite
 - **Note**: Fits within "Comprehensive Exercise" (Day 2 PM)
 - **Model**: claude-sonnet-4
+- **Status**: COMPLETE - Comprehensive README, starter code, and full solution provided
 
 ##### 3.5 Instructor Materials [4 hours]
 
@@ -820,7 +821,7 @@ slides without requiring implementation.
 1. ~~Launch parallel exercise development~~ ✅ COMPLETED
 1. ~~Begin Java 8 compatibility testing~~ ✅ COMPLETED
 1. **Remaining Tasks:**
-   - [ ] Exercise 09 - Comprehensive final exercise
+   - [x] Exercise 09 - Comprehensive final exercise ✅ COMPLETED
    - [ ] Final instructor guide polish
    - [ ] Common Q&A documentation
 
